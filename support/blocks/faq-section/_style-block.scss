@@ -13,17 +13,12 @@ html :where(.wp-block) {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
+	box-shadow: 0 0 0 2px $light-yellow;
+	margin-bottom: 2px;
 }
 
 .faq .block-wrapper {
-	max-width: 1000px;
 	width: 100%;
-	margin-bottom: 4px;
-	@media screen and (min-width: $small-width) {
-		margin-bottom: 6px;
-	}
 }
 
 .faq:not(.wp-block) + .faq:not(.wp-block) .block-wrapper {
@@ -33,8 +28,8 @@ html :where(.wp-block) {
 
 .wp-block.faq .content-column.hide-this .header-title,
 .faq .header-title {
-	padding-left: 2.05rem;
-	background: $light-grey url(img/down-chevron.svg) no-repeat calc(100% - 16px) center / 15px;
+	padding-left: calc(2.5rem - 12px);
+	background: white url($plus) no-repeat calc(100% - 16px) center / 15px;
 	padding-bottom: 0.35rem;
 	margin-bottom: 0;
 	margin-top: 0;
@@ -47,12 +42,13 @@ html :where(.wp-block) {
 	padding-bottom: 1rem;
 	padding-right: 2.5rem;
 	font-family: $font-body;
+	font-weight: 300;
 	@media screen and (min-width: $small-width) {
 		padding-bottom: 0.35rem;
 		cursor: pointer;
 		padding-left: 1.25rem;
 		padding-right: 3.5rem;
-		background: $light-grey url(img/down-chevron.svg) no-repeat calc(100% - 28px) center / 28px;
+		background: white url($plus) no-repeat calc(100% - 20px) center / 20px;
 		font-size: 22px;
 		line-height: 36px;
 		padding-top: 1.225rem;
@@ -69,9 +65,9 @@ html :where(.wp-block) {
 .wp-block.faq .content-column .header-title,
 .faq .content-column[data-toggled="true"] .header-title {
 	color: black;
-	background: $light-grey url(img/up-chevron.svg) no-repeat calc(100% - 16px) center / 10px;
+	background: white url($minus) no-repeat calc(100% - 16px) center / 15px;
 	@media screen and (min-width: $small-width) {
-		background: $light-grey url(img/up-chevron.svg) no-repeat calc(100% - 28px) center/ 28px;
+		background: white url($minus) no-repeat calc(100% - 20px) center/ 20px;
 	}
 }
 
@@ -96,7 +92,7 @@ html :where(.wp-block) {
 .wp-block.faq .content-column .answer {
 	display: flex;
 	background-color: white;
-	padding-left: calc(1.5rem - 12px);
+	padding-left: calc(2.5rem - 12px);
 	padding-right: 1.5rem;
 	overflow-wrap: break-word;
   	word-wrap: break-word;

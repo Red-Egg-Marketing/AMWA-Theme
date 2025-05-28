@@ -8,6 +8,11 @@ import Content from '../../components/Content.js';
 import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
+
+const template = [
+	['core/paragraph', {'placeholder' : 'Faq...'}]
+];
+
 const EditFAQ = ( { attributes, setAttributes, clientId } ) => {
 		const {
 			title, content, open, padding, blockId, margin 
@@ -85,13 +90,9 @@ const EditFAQ = ( { attributes, setAttributes, clientId } ) => {
 									<div 
 										className="content-col"
 									>
-										<Content 
-											tag="div"
-											content={ content }
-											placeholder={__('Answer...')}
-											setAttributes={ setAttributes }
-											multiline="p"
-											classProp="content"
+										<InnerBlocks 
+											allowedBlocks={ ['core/paragraph', 'core/heading', 'core/buttons', 'core/list'] }
+											template={ template }
 										/>
 									</div>
 								</div>

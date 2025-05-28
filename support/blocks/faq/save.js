@@ -42,12 +42,7 @@ const SaveFAQ = ( { attributes } ) => {
 								/>
 								<div className="answer">
 									<div class="content-col">
-										<Content.View
-											tag="div"
-											content={ content }
-											multiline="p"
-											classProp="content"
-										/>
+										<InnerBlocks.Content />
 									</div>
 								</div>
 							</div>

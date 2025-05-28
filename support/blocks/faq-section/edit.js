@@ -10,9 +10,12 @@ import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro', {}],
-	['AMWA-theme-blocks/faq', {}],
-	['AMWA-theme-blocks/faq', {}],
+	['core/heading', {}],
+	['amwa-theme-block/faq', {}],
+	['amwa-theme-block/faq', {}],
+	['amwa-theme-block/faq', {}],
+	['amwa-theme-block/faq', {}],
+	['amwa-theme-block/faq', {}],
 ];
 
 const EditFAQSection = ( { attributes, setAttributes, clientId } ) => {
@@ -53,7 +56,7 @@ const EditFAQSection = ( { attributes, setAttributes, clientId } ) => {
 					<div className="block-wrapper">
 						<InnerBlocks
 							template={ template }
-							allowedBlocks={['AMWA-theme-blocks/faq', 'core/heading', 'core/buttons', 'AMWA-theme-blocks/header-intro']}
+							allowedBlocks={['amwa-theme-block/faq', 'core/heading', 'core/buttons', 'core/paragraph']}
 						/>
 					</div>
 				</div>
