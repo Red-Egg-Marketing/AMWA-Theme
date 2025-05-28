@@ -1,0 +1,30 @@
+const { useBlockProps } = wp.blockEditor;
+const { registerBlockType } = wp.blocks;
+const { RichText, MediaUpload, InnerBlocks } = wp.blockEditor;
+const { Button } = wp.components;
+const { __ } = wp.i18n;
+import Content from '../../components/Content.js';
+
+const SaveCTA = ( { attributes } ) => {
+		const {
+			width, icons, bgSlug, iconColor, cardBG
+		} = attributes;
+
+		const blockProps = useBlockProps.save({
+			className: 'text-card' + ' width-' + width + ' ' + 'border-' + bgSlug + ' ' + cardBG
+		});
+	
+		return (
+			<div
+				{...blockProps}
+			>
+				<div className="block-wrapper">
+					<div className="block-content">
+						<InnerBlocks.Content />
+					</div>
+				</div>
+			</div>
+		);
+}
+
+export default SaveCTA;

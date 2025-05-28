@@ -1,0 +1,493 @@
+@font-face {
+    font-family: 'retroicaregular';
+    src: url('fonts/retroica-webfont.woff2') format('woff2'),
+         url('fonts/retroica-webfont.woff') format('woff'),
+         url('fonts/retroica-webfont.ttf') format('truetype'),
+         url('fonts/retroica-webfont.svg#retroicaregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.site-main p,
+.site p,
+.gs-sin-mem-desig,
+.gs_team p, .gs_team li,
+.editor-visual-editor p, .entry-content p,
+.editor-visual-editor li, .entry-content li,
+.editor-visual-editor dl, .entry-content dl,
+.editor-visual-editor dd, .entry-content dd {
+	font-family: $font-body;
+	font-size: 18px;
+	line-height: 25px;
+	color: black;
+	font-weight: 300;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+		line-height: 33px;
+	}
+}
+
+italic {
+	font-style: italic !important;
+}
+
+.gs-sin-mem-desig,
+.gs_team b {
+	font-weight: bold;
+}
+
+.gstm-details span {
+	font-family: $font-body;
+	font-size: 16px;
+	line-height: 22px;
+	color: $head-color;
+	font-weight: 300;
+	@media screen and (min-width: $small-width) {
+		font-size: 18px;
+		line-height: 25px;
+	}
+}
+
+.editor-visual-editor a, .entry-content a {
+	color: $head-color;
+}
+
+.editor-visual-editor strong,.entry-content strong {
+	font-weight: bold;
+}
+
+.editor-visual-editor ul.has-large-font-size li, .entry-content ul.has-large-font-size li,
+.editor-visual-editor p.has-large-font-size, .entry-content p.has-large-font-size {
+	font-size: 24px !important;
+	line-height: 34px;
+	color: $bg-color-7;
+	@media screen and (min-width: $small-width) {
+		font-size: 30px !important;
+		line-height: 42px;
+	}
+}
+
+.site-main ul,
+.editor-visual-editor ul, .entry-content ul {
+	margin: 0;
+}
+
+.editor-visual-editor li, .page .entry-content li,
+.post .post-content li {
+	font-family: $font-body;
+	position: relative;
+	margin-bottom: 5px;
+	@media screen and (min-width: $small-width) {
+		margin-bottom: 10px;
+	}
+}
+
+.site-main li,
+.site li,
+.editor-visual-editor li, .page .entry-content li {
+	font-size: 18px;
+	line-height: 30px;
+	color: black;
+	font-weight: 300;
+	font-family: $font-body;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+		line-height: 33px;
+	}
+}
+
+.page .entry-content > ul {
+	padding-left: 2.25rem;
+	@media screen and (min-width: $small-width) {
+		padding-left: 2.5rem;
+	}
+}
+
+.page .entry-content > ul li {
+	list-style-type: disc;
+}
+
+.gs_team h1,
+.site-main h1,
+.site h1,
+.editor-visual-editor h1, .entry-content h1 {
+	color: black;
+	font-size: 42px;
+	line-height: 50px;
+	font-family: $font-head;
+	font-weight: 700;
+	text-transform: none;
+	@media screen and (min-width: $small-width) {
+		font-size: 65px;
+		line-height: 85px;
+	}
+}
+
+.gs_team h2,
+.site h2,
+.site-main h2,
+.editor-visual-editor h2, .entry-content h2 {
+	font-size: 35px;
+	line-height: 42px;
+	color: black;
+	margin-top: 2rem;
+	font-family: $font-head;
+	text-transform: none;
+	font-weight: 700;
+	@media screen and (min-width: $small-width) {
+		font-size: 50px;
+		line-height: 60px;
+		margin-top: 3rem;
+	}
+}
+
+h1 a,
+h2 a,
+h3 a,
+h4 a,
+h5 a,
+h6 a {
+	text-decoration: none;
+}
+
+.main-navigation h3,
+.site h3,
+.site-main h3,
+.gs_team h3,
+.editor-visual-editor h3, .entry-content h3 {
+	color: $green;
+	font-size: 28px;
+	line-height: 36px;
+	font-family: $font-head;
+	font-weight: 700;
+	@media screen and (min-width: $small-width) {
+		font-size: 34px;
+		line-height: 44px;
+	}
+}
+
+
+.editor-visual-editor h3.has-large-font-size,
+.entry-content h3.has-large-font-size {
+	font-size: 34px !important;
+	line-height: 40px;
+	@media screen and (min-width: $small-width) {
+		font-size: 50px !important;
+		line-height: 62px;
+	}
+}
+
+.gs_team h4,
+.site h4,
+.site-main h4,
+.editor-visual-editor h4, .entry-content h4 {
+	color: $light-orange;
+	line-height: 22px;
+	font-size: 18px;
+	text-transform: uppercase;
+	font-family: $font-body;
+	font-weight: 600;
+	letter-spacing: 0.2px;
+	@media screen and (min-width: $small-width) {
+		font-size: 23px;
+		letter-spacing: 1px;
+		line-height: 34px;
+	}
+}
+
+.gs_team h5,
+.site h5,
+.site-main h5,
+.editor-visual-editor h5, .entry-content h5 {
+	color: $green;
+	line-height: 19px;
+	font-size: 14px;
+	font-family: $font-body;
+	@media screen and (min-width: $small-width) {
+		font-size: 16px;
+		line-height: 25px;
+	}
+}
+
+.gs_team h6,
+.site h6,
+.site-main h6,
+.editor-visual-editor h6, .entry-content h6 {
+	color: $green;
+	line-height: 18px;
+	font-size: 14px;
+	font-weight: 700;
+	font-family: $font-body;
+	@media screen and (min-width: $small-width) {
+		font-size: 15px;
+		line-height: 21px;
+	}
+}
+
+.entry-content h3 + h2,
+.editor-visual-editor h3 + h2 {
+	margin-top: 0;
+}
+
+.blue h1,
+.blue h2,
+.blue h3,
+.blue h4,
+.blue h5,
+.blue h6,
+.blue td,
+.blue th,
+.blue p {
+	color: white;
+}
+
+.has-white-color p,
+.has-white-color 
+.entry-content .has-white-color, 
+{
+	color: white;
+}
+
+.bona-nova {
+	font-family: $font-head !important;
+}
+
+.figtree {
+	font-family: $font-body !important;
+}
+
+.has-green-color p,
+.has-green-color,
+.entry-content .has-blue-green-color {
+	color: $green !important;
+}
+
+.has-red-color p,
+.has-red-color,
+.entry-content .has-red-color {
+	color: $red !important;
+}
+
+.has-teal-color p,
+.has-teal-color,
+.entry-content .has-teal-color {
+	color: $teal !important;
+	
+}
+
+.has-purple-color p,
+.has-purple-color,
+.entry-content .has-purple-color {
+	color: $purple !important;
+}
+
+.has-orange-color p,
+.has-orange-color,
+.entry-content .has-orange-color {
+	color: $orange !important;
+}
+
+.has-light-orange-color p,
+.has-light-orange-color,
+.entry-content .has-light-orange-color {
+	color: $light-orange !important;
+}
+
+background {
+	background: linear-gradient(to bottom, $light-blue 25%, transparent 25% );
+	background-size: 200% 200%;
+	background-position: 0 100%;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-left: -10px;
+}
+
+background.active {
+	animation: backgroundShift 3s ease forwards;
+}
+
+.light-grey background,
+.peach background,
+.light-blue background {
+	background: linear-gradient(to bottom, white 25%, transparent 25% );
+	background-size: 200% 200%;
+	background-position: 0 100%;
+}
+
+.contact-section background,
+.teal-gradient background {
+	background: linear-gradient(to bottom, rgba(25, 48, 63, .2) 25%, transparent 25% );
+	background-size: 200% 200%;
+	background-position: 0 100%;
+}
+
+words {
+	font-weight: bold;
+	color: $bg-color-5;
+	display: inline;
+	white-space: nowrap;
+	position: relative;
+	padding-right: 3px;
+}
+
+words.highlight {
+	background: $bg-color-5;
+	color: white;
+}
+
+words:after {
+	content: "";
+	background: black;
+	width: 1px;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	display: inline-block;
+}
+words:before {
+	content: "";
+	width: 50px;
+}
+
+words.highlight:after {
+	background: white;
+}
+
+words.waiting:after {
+	animation: opacityChange 0.5s infinite;
+}
+
+block {
+	display: block;
+	margin-top: 25px
+}
+
+a block {
+	color: $bg-color-5;
+	text-decoration: none;
+}
+
+a block:after,
+block a:after {
+	content: "";
+	background: url(img/right-chevron-yellow.svg) no-repeat center center / 100%;
+	width: 9px;
+	height: 14px;
+	display: inline-block;
+	margin-left: 8px;
+}
+
+.entry-content block a {
+	color: $bg-color-5;
+	text-decoration: none;
+}
+
+
+.entry-content p.has-medium-font-size {
+	font-size: 20px !important;
+	line-height: 29px;
+	@media screen and (min-width: $small-width) {
+		font-size: 22px !important;
+		line-height: 34px;
+	}
+}
+
+.entry-content p.has-large-font-size {
+	font-size: 24px !important;
+	line-height: 36px;
+	@media screen and (min-width: $small-width) {
+		font-size: 30px !important;
+		line-height: 42px;
+	}
+}
+
+
+/* arrows */
+arrow:after {
+	content: "";
+	display: inline-block;
+	background: url(img/right-arrow-green.svg) no-repeat center center / 100%;
+	width: 22px;
+	height: 18px;
+	margin-left: 10px;
+	transition-property: margin;
+	transition-duration: 0.3s;
+	@media screen and (min-width: $small-width) {
+		width: 30px;
+		height: 25px;
+		margin-left: 15px;
+	}
+}
+
+arrow:hover:after {
+	margin-left: 15px;
+	@media screen and (min-width: $small-width) {
+		margin-left: 25px;
+	}
+}
+
+.has-teal-color arrow:after {
+	background-image: url(img/right-arrow-teal.svg);
+}
+
+.has-green-color arrow:after {
+	background-image: url(img/right-arrow-green.svg);
+}
+
+.has-orange-color arrow:after {
+	background-image: url(img/right-arrow-orange.svg);
+}
+
+.has-light-orange-color arrow:after {
+	background-image: url(img/right-arrow-light-orange.svg);
+}
+
+.has-red-color arrow:after {
+	background-image: url(img/right-arrow-red.svg);
+}
+
+.has-purple-color arrow:after {
+	background-image: url(img/right-arrow-purple.svg);
+}
+
+.middle-active {
+	position: relative;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+}
+
+middleline {
+	position: relative;
+	display: block;
+	margin-left: 3px;
+	margin-right: 3px;
+	max-width: calc(100% - 2.5rem);
+	@media screen and (min-width: $small-width) {
+		max-width: 92.5%;
+		margin-left: 15px;
+		margin-right: 15px;
+	}
+}
+
+.teal .middle-active:after,
+.teal .middle-active:before,
+.light-orange .middle-active:after,
+.light-orange .middle-active:before,
+.light-brown .middle-active:after,
+.light-brown .middle-active:before, {
+	background: white;
+}
+
+.middle-active:after,
+.middle-active:before {
+	content: "";
+	background: $light-grey;
+	height: 3px;
+	display: block;
+	flex: 1;
+	width: 100%;
+} 
+

@@ -1,0 +1,42 @@
+const { registerBlockType } = wp.blocks;
+const { __ } = wp.i18n;
+import edit from './edit';
+import save from './save';
+
+registerBlockType( 'AMWA-theme-blocks/selected-case-study', {
+	apiVersion: 2,
+	title: __( 'Selected Spotlight Stories', 'AMWA-theme-blocks' ),
+	description: __( 'Block for a selecting Spotlight Stories by category. Displays statistics block associated with Case Study.', 'AMWA-theme-blocks' ),
+	icon: 'welcome-write-blog',
+	category: 'layout',
+	attributes: {
+		resources: {
+			type: 'array',
+			default: []
+		},
+		category : {
+			type: 'string',
+		},
+		mainTitle : {
+			type: 'string',
+		},
+		padding: {
+			type: 'object',
+			default: {
+			}
+		},
+		margin: {
+			type: 'object',
+			default: {
+			}
+		},
+		blockId: {
+			type: 'string'
+		}
+	},
+	supports: {
+		anchor: true
+	},
+	edit: edit,
+	save: save
+} );
