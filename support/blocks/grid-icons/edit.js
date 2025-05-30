@@ -11,10 +11,10 @@ const colors = [
 ];
 
 const template = [
-	['AMWA-theme-blocks/icon-cta'],
-	['AMWA-theme-blocks/icon-cta'],
-	['AMWA-theme-blocks/icon-cta'],
-	['AMWA-theme-blocks/icon-cta', {'template' :[
+	['amwa-theme-block/icon-cta'],
+	['amwa-theme-block/icon-cta'],
+	['amwa-theme-block/icon-cta'],
+	['amwa-theme-block/icon-cta', {'template' :[
 		['core/buttons', {},
 			[
 				['core/button', {'placeholder' : 'Get a Quote'}]
@@ -47,7 +47,7 @@ const EditGridIcons = ( { attributes, setAttributes } ) => {
 						<div className="icon-wrapper">
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={['AMWA-theme-blocks/icon-cta']}
+								allowedBlocks={['amwa-theme-block/icon-cta']}
 							/>
 						</div>	
 					</div>

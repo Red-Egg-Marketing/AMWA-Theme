@@ -15,7 +15,7 @@ import MarginSelector from '../../components/Margin.js';
 const apiUrl  = '/wp-json/AMWA/v2/events';
 
 const template = [
-	['AMWA-theme-blocks/header-intro']
+	['amwa-theme-block/header-intro']
 ]
 const count = 3;
 const buttonStyle = {
@@ -166,7 +166,7 @@ const EditSelectedProject = ( { setAttributes, attributes, isSelected, clientId 
 				>
 					<InnerBlocks
 						template={ template }
-						allowBlocks={['AMWA-theme-blocks/header-intro']}
+						allowBlocks={['amwa-theme-block/header-intro']}
 					/>
 					<div className="wrapper">
 					{ noResource == false && resource.length > 0 && resource.map( (resource, resourceIndex) => {

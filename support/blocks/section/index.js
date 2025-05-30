@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/section', {
-	title: __( 'Section', 'AMWA-theme-blocks' ),
-	description: __( 'Title & related content. Can include Bios, Image & Text, and Title & Content custom blocks.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/section', {
+	title: __( 'Section', 'amwa-theme-block' ),
+	description: __( 'Title & related content. Can include Bios, Image & Text, and Title & Content custom blocks.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'schedule',
 	category: 'layout',

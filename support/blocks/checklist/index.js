@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/checklist', {
-	title: __( 'Check List', 'AMWA-theme-blocks' ),
-	description: __( 'Checklist block', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/checklist', {
+	title: __( 'Check List', 'amwa-theme-block' ),
+	description: __( 'Checklist block', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',

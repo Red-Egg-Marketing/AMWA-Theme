@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/stat-callout', {
-	title: __( 'Stat Callout', 'AMWA-theme-blocks' ),
-	description: __( 'Block with Statistic and short description', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/stat-callout', {
+	title: __( 'Stat Callout', 'amwa-theme-block' ),
+	description: __( 'Block with Statistic and short description', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',

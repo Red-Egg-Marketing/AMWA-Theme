@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/title-image-cta-group', {
-	title: __( 'CTA Group - Title/Image/Button', 'AMWA-theme-blocks' ),
-	description: __( 'Group of CTAs featuring image, title, description and button.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/title-image-cta-group', {
+	title: __( 'CTA Group - Title/Image/Button', 'amwa-theme-block' ),
+	description: __( 'Group of CTAs featuring image, title, description and button.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'schedule',
 	category: 'layout',

@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/title-content', {
-	title: __( 'Title & Content', 'AMWA-theme-blocks' ),
-	description: __( 'Title & content blurb. Centered text.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/title-content', {
+	title: __( 'Title & Content', 'amwa-theme-block' ),
+	description: __( 'Title & content blurb. Centered text.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'align-center',
 	category: 'layout',

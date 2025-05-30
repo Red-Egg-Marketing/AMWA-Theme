@@ -3,11 +3,11 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/event', {
+registerBlockType( 'amwa-theme-block/event', {
 	apiVersion: 2,
-	title: __( 'Event', 'AMWA-theme-blocks' ),
-	description: __( 'Event Block.', 'AMWA-theme-blocks' ),
-	parent: ['AMWA-theme-blocks/selected-events-blog'],
+	title: __( 'Event', 'amwa-theme-block' ),
+	description: __( 'Event Block.', 'amwa-theme-block' ),
+	parent: ['amwa-theme-block/selected-events-blog'],
 	icon: 'welcome-write-blog',
 	category: 'layout',
 	attributes: {

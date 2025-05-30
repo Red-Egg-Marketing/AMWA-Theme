@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/selected-events-blog', {
+registerBlockType( 'amwa-theme-block/selected-events-blog', {
 	apiVersion: 2,
-	title: __( 'Blog/Events Block', 'AMWA-theme-blocks' ),
-	description: __( 'Block for a Selecting Events. Displays latest 1 from selected category, or most recent one.', 'AMWA-theme-blocks' ),
+	title: __( 'Blog/Events Block', 'amwa-theme-block' ),
+	description: __( 'Block for a Selecting Events. Displays latest 1 from selected category, or most recent one.', 'amwa-theme-block' ),
 	icon: 'welcome-write-blog',
 	category: 'layout',
 	attributes: {

@@ -5,12 +5,12 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/contact-forms', {
-	title: __( 'Contact Form Selector', 'AMWA-theme-blocks' ),
-	description: __( ' Can contain blocks for header and description in column format. Useful for introduction to section.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/contact-forms', {
+	title: __( 'Contact Form Selector', 'amwa-theme-block' ),
+	description: __( ' Can contain blocks for header and description in column format. Useful for introduction to section.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'align-center',
-	parent: ['AMWA-theme-blocks/contact', 'AMWA-theme-blocks/sign-up'],
+	parent: ['amwa-theme-block/contact', 'amwa-theme-block/sign-up'],
 	category: 'layout',
 	edit: edit,
 	save: save,

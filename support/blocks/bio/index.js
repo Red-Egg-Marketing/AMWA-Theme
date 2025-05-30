@@ -5,13 +5,13 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/bio', {
-	title: __( 'Bio (biography)', 'AMWA-theme-blocks' ),
-	description: __( 'Bio block. Useful for displaying info about a person.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/bio', {
+	title: __( 'Bio (biography)', 'amwa-theme-block' ),
+	description: __( 'Bio block. Useful for displaying info about a person.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'users',
 	category: 'layout',
-	parent: ['AMWA-theme-blocks/bios'],
+	parent: ['amwa-theme-block/bios'],
 	attributes: {
 		name: {
 			type: 'string',

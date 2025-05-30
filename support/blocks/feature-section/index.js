@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/feature-section', {
-	title: __( 'Feature Section', 'AMWA-theme-blocks' ),
-	description: __( 'Feature Section with animation features', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/feature-section', {
+	title: __( 'Feature Section', 'amwa-theme-block' ),
+	description: __( 'Feature Section with animation features', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'columns',
 	category: 'layout',

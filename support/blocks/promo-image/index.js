@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/promo-image', {
-	title: __( 'Promo/Image Offset Card', 'AMWA-theme-blocks' ),
-	description: __( 'Contains Image, Title, Description and Buttons. Has offset display.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/promo-image', {
+	title: __( 'Promo/Image Offset Card', 'amwa-theme-block' ),
+	description: __( 'Contains Image, Title, Description and Buttons. Has offset display.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'columns',
 	category: 'layout',

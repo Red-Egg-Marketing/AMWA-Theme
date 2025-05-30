@@ -231,21 +231,21 @@ const EditCaseStudy = ( { attributes, setAttributes } ) => {
 										tagName="p"
 										value={ quote.snippet }
 										className="quote-snippet"
-										placeholder={ __('Quote...','AMWA-theme-blocks')}
+										placeholder={ __('Quote...','amwa-theme-block')}
 										onChange={ updateQuote }
 									/>
 									<RichText 
 										tagName="p"
 										value={ quote.name }
 										className="quote-name"
-										placeholder={ __('Name...','AMWA-theme-blocks')}
+										placeholder={ __('Name...','amwa-theme-block')}
 										onChange={ updateName }
 									/>
 									<RichText 
 										tagName="p"
 										value={ quote.title }
 										className="quote-title"
-										placeholder={ __('Title...','AMWA-theme-blocks')}
+										placeholder={ __('Title...','amwa-theme-block')}
 										onChange={ updateTitle }
 									/>
 								</div>
@@ -264,7 +264,7 @@ const EditCaseStudy = ( { attributes, setAttributes } ) => {
 													tagName="h3"
 													value={ title }
 													className="header-title"
-													placeholder={ __('Stat...','AMWA-theme-blocks')}
+													placeholder={ __('Stat...','amwa-theme-block')}
 													onChange={ updateStatTitle }
 													unstableOnFocus={ () => {
 					 										setRownumber(index);
@@ -276,7 +276,7 @@ const EditCaseStudy = ( { attributes, setAttributes } ) => {
 													value={ content }
 													multiline="p"
 													className="description"
-													placeholder={ __('Stat description...','AMWA-theme-blocks')}
+													placeholder={ __('Stat description...','amwa-theme-block')}
 													onChange={ updateStatContent }
 													unstableOnFocus={ () => {
 					 										setRownumber(index);

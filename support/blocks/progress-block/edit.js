@@ -8,7 +8,7 @@ import Header from '../../components/Header.js';
 import BackgroundColor from '../../components/BackgroundColor.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro-column', {}]
+	['amwa-theme-block/header-intro-column', {}]
 ];
 
 const mainControl = {

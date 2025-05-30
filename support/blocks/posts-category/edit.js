@@ -16,7 +16,7 @@ const apiUrl  = '/wp-json/AMWA/v2/events';
 const catUrl  = '/wp-json/wp/v2/categories';
 
 const template = [
-	['AMWA-theme-blocks/header-intro']
+	['amwa-theme-block/header-intro']
 ]
 const count = 3;
 const buttonStyle = {
@@ -193,7 +193,7 @@ const EditSelectedResources = ( { setAttributes, attributes, isSelected, clientI
 						<div className="resources-wrap">
 							<InnerBlocks
 								template={ template }
-								allowBlocks={['AMWA-theme-blocks/header-intro']}
+								allowBlocks={['amwa-theme-block/header-intro']}
 							/>
 							<div className="resources grid">
 									{ resources.length > 0 && resources.map( (resource, resourceIndex) => {
@@ -218,7 +218,7 @@ const EditSelectedResources = ( { setAttributes, attributes, isSelected, clientI
 									}
 							</div>
 							{ resources.length == 0 && (
-								<p style={ warningStyle }>{__('No Posts found. Try a different category.', 'AMWA-theme-blocks')}</p>
+								<p style={ warningStyle }>{__('No Posts found. Try a different category.', 'amwa-theme-block')}</p>
 							)}
 							
 						</div>

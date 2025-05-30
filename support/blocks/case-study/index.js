@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/case-study', {
-	title: __( 'Case Study Block', 'AMWA-theme-blocks' ),
-	description: __( 'Block with Statistics, short description, quote, and image', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/case-study', {
+	title: __( 'Case Study Block', 'amwa-theme-block' ),
+	description: __( 'Block with Statistics, short description, quote, and image', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',

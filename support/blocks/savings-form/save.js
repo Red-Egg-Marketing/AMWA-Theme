@@ -20,7 +20,7 @@ const SaveSavingsForm = ( { attributes } ) => {
 				<div className="col">
 					<form className="form-savings">
 						<div className="input-wrap">
-							<label className="label-block" for="doctors">{ __('How many doctors are in your clinic?', 'AMWA-theme-blocks') }</label>
+							<label className="label-block" for="doctors">{ __('How many doctors are in your clinic?', 'amwa-theme-block') }</label>
 							<input
 								type="range"
 								id="doctors"
@@ -43,7 +43,7 @@ const SaveSavingsForm = ( { attributes } ) => {
 							/>
 						</div>
 						<div className="input-wrap">
-							<label className="label-block" for="patients">{ __('How many patients per provider per day?', 'AMWA-theme-blocks') }</label>
+							<label className="label-block" for="patients">{ __('How many patients per provider per day?', 'amwa-theme-block') }</label>
 							<input
 								type="range"
 								id="patients"

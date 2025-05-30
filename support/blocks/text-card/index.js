@@ -5,13 +5,13 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/text-card', {
-	title: __( 'Text Card', 'AMWA-theme-blocks' ),
-	description: __( 'Card with title short blurb.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/text-card', {
+	title: __( 'Text Card', 'amwa-theme-block' ),
+	description: __( 'Card with title short blurb.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',
-	parent: ['AMWA-theme-blocks/cards-grid'],
+	parent: ['amwa-theme-block/cards-grid'],
 	attributes: {
 		cardBG: {
 			type: 'string',
@@ -37,33 +37,9 @@ registerBlockType( 'AMWA-theme-blocks/text-card', {
 			type: 'string',
 			default: ''
 		},
-		icons : {
-			type: 'array',
-			source: 'query',
-			default: [],
-			selector: '.icon-row',
-			query: {
-				icon: {
-					type: 'string',
-      				source: 'attribute',
-      				default: 'address-book',
-      				selector: '.icon-icon',
-      				attribute: 'data-icon'
-      			},
-      			prefix: {
-      				type: 'string',
-      				source: 'attribute',
-      				selector: '.icon-wrap',
-      				attribute: 'data-prefix',
-      				default: 'far'
-      			},
-      			upload: {
-      				type: 'string',
-      				source: 'html',
-      				selector: '.upload-icon',
-      				default: ''
-      			}
-			}
+		withImage: {
+			type: 'string',
+			default: 'with-image'
 		}
 	},
 	edit: edit,

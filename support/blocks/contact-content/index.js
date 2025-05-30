@@ -5,12 +5,12 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/contact-content', {
-	title: __( 'Header Intro in Columns', 'AMWA-theme-blocks' ),
-	description: __( ' Can contain blocks for header and description in column format. Useful for introduction to section.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/contact-content', {
+	title: __( 'Header Intro in Columns', 'amwa-theme-block' ),
+	description: __( ' Can contain blocks for header and description in column format. Useful for introduction to section.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'align-center',
-	parent: ['AMWA-theme-blocks/contact'],
+	parent: ['amwa-theme-block/contact'],
 	category: 'layout',
 	attributes: {
 		title: {

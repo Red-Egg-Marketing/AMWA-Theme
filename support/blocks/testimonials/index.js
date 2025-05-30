@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/testimonials', {
+registerBlockType( 'amwa-theme-block/testimonials', {
 	apiVersion: 2,
-	title: __( 'Testimonials', 'AMWA-theme-blocks' ),
-	description: __( 'For testimonials with Slider functionality.', 'AMWA-theme-blocks' ),
+	title: __( 'Testimonials', 'amwa-theme-block' ),
+	description: __( 'For testimonials with Slider functionality.', 'amwa-theme-block' ),
 	icon: 'welcome-write-blog',
 	category: 'layout',
 	attributes: {

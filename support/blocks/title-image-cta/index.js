@@ -5,13 +5,13 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/title-image-cta', {
-	title: __( 'CTA - Title, Image', 'AMWA-theme-blocks' ),
-	description: __( 'Useful for displaying CTA with title image', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/title-image-cta', {
+	title: __( 'CTA - Title, Image', 'amwa-theme-block' ),
+	description: __( 'Useful for displaying CTA with title image', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'format-image',
 	category: 'layout',
-	parent: ['AMWA-theme-blocks/title-image-cta-group'],
+	parent: ['amwa-theme-block/title-image-cta-group'],
 	attributes: {
 		introTitle : {
 			type: 'string',

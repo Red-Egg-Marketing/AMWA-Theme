@@ -8,7 +8,7 @@ import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro', {}],
+	['amwa-theme-block/header-intro', {}],
 	['core/shortcode', {}],
 ];
 
@@ -50,7 +50,7 @@ const EditShortcodeSection = ( { attributes, setAttributes, clientId } ) => {
 						<div className="block-content">							
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={ ['AMWA-theme-blocks/header-intro', 'core/shortcode'] }
+								allowedBlocks={ ['amwa-theme-block/header-intro', 'core/shortcode'] }
 							/>
 						</div>
 					</div>

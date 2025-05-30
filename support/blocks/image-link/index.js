@@ -5,13 +5,13 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/image-link', {
-	title: __( 'Image & Text Link', 'AMWA-theme-blocks' ),
-	description: __( 'Useful for displaying a group of links to various services, or posts and pages.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/image-link', {
+	title: __( 'Image & Text Link', 'amwa-theme-block' ),
+	description: __( 'Useful for displaying a group of links to various services, or posts and pages.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'format-image',
 	category: 'layout',
-	parent: ['AMWA-theme-blocks/image-swiper'],
+	parent: ['amwa-theme-block/image-swiper'],
 	attributes: {
 		link : {
 			type: 'string',

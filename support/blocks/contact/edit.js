@@ -11,8 +11,8 @@ import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro'],
-	['AMWA-theme-blocks/contact-forms']
+	['amwa-theme-block/header-intro'],
+	['amwa-theme-block/contact-forms']
 ];
 
 const EditContact = ( { attributes, setAttributes, clientId } ) => {
@@ -57,7 +57,7 @@ const EditContact = ( { attributes, setAttributes, clientId } ) => {
 					<div className="block-wrapper">
 						<div className="content">
 							<InnerBlocks 
-								allowedBlocks={ ['AMWA-theme-blocks/header-intro', 'AMWA-theme-blocks/contact-forms'] }
+								allowedBlocks={ ['amwa-theme-block/header-intro', 'amwa-theme-block/contact-forms'] }
 								template={ template }
 							/>
 						</div>

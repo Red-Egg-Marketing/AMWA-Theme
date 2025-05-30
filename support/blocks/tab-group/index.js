@@ -5,12 +5,12 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/tab-group', {
-	title: __( 'Tab Group', 'AMWA-theme-blocks' ),
-	description: __( 'Group of tabs.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/tab-group', {
+	title: __( 'Tab Group', 'amwa-theme-block' ),
+	description: __( 'Group of tabs.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
-	parent: ['AMWA-theme-blocks/tabs'],
+	parent: ['amwa-theme-block/tabs'],
 	attributes: {
 		height : {
 			type: 'string',

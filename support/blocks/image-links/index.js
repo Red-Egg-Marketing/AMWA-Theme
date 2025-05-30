@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/image-links', {
-	title: __( 'Image Links', 'AMWA-theme-blocks' ),
-	description: __( 'Group of Image Links. Useful to link to multiple, related pages, posts, or services.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/image-links', {
+	title: __( 'Image Links', 'amwa-theme-block' ),
+	description: __( 'Group of Image Links. Useful to link to multiple, related pages, posts, or services.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'schedule',
 	category: 'layout',

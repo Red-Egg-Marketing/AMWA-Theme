@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/contact-alt', {
-	title: __( 'Contact Section with text column .', 'AMWA-theme-blocks' ),
-	description: __( 'Section for displaying contact info, and contact form (Gravity Form)', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/contact-alt', {
+	title: __( 'Contact Section with text column .', 'amwa-theme-block' ),
+	description: __( 'Section for displaying contact info, and contact form (Gravity Form)', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'forms',
 	category: 'layout',

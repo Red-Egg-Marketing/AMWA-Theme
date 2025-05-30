@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/header-intro', {
-	title: __( 'Header Intro', 'AMWA-theme-blocks' ),
-	description: __( ' Can contain blocks for header and description. Useful for introduction to section.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/header-intro', {
+	title: __( 'Header Intro', 'amwa-theme-block' ),
+	description: __( ' Can contain blocks for header and description. Useful for introduction to section.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'align-center',
 	category: 'layout',

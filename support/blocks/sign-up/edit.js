@@ -25,7 +25,7 @@ const EditSignUp = ( { attributes, setAttributes } ) => {
 				<div {...blockProps}>
 					<div className="block-wrapper">
 						<InnerBlocks 
-							allowedBlocks={ ['core/heading', 'AMWA-theme-blocks/contact-forms'] }
+							allowedBlocks={ ['core/heading', 'amwa-theme-block/contact-forms'] }
 							template={ template }
 						/>
 					</div>

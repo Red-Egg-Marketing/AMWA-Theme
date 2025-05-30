@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/shortcode-section', {
-	title: __( 'Shortcode Section', 'AMWA-theme-blocks' ),
-	description: __( 'Title Block with area for shortcode embedding', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/shortcode-section', {
+	title: __( 'Shortcode Section', 'amwa-theme-block' ),
+	description: __( 'Title Block with area for shortcode embedding', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'schedule',
 	category: 'layout',

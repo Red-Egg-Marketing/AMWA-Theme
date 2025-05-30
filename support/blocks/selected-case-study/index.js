@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/selected-case-study', {
+registerBlockType( 'amwa-theme-block/selected-case-study', {
 	apiVersion: 2,
-	title: __( 'Selected Spotlight Stories', 'AMWA-theme-blocks' ),
-	description: __( 'Block for a selecting Spotlight Stories by category. Displays statistics block associated with Case Study.', 'AMWA-theme-blocks' ),
+	title: __( 'Selected Spotlight Stories', 'amwa-theme-block' ),
+	description: __( 'Block for a selecting Spotlight Stories by category. Displays statistics block associated with Case Study.', 'amwa-theme-block' ),
 	icon: 'welcome-write-blog',
 	category: 'layout',
 	attributes: {

@@ -5,13 +5,13 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/tab', {
-	title: __( 'Tab', 'AMWA-theme-blocks' ),
-	description: __( 'Tab', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/tab', {
+	title: __( 'Tab', 'amwa-theme-block' ),
+	description: __( 'Tab', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',
-	parent: ['AMWA-theme-blocks/tab-group'],
+	parent: ['amwa-theme-block/tab-group'],
 	attributes: {
 		title: {
 			type: 'string',

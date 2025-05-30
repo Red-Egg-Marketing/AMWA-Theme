@@ -8,8 +8,8 @@ import Content from '../../components/Content.js';
 import Columns from '../../components/Columns.js';
 
 const template = [
-	['AMWA-theme-blocks/tab', {}],
-	['AMWA-theme-blocks/tab', {}],
+	['amwa-theme-block/tab', {}],
+	['amwa-theme-block/tab', {}],
 ];
 
 const EditTabGroup = ( { attributes, setAttributes, clientId } ) => {
@@ -34,7 +34,7 @@ const EditTabGroup = ( { attributes, setAttributes, clientId } ) => {
 						>
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={ ['AMWA-theme-blocks/tab'] }
+								allowedBlocks={ ['amwa-theme-block/tab'] }
 							/>
 						</div>
 					</div>

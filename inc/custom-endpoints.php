@@ -302,7 +302,7 @@ function amwa_theme_case_study_stat_block($id) {
 		foreach($blocks as $key => $block) {
 			$name = $block['blockName'];
 
-			if ($name == 'AMWA-theme-blocks/case-study') {
+			if ($name == 'amwa-theme-block/case-study') {
 				$inner_html = render_block($block);
 				$html = $inner_html;
 				break;

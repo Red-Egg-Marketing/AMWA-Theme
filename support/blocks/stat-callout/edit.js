@@ -62,7 +62,7 @@ const EditCTA = ( { attributes, setAttributes, clientId } ) => {
 								tag="h3"
 								title={ title }
 								setAttributes={ setAttributes }
-								placeholder={ __('Stat...','AMWA-theme-blocks/stat-')}
+								placeholder={ __('Stat...','amwa-theme-block/stat-')}
 								updateProp="title"
 							/>
 							<Content 
@@ -70,7 +70,7 @@ const EditCTA = ( { attributes, setAttributes, clientId } ) => {
 								content={ content }
 								setAttributes={ setAttributes }
 								multiline="p"
-								placeholder={ __('Stat description...','AMWA-theme-blocks/cta')}
+								placeholder={ __('Stat description...','amwa-theme-block/cta')}
 								classProp="content"
 								updateProp="content"
 							/>

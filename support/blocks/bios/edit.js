@@ -5,9 +5,9 @@ const { Button, PanelBody, SelectControl, ColorPalette, ToggleControl, RangeCont
 const { __ } = wp.i18n;
 
 const template = [
-	['AMWA-theme-blocks/bio'],
-	['AMWA-theme-blocks/bio'],
-	['AMWA-theme-blocks/bio'],
+	['amwa-theme-block/bio'],
+	['amwa-theme-block/bio'],
+	['amwa-theme-block/bio'],
 ];
 
 const EditBios = ( { attributes, setAttributes } ) => {
@@ -23,7 +23,7 @@ const EditBios = ( { attributes, setAttributes } ) => {
 						<div className="fake-grid">
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={['AMWA-theme-blocks/bio']}
+								allowedBlocks={['amwa-theme-block/bio']}
 							/>
 						</div>
 					</div>

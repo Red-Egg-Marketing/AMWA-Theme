@@ -31,7 +31,7 @@ const colors = [
 
 
 const template = [
-	['AMWA-theme-blocks/header-intro', {}],
+	['amwa-theme-block/header-intro', {}],
 	['core/paragraph', {'placeholder' : 'Section paragraph...'}],
 	['core/buttons', {},
 		[
@@ -52,7 +52,7 @@ const VidImg = [
 ];
 
 
-const allowBlocks = ['core/heading', 'core/paragraph', 'core/list', 'core/buttons', 'AMWA-theme-blocks/header-intro'];
+const allowBlocks = ['core/heading', 'core/paragraph', 'core/list', 'core/buttons', 'amwa-theme-block/header-intro'];
 
 const EditImageColumns = ( { attributes, setAttributes } ) => {
 		const {

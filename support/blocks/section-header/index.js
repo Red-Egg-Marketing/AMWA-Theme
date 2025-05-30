@@ -5,8 +5,8 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/section-header', {
-	title: __( 'Page Header', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/section-header', {
+	title: __( 'Page Header', 'amwa-theme-block' ),
 	apiVersion: 2,
 	attributes: {
 		bgColor: {
@@ -33,7 +33,7 @@ registerBlockType( 'AMWA-theme-blocks/section-header', {
 	},
 	icon: 'button',
 	category: 'layout',
-	// parent: ['AMWA-theme-blocks/cards-grid'],
+	// parent: ['amwa-theme-block/cards-grid'],
 	edit: edit,
 	save: save,
 } );

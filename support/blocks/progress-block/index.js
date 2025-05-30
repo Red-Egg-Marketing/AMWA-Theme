@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/progress-block', {
+registerBlockType( 'amwa-theme-block/progress-block', {
 	apiVersion: 2,
-	title: __( 'Progress Block', 'AMWA-theme-blocks' ),
-	description: __( 'Block useful for displaying steps or progress of items. Has scroll and lock feature', 'AMWA-theme-blocks' ),
+	title: __( 'Progress Block', 'amwa-theme-block' ),
+	description: __( 'Block useful for displaying steps or progress of items. Has scroll and lock feature', 'amwa-theme-block' ),
 	icon: 'dashboard',
 	category: 'layout',
 	attributes: {

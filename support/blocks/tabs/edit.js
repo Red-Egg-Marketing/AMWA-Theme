@@ -7,8 +7,8 @@ const { __ } = wp.i18n;
 import Anchor from '../../components/Anchor.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro', {}],
-	['AMWA-theme-blocks/tab-group', {}]
+	['amwa-theme-block/header-intro', {}],
+	['amwa-theme-block/tab-group', {}]
 ];
 
 const EditTabs = ( { attributes, setAttributes, clientId } ) => {
@@ -33,7 +33,7 @@ const EditTabs = ( { attributes, setAttributes, clientId } ) => {
 					<div className="block-wrapper">
 						<InnerBlocks
 							template={ template }
-							allowedBlocks={ ['AMWA-theme-blocks/tab-group', 'AMWA-theme-blocks/header-intro'] }
+							allowedBlocks={ ['amwa-theme-block/tab-group', 'amwa-theme-block/header-intro'] }
 						/>
 					</div>
 				</div>

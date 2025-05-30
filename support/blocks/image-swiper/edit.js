@@ -5,9 +5,9 @@ const { Button, PanelBody, SelectControl, ColorPalette, ToggleControl, RangeCont
 const { __ } = wp.i18n;
 
 const template = [
-	['AMWA-theme-blocks/image-link'],
-	['AMWA-theme-blocks/image-link'],
-	['AMWA-theme-blocks/image-link'],
+	['amwa-theme-block/image-link'],
+	['amwa-theme-block/image-link'],
+	['amwa-theme-block/image-link'],
 ];
 
 const EditImageSwiper = ( { attributes, setAttributes } ) => {
@@ -23,7 +23,7 @@ const EditImageSwiper = ( { attributes, setAttributes } ) => {
 						<div className="swiper-wrapper">
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={['AMWA-theme-blocks/image-link']}
+								allowedBlocks={['amwa-theme-block/image-link']}
 							/>
 						</div>
 						<div class="swiper-button-prev"></div>

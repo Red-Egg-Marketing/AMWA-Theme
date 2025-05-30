@@ -60,7 +60,7 @@ const EditImageLink = ( { attributes, setAttributes } ) => {
 							tag="h3"
 							title={ title }
 							setAttributes={ setAttributes }
-							placeholder={ __('Title...', 'AMWA-theme-blocks')}
+							placeholder={ __('Title...', 'amwa-theme-block')}
 						/>
 						<ImageComp
 							id={ media.id }

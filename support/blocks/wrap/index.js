@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/wrap', {
+registerBlockType( 'amwa-theme-block/wrap', {
 	apiVersion: 2,
-	title: __( 'Wrap', 'AMWA-theme-blocks' ),
+	title: __( 'Wrap', 'amwa-theme-block' ),
 	description: __('Generic Wrap, has no utility/function'),
 	attributes: {
 		allowBlocks : {

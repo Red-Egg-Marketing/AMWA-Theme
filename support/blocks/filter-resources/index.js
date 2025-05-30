@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/resources', {
+registerBlockType( 'amwa-theme-block/resources', {
 	apiVersion: 2,
-	title: __( 'Filterable Resources', 'AMWA-theme-blocks' ),
-	description: __( 'Block with filterable list of Resourcess', 'AMWA-theme-blocks' ),
+	title: __( 'Filterable Resources', 'amwa-theme-block' ),
+	description: __( 'Block with filterable list of Resourcess', 'amwa-theme-block' ),
 	icon: 'megaphone',
 	category: 'layout',
 	supports: {

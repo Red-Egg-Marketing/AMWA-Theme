@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/tabs', {
+registerBlockType( 'amwa-theme-block/tabs', {
 	apiVersion: 2,
-	title: __( 'Tabs', 'AMWA-theme-blocks' ),
-	description: __( 'Block for a tabs', 'AMWA-theme-blocks' ),
+	title: __( 'Tabs', 'amwa-theme-block' ),
+	description: __( 'Block for a tabs', 'amwa-theme-block' ),
 	icon: 'table-col-after',
 	category: 'layout',
 	attributes: {

@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/promo', {
-	title: __( 'Promo Block', 'AMWA-theme-blocks' ),
-	description: __( 'Promotional Block. Useful for promoting services. ', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/promo', {
+	title: __( 'Promo Block', 'amwa-theme-block' ),
+	description: __( 'Promotional Block. Useful for promoting services. ', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'megaphone',
 	category: 'layout',

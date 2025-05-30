@@ -5,13 +5,13 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/icon-cta', {
-	title: __( 'Icon or CTA', 'AMWA-theme-blocks' ),
-	description: __( 'Option for CTA (button) or icon and title.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/icon-cta', {
+	title: __( 'Icon or CTA', 'amwa-theme-block' ),
+	description: __( 'Option for CTA (button) or icon and title.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',
-	parent: ['AMWA-theme-blocks/grid-icons'],
+	parent: ['amwa-theme-block/grid-icons'],
 	attributes: {
 		template: {
 			type: 'array',

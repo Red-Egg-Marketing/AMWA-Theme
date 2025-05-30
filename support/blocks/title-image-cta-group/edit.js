@@ -10,9 +10,9 @@ import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro', {}],
-	['AMWA-theme-blocks/title-image-cta'],
-	['AMWA-theme-blocks/title-image-cta'],
+	['amwa-theme-block/header-intro', {}],
+	['amwa-theme-block/title-image-cta'],
+	['amwa-theme-block/title-image-cta'],
 	['core/buttons', {},
 		[
 			['core/button', {'placeholder' : 'View Portfolio...'}]
@@ -85,7 +85,7 @@ const EditTitleImageCTAGroup = ( { attributes, setAttributes, clientId } ) => {
 						<div className="links-wrapper">
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={['AMWA-theme-blocks/title-image-cta', 'AMWA-theme-blocks/header-intro', 'core/buttons']}
+								allowedBlocks={['amwa-theme-block/title-image-cta', 'amwa-theme-block/header-intro', 'core/buttons']}
 							/>
 						</div>	
 					</div>

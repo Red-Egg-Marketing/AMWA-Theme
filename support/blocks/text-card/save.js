@@ -7,11 +7,11 @@ import Content from '../../components/Content.js';
 
 const SaveCTA = ( { attributes } ) => {
 		const {
-			width, icons, bgSlug, iconColor, cardBG
+			width, icons, bgSlug, iconColor, cardBG, withImage
 		} = attributes;
 
 		const blockProps = useBlockProps.save({
-			className: 'text-card' + ' width-' + width + ' ' + 'border-' + bgSlug + ' ' + cardBG
+			className: 'text-card' + ' width-' + width + ' ' + 'border-' + bgSlug + ' ' + cardBG +  ' ' + withImage
 		});
 	
 		return (

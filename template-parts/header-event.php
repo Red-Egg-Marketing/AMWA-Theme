@@ -2,12 +2,12 @@
 if (is_post_type_archive('tribe_events')) {
 
 ?>
-<div class="wp-block-AMWA-theme-blocks-section-header section-header purple with-bg">
+<div class="wp-block-amwa-theme-block-section-header section-header purple with-bg">
 	<div class="block-wrapper">
 		<h1 class="wp-block-heading has-white-color has-text-color">Events</h1>
 	</div>
 </div>
-<div class="wp-block-AMWA-theme-blocks-header-intro header-intro-block">
+<div class="wp-block-amwa-theme-block-header-intro header-intro-block">
 	<div class="block-wrapper">
 		<div class="block-content">
 			<h2 class="wp-block-heading header-title middle-active"><middleline>Upcoming Events</middleline></h2>

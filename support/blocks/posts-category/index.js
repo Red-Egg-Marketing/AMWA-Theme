@@ -3,10 +3,10 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/posts-category', {
+registerBlockType( 'amwa-theme-block/posts-category', {
 	apiVersion: 2,
-	title: __( 'Selected Posts by category', 'AMWA-theme-blocks' ),
-	description: __( 'Block for a selecting posts. Displays latest 3 from selected category.', 'AMWA-theme-blocks' ),
+	title: __( 'Selected Posts by category', 'amwa-theme-block' ),
+	description: __( 'Block for a selecting posts. Displays latest 3 from selected category.', 'amwa-theme-block' ),
 	icon: 'welcome-write-blog',
 	category: 'layout',
 	attributes: {

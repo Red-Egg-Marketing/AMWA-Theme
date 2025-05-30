@@ -5,11 +5,11 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/savings-form', {
-	title: __( 'Savings Form', 'AMWA-theme-blocks' ),
-	description: __( 'Savings Form block.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/savings-form', {
+	title: __( 'Savings Form', 'amwa-theme-block' ),
+	description: __( 'Savings Form block.', 'amwa-theme-block' ),
 	apiVersion: 2,
-	parent: ['AMWA-theme-blocks/savings-calculator'],
+	parent: ['amwa-theme-block/savings-calculator'],
 	icon: 'button',
 	category: 'layout',
 	edit: edit,

@@ -12,8 +12,8 @@ import MarginSelector from '../../components/Margin.js';
 // import a component
 
 const template = [
-	['AMWA-theme-blocks/post'],
-	['AMWA-theme-blocks/event']
+	['amwa-theme-block/post'],
+	['amwa-theme-block/event']
 	
 ]
 const count = 3;
@@ -75,7 +75,7 @@ const EditSelectedProjects = ( { setAttributes, attributes, isSelected, clientId
 							<div className="resources grid">
 								<InnerBlocks 
 									template={ template }
-									allowedBlocks={['AMWA-theme-blocks/event', 'AMWA-theme-blocks/post']}
+									allowedBlocks={['amwa-theme-block/event', 'amwa-theme-block/post']}
 								/>
 							</div>
 						</div>

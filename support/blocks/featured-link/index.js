@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/featured-link', {
-	title: __( 'Featured Link', 'AMWA-theme-blocks' ),
-	description: __( 'Large promo for specific page, post, project, etc.. Has Options for title, super title, image, and description.', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/featured-link', {
+	title: __( 'Featured Link', 'amwa-theme-block' ),
+	description: __( 'Large promo for specific page, post, project, etc.. Has Options for title, super title, image, and description.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'format-image',
 	category: 'layout',

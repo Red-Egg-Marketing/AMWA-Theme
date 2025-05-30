@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/cards-grid', {
-	title: __( 'Text Cards Grid (Services Block)', 'AMWA-theme-blocks' ),
-	description: __( 'Grid of Text Cards', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/cards-grid', {
+	title: __( 'Text Cards Grid', 'amwa-theme-block' ),
+	description: __( 'Grid of Text Cards with Icon', 'amwa-theme-block' ),
 	apiVersion: 2,
 	attributes: {
 		columns: {

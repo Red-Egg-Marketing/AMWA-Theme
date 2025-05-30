@@ -7,8 +7,8 @@ import Content from '../../components/Content.js';
 import Header from '../../components/Header.js';
 
 const template = [
-	['AMWA-theme-blocks/savings-form', {},],
-	['AMWA-theme-blocks/cta', {}]
+	['amwa-theme-block/savings-form', {},],
+	['amwa-theme-block/cta', {}]
 ];
 
 const EditSavingsCalculator = ( { attributes, setAttributes } ) => {
@@ -27,7 +27,7 @@ const EditSavingsCalculator = ( { attributes, setAttributes } ) => {
 					<div className="block-wrapper">
 						<InnerBlocks
 							template={ template }
-							allowedBlocks={ ['AMWA-theme-blocks/savings-form', 'AMWA-theme-blocks/cta'] }
+							allowedBlocks={ ['amwa-theme-block/savings-form', 'amwa-theme-block/cta'] }
 						/>
 					</div>
 				</div>

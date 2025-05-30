@@ -40,7 +40,7 @@ const EditSavingsForm = ( { attributes, setAttributes } ) => {
 							<div className="input-wrap">
 								<RangeControl 
 									initialPosition={ 10 }
-									label={__('How many doctors are in your clinic?', 'AMWA-theme-blocks')}
+									label={__('How many doctors are in your clinic?', 'amwa-theme-block')}
 									value={ doctors }
 									min={ 1 }
 									max={ 100 }
@@ -53,7 +53,7 @@ const EditSavingsForm = ( { attributes, setAttributes } ) => {
 							<div className="input-wrap">
 								<RangeControl 
 									initialPosition={ 10 }
-									label={__('How many patients per provider per day?', 'AMWA-theme-blocks')}
+									label={__('How many patients per provider per day?', 'amwa-theme-block')}
 									value={ patients }
 									min={ 1 }
 									max={ 35 }

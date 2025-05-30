@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/columns-list', {
-	title: __( 'List Columns', 'AMWA-theme-blocks' ),
-	description: __( 'List as columns. Optional CTA and title', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/columns-list', {
+	title: __( 'List Columns', 'amwa-theme-block' ),
+	description: __( 'List as columns. Optional CTA and title', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'button',
 	category: 'layout',

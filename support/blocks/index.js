@@ -17,7 +17,7 @@ import "./core";
 
 // Custom Blocks
 import "./hero";
-// import "./text-card";
+import "./text-card";
 // import "./event";
 // import "./post";
 // import "./section-header";

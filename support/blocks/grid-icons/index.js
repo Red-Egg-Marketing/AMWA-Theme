@@ -5,9 +5,9 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/grid-icons', {
-	title: __( 'Grid of Icons or CTAs', 'AMWA-theme-blocks' ),
-	description: __( 'Grid of Icons or CTAs', 'AMWA-theme-blocks' ),
+registerBlockType( 'amwa-theme-block/grid-icons', {
+	title: __( 'Grid of Icons or CTAs', 'amwa-theme-block' ),
+	description: __( 'Grid of Icons or CTAs', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'schedule',
 	category: 'layout',

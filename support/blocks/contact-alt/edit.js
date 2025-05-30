@@ -5,8 +5,8 @@ const { Button, PanelBody, SelectControl, TextControl, ColorPalette, ToggleContr
 const { __ } = wp.i18n;
 
 const template = [
-	['AMWA-theme-blocks/contact-forms'],
-	['AMWA-theme-blocks/contact-content', {
+	['amwa-theme-block/contact-forms'],
+	['amwa-theme-block/contact-content', {
 		'template': [
 			['core/heading', {'level' : 3, 'placeholder' : 'Contact heading...'}],
 			['core/paragraph', {'placeholder' : 'Contact description...'}],
@@ -29,7 +29,7 @@ const EditContactAlt = ( { attributes, setAttributes } ) => {
 					<div className="block-wrapper">
 						<div className="block-content">
 							<InnerBlocks 
-								allowedBlocks={ ['AMWA-theme-blocks/contact-content', 'AMWA-theme-blocks/contact-forms'] }
+								allowedBlocks={ ['amwa-theme-block/contact-content', 'amwa-theme-block/contact-forms'] }
 								template={ template }
 							/>
 						</div>

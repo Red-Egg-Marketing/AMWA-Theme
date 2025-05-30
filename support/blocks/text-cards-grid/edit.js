@@ -11,10 +11,9 @@ import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
 const template = [
-	['AMWA-theme-blocks/header-intro', {}],
-	['AMWA-theme-blocks/text-card', {}],
-	['AMWA-theme-blocks/text-card', {}],
-	['AMWA-theme-blocks/text-card', {}],
+	['amwa-theme-block/text-card', {}],
+	['amwa-theme-block/text-card', {}],
+	['amwa-theme-block/text-card', {}],
 ];
 
 
@@ -102,7 +101,7 @@ const EditCTAGrid = ( { attributes, setAttributes, clientId } ) => {
 						<div className="block-content">							
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={ ['AMWA-theme-blocks/text-card', 'AMWA-theme-blocks/header-intro', 'core/heading'] }
+								allowedBlocks={ ['amwa-theme-block/text-card', 'amwa-theme-block/header-intro', 'core/heading'] }
 							/>
 						</div>
 					</div>

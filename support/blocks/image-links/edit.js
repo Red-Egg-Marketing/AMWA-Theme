@@ -5,8 +5,8 @@ const { Button, PanelBody, SelectControl, ColorPalette, ToggleControl, RangeCont
 const { __ } = wp.i18n;
 
 const template = [
-	['AMWA-theme-blocks/header-intro'],
-	['AMWA-theme-blocks/image-swiper']
+	['amwa-theme-block/header-intro'],
+	['amwa-theme-block/image-swiper']
 ];
 
 const displayType = [
@@ -52,7 +52,7 @@ const EditImageLinks = ( { attributes, setAttributes } ) => {
 						<div className="links-wrapper">
 							<InnerBlocks
 								template={ template }
-								allowedBlocks={['AMWA-theme-blocks/header-intro', 'AMWA-theme-blocks/image-swiper']}
+								allowedBlocks={['amwa-theme-block/header-intro', 'amwa-theme-block/image-swiper']}
 							/>
 						</div>	
 					</div>

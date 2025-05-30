@@ -43,121 +43,37 @@ const BGOptions = [
     },
 ];
 
-const EditCTA = ( { attributes, setAttributes } ) => {
+const EditCTA = ( { attributes, setAttributes, clientId } ) => {
 		const {
-			width, icons, bgColor, bgSlug, link, content, buttonText, iconColor, cardBG
+			width, bgColor, bgSlug, link, content, buttonText, iconColor, cardBG, withImage
 		} = attributes;
 
-
-  		const [rowNumber, setRownumber] = useState(null);
-		const [currentIconList, setIconList] = useState(null);
-		const [searchActive, activateSearch] = useState({index: false, active: false});
-		let tempValue = icons[0] && icons[0].upload != 'undefined' ? icons[0].upload : '';
-		const [uploadActive, activateHTML] = useState({index: false, active: false, tempValue : tempValue});
-
-		const updateIcon = (value, prefix) => {
-  			let currentIcons = JSON.parse(JSON.stringify(icons));
-			let index = rowNumber;
-
-			let newRow = {
-				icon: value,
-				prefix: prefix,
-				upload: ''
-			};
-
-			currentIcons[index] = newRow;
-
-			setAttributes({
-				icons: currentIcons
-			});
-
-			activateSearch({ index: index, active: !searchActive.active });
-  		}
-
-  		const updateUploadIcon = (value) => {
-  			let currentIcons = JSON.parse(JSON.stringify(icons));
-			let index = rowNumber;
-
-			let newRow = {
-				icon: 'address-book',
-				prefix: 'far',
-				upload: value
-			};
-
-			currentIcons[index] = newRow;
-
-			setAttributes({
-				icons: currentIcons
-			});
-  		}
-
-  		const addIcon = () => {
-			let currentIcons = JSON.parse(JSON.stringify(icons));
-			let index = currentIcons.length;
-			let newRow = {
-				title: '',
-				icon: 'address-book',
-				prefix: 'far'
-			};
-
-			currentIcons.splice(index, 0, newRow);
-
-			setAttributes({
-				icons: currentIcons
-			});
-
-		}
-
-		const removeIcon = (index) => {
-
-			let currentIcons = JSON.parse(JSON.stringify(icons));
-
-			currentIcons.splice(index, 1);
-
-			setAttributes({
-				icons: currentIcons
-			});
-
-		}
-
-		const filterIconList = (value) => {
-			let search = value.replace(" ", "-");
-			let foundIcons = IconLibrary.filter(icon => {
-				let name = icon.iconName;
-				if (name.indexOf(search, 0) != -1) {
-					return icon;
-				}
-			});
-
-			setIconList(foundIcons);
-		}
-
-		const activateIconSearch = (index) => {
-
-			activateSearch({ index: index, active: !searchActive.active });
-
-		}
-
-		const updateHTMLUpload = (value) => {
-
-			activateHTML({ index: uploadActive.index, active: uploadActive.active, tempValue : value});
-
-		}
-
-		const activateHTMLUpload = (index) => {
-
-			activateHTML({ index: index, active: !uploadActive.active, tempValue : uploadActive.tempValue});
-
-		}
-
-		const currentRowFocus = (value) => {
-			setRownumber(value);
-		}
-
 		const blockProps = useBlockProps({
-			className: 'text-card' + ' width-' + width + ' ' + 'border-' + bgSlug + ' ' + cardBG
+			className: 'text-card' + ' width-' + width + ' ' + 'border-' + bgSlug + ' ' + cardBG + ' ' + withImage
 		});	
 
+		const blockHasImage = ( clientId ) => {
+			console.log('what up');
+			let innerBlocks = wp.data.select( 'core/editor' ).getBlock( clientId ).innerBlocks;
+			let find = innerBlocks.find((element) => {
+				let name = element.name;
+				return name == 'core/image' ? true : false;
+			});
+
+			if (typeof find != 'undefined') {
+				return true;
+			}
+		}
+
+		if (blockHasImage(clientId)) {
+			setAttributes({
+				withImage: 'with-image'
+			});
+		} else {
+			setAttributes({
+				withImage: 'no-image'
+			});
+		}
 		
 		return (
 			<Fragment>
@@ -203,8 +119,7 @@ const EditCTA = ( { attributes, setAttributes } ) => {
 					{...blockProps}
 				>
 					<div className="block-wrapper">
-						<div className="block-content">
-							
+						<div className="block-content">	
 							<InnerBlocks
 								template={ template }
 								templateLock={ false }

@@ -5,7 +5,7 @@ const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'AMWA-theme-blocks/columns-group', {
+registerBlockType( 'amwa-theme-block/columns-group', {
 	title: __( 'Columns Group', 'AMWA' ),
 	description: __( 'Group of columns with optional header intro', 'AMWA' ),
 	apiVersion: 2,

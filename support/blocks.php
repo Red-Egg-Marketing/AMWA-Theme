@@ -63,7 +63,7 @@ function amwa_theme_render_filtered_projects_callback($block_attributes, $conten
 
 function amwa_theme_dynamic_projects_block() {
 
-    register_block_type( 'AMWA-theme-blocks/project', [
+    register_block_type( 'amwa-theme-block/project', [
             'api_version' => 2,
             'script' => 'wp-main-js',
             'render_callback' => 'amwa_theme_render_filtered_projects_callback'
@@ -104,7 +104,7 @@ add_action('init', 'amwa_theme_dynamic_projects_block');
 
 // function amwa_theme_dynamic_selected_insights() {
 
-//     register_block_type( 'AMWA-theme-blocks/selected-insights', [
+//     register_block_type( 'amwa-theme-block/selected-insights', [
 //             'api_version' => 2,
 //             'script' => 'wp-main-js',
 //             'render_callback' => 'amwa_theme_render_selected_insights'
@@ -162,7 +162,7 @@ function amwa_theme_dynamic_case_studies_grid_block() {
        );
     }
 
-    register_block_type( 'AMWA-theme-blocks/selected-case-studies', [
+    register_block_type( 'amwa-theme-block/selected-case-studies', [
             'api_version' => 2,
             'script' => 'wp-main-js',
             'render_callback' => 'amwa_theme_render_filtered_case_studies_callback'
