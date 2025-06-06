@@ -1084,47 +1084,6 @@ ul.hours li span {
 	padding-right: 5px;
 }
 
-ul.hours li s {
-	text-decoration: none;
-}
-
-ul.hours li time.closed:before {
-	content: "Closed";
-	position: absolute;
-	z-index: 3;
-	text-align: center;
-	color: white;
-	width: 100%;
-}
-
-ul.hours li s:before {
-	content: "";
-	text-align: right;
-	position: absolute;
-	color: white;
-	left: 0;
-	top: 0;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	display: inline-block;
-	height: 100%;
-	transform: rotate(-4deg);
-}
-
-ul.hours li s:after {
-	content: "";
-	text-align: right;
-	position: absolute;
-	left: 0;
-	top: 0;
-	color: white;
-	width: 100%;
-	background: rgba(0, 0, 0, 0.5);
-	display: inline-block;
-	height: 100%;
-	transform: rotate(4deg);
-}
-
 ul.hours li time {
 	padding-left: 5px;
 }
