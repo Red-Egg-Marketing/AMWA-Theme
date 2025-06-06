@@ -42,8 +42,39 @@ function amwa_theme_return_taxonomies($post_types) {
 
 function amwa_get_business_hours() {
 	if (function_exists('get_field')) {
-		$hour_group = get_field('hours', 'options');
+		$current_date = date('Y-m-d');
+		$display_date = date('l, F n ');
 		$current_day = date('l');
+		$closure = false;
+		// first check for any clousures
+
+		$args = [
+			'post_type' 		=> 'product',
+			'posts_per_page' 	=> 1,
+			'status'			=> 'publish',
+			'order'				=> 'DESC',
+			'meta_query'		=> [
+				'relation' 		=> 'AND',
+				'key'			=> 'expirydate',
+				'compare'		=> '=',
+				'type'			=> 'DATE',
+				'value'			=> $current_date
+			]
+			
+		];
+
+		$query = new WP_Query($args);
+
+		if ($query->have_posts()) {
+			while($query->have_posts()) {
+				$query->the_post();
+				$closure = true;
+			}
+			wp_reset_postdata();
+		}
+
+		$hour_group = get_field('hours', 'options');
+		
 		$day_language = '';
 		$hours = [];
 
@@ -54,15 +85,20 @@ function amwa_get_business_hours() {
 				$weekday = explode('|', $d);
 				if (is_array($weekday)) {
 					$w = str_replace(' ', '', $weekday[0]);
-					$hours[] = [$weekday[0], $weekday[1]];
+					
 					if ($w == $current_day) {
 						$h = $weekday[1];
 						$h = ltrim($h);
-						if ($h == 'Closed') {
+						if ($closure == true) {
+							$day_language .= 'AMWA is closed today, ' . $display_date;
+							$hours[] = [$weekday[0], $weekday[1], true];
+						} else if ($h == 'Closed') {
 							$day_language .= 'AMWA is closed today';
 						} else {
 							$day_language .= 'AMWA is open today ' . $h;
 						}
+					} else {
+						$hours[] = [$weekday[0], $weekday[1]];
 					}
 				}
 			}

@@ -52,11 +52,20 @@ const SaveTime = ( { attributes, reference } ) => {
 							hours.length > 0 && hours.map((hour, hourIndex) => {
 								let day = hour[0];
 								let dayHour = hour[1];
+								let closed = hour[2];
+
+								console.log(closed);
+
 								return (
 									<Fragment>
 										<li>
 											<span className="day">{day}</span>
-											<time className="hour">{dayHour}</time>
+											{closed == true && (
+												<time className="hour closed"><s>{dayHour}</s></time>
+											)}
+											{closed != true && (
+												<time className="hour">{dayHour}</time>
+											)}
 										</li>
 									</Fragment>
 								);

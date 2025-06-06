@@ -904,7 +904,8 @@ li.menu-item.nav-button a {
 }
 
 .time-toggle {
-	padding: 0 !important;
+	padding-top: 10px;
+	padding-bottom: 10px;
 	border: none;
 	position: relative;
 	display: flex;
@@ -918,6 +919,10 @@ li.menu-item.nav-button a {
 	font-weight: 600;
 	transition-property: color;
 	transition-duration: 0.3s;
+	@media screen and (min-width: $small-width) {
+		padding-top: 26px;
+		padding-bottom: 26px;
+	}
 }
 
 
@@ -945,18 +950,18 @@ li.menu-item.nav-button a {
 }
 
 .site-header .time-navigation {
-	padding-top: 10px;
-    padding-bottom: 10px;
     padding-left: 10px;
     margin-left: auto;
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     @media screen and (min-width: $med-small-width) {
-    	padding-top: 26px;
-   		padding-bottom: 26px;
     	padding-left: 20px;
     }
+}
+
+.site-header .time-navigation button {
+
 }
 
 .main-wrapper.search-active nav.main-navigation {
@@ -1077,6 +1082,47 @@ ul.hours {
 
 ul.hours li span {
 	padding-right: 5px;
+}
+
+ul.hours li s {
+	text-decoration: none;
+}
+
+ul.hours li time.closed:before {
+	content: "Closed";
+	position: absolute;
+	z-index: 3;
+	text-align: center;
+	color: white;
+	width: 100%;
+}
+
+ul.hours li s:before {
+	content: "";
+	text-align: right;
+	position: absolute;
+	color: white;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: inline-block;
+	height: 100%;
+	transform: rotate(-4deg);
+}
+
+ul.hours li s:after {
+	content: "";
+	text-align: right;
+	position: absolute;
+	left: 0;
+	top: 0;
+	color: white;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	display: inline-block;
+	height: 100%;
+	transform: rotate(4deg);
 }
 
 ul.hours li time {
