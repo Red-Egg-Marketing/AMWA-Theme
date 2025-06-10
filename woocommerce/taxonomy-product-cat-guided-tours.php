@@ -29,7 +29,13 @@ get_header( 'shop' );
 ?>
 
 <div class="site-main">
+	
 <div class="wrapper">
+	<div class="col-100">
+	<?php
+		woocommerce_output_all_notices();
+	?>
+	</div>
 	<div class="col col-image">
 	<?php 
 		$thumb_id = get_term_meta( $term->term_id, 'thumbnail_id', true );

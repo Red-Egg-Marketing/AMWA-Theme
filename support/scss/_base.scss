@@ -953,6 +953,10 @@ textarea {
 	margin-bottom: 1.5em;
 }
 
+.col-100 {
+	width: 100%;
+}
+
 .col {
 	width: 100%;
 	@media screen and (min-width: $small-width) {

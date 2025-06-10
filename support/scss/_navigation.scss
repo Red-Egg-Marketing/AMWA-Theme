@@ -65,6 +65,7 @@ a.custom-logo-link {
 	top: 0;
 	left: 0;
 	z-index: 999;
+	background: white;
 	transition-property: all;
 	transition-duration: 0.3s;
 	animation: transitionDown 0.75s ease forwards;
@@ -80,7 +81,7 @@ a.custom-logo-link {
 }
 
 .time-active .time-toggle svg .color-change,
-.site-header.fixed svg .color-change {
+.site-header svg .color-change {
 	fill: black;
 }
 
@@ -479,7 +480,7 @@ li.menu-item.nav-button a {
 	}
 }
 
-.site-header.fixed .main-navigation .menu-item a {
+.site-header .main-navigation .menu-item a {
 	color: black;
 	&:hover {
 		color: $light-orange;
@@ -913,7 +914,7 @@ li.menu-item.nav-button a {
 	margin-left: 8px;
 	background: none;
 	border-radius: 0;
-	color: white;
+	color: black;
 	font-family: $font-body;
 	font-size: 20px;
 	font-weight: 600;

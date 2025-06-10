@@ -53,17 +53,20 @@ const SaveTime = ( { attributes, reference } ) => {
 								let day = hour[0];
 								let dayHour = hour[1];
 								let closed = hour[2];
-								
 								return (
 									<Fragment>
 										<li>
 											<span className="day">{day}</span>
-											{closed == true && (
+											{(closed == true && !dayHour.includes('Closed')) && (
 												<time className="hour closed"><s>{dayHour}</s></time>
+											)}
+											{(closed == true && dayHour.includes('Closed')) && (
+												<time className="hour">{dayHour}</time>
 											)}
 											{closed != true && (
 												<time className="hour">{dayHour}</time>
 											)}
+											
 										</li>
 									</Fragment>
 								);
