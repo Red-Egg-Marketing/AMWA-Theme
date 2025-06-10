@@ -10,6 +10,21 @@ registerBlockType( 'amwa-theme-block/sign-up', {
 	apiVersion: 2,
 	icon: 'align-center',
 	category: 'layout',
+	attributes: {
+		padding: {
+			type: 'object',
+			default: {
+			}
+		},
+		margin: {
+			type: 'object',
+			default: {
+			}
+		},
+		blockId: {
+			type: 'string'
+		}
+	},
 	edit: edit,
 	save: save,
 } );

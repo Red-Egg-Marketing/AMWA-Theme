@@ -148,7 +148,7 @@ function amwa_theme_scripts() {
 	global $post;
 
 	wp_enqueue_style('AMWA-theme-fonts', 'https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap', [], null);
-	wp_enqueue_style( 'AMWA-theme-style', get_stylesheet_uri(), ['AMWA-theme-fonts'], _S_VERSION );
+	wp_enqueue_style( 'AMWA-theme-style', get_stylesheet_uri(), ['AMWA-theme-fonts' , 'wp-components'], _S_VERSION );
 	wp_style_add_data( 'AMWA-theme-style', 'rtl', 'replace' );
 
 	wp_enqueue_script( 'AMWA-theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION . date("U"), true );
@@ -164,6 +164,19 @@ function amwa_theme_scripts() {
         '1.1.7',
         true
     );
+
+
+	 if (is_tax('product_cat', 'guided-tours')){
+	 	wp_register_script(
+        	'site-tickets',
+        	get_stylesheet_directory_uri() . '/js/tickets.js',
+        	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
+        	'1.1.7',
+        	true
+    	);
+
+    	wp_enqueue_script( 'site-tickets' );
+	 }
 
 }
 
@@ -201,7 +214,7 @@ add_filter('body_class','amwa_theme_browser_body_class');
 
 
 
-function providencelogin_logo() { ?>
+function amwa_login_logo() { ?>
     <style type="text/css">
 
         #login h1 a, .login h1 a {
@@ -215,6 +228,11 @@ function providencelogin_logo() { ?>
 <?php }
 
 
+function amwa_add_woocommerce_support() {
+	add_theme_support( 'woocommerce' );
+}
+add_action( 'after_setup_theme', 'amwa_add_woocommerce_support' );
+
 /**
 * Allow additional MIME types
 * Use 'text/plain' instead of 'application/json' for JSON because of a current Wordpress core bug
@@ -227,7 +245,7 @@ function add_upload_mimes( $types ) {
 add_filter( 'upload_mimes', 'add_upload_mimes' );
 
 
-add_action( 'login_enqueue_scripts', 'providencelogin_logo' );
+add_action( 'login_enqueue_scripts', 'amwa_login_logo' );
 
 /**
  * Implement the Custom Header feature.

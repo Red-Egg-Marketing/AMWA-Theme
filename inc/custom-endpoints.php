@@ -39,6 +39,67 @@ function amwa_theme_return_taxonomies($post_types) {
 	return $ordered_array;
 }
 
+function amwa_get_guided_tours() {
+
+	$current_date = current_time('timestamp', 1);
+
+	$args = [
+		'limit' 	=> -1,
+		'orderby' 	=>  'date',
+		'tax_query' => [
+			'relation' => 'AND',
+			[
+				'taxonomy' 	=> 'product_cat',
+				'terms'		=> 'guided-tours',
+				'field'		=> 'slug'
+			]
+		],
+		'meta_query' => [ 
+			'relation'  => 'AND',
+			[
+				'key' 		=> 'WooCommerceEventsDateTimestamp',
+				'compare' 	=> '>=',
+				'type'		=> 'NUMERIC',
+				'value'		=> $current_date
+			]
+		]
+	];
+
+	$products = new WP_Query( $args );
+
+	$posts = [];
+
+	if ($products->have_posts()) {
+		while($products->have_posts()) {
+			$products->the_post();
+			$id = get_the_ID();
+			$product = wc_get_product($id);
+
+			// print_r($product);
+			$postObj = new stdClass;
+			$postObj->ID = $id;
+			$postObj->tickets = $product->stock_quantity;
+			$postObj->date = date('m/d/Y', get_post_meta($id, 'WooCommerceEventsDateTimestamp', true));
+			$postObj->time = date('m/d/Y', get_post_meta($id, 'WooCommerceEventsDateTimestamp', true));
+			$posts[] = $postObj;
+		}
+
+		wp_reset_postdata();
+	}
+
+	return $posts;
+}
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'AMWA/v2', '/tours/', 
+  	[
+    	'methods' => 'GET, POST',
+    	'callback' => 'amwa_get_guided_tours',
+    	'permission_callback' => '__return_true'
+  	] 
+  );
+ });
+
 
 function amwa_get_business_hours() {
 	if (function_exists('get_field')) {
@@ -51,7 +112,7 @@ function amwa_get_business_hours() {
 		$args = [
 			'post_type' 		=> 'product',
 			'posts_per_page' 	=> 1,
-			'status'			=> 'publish',
+			'post_status'		=> 'publish',
 			'order'				=> 'DESC',
 			'meta_query'		=> [
 				'relation' 		=> 'AND',
@@ -218,14 +279,12 @@ add_action( 'rest_api_init', function () {
  });
 
 
-function amwa_theme_return_projects($data, $post_types = 'tribe_events') {
+function amwa_theme_return_programs($data, $post_types = 'product') {
 
 	$get = $_GET;
 	$post_a = $_POST;
 	$cats = isset($get['category']) ? explode(',', $get['category']) : false;
 	$cats = isset($post_a['category']) ? explode(',', $post_a['category']) : $cats;
-	$donors = isset($get['donors']) ? explode(',', $get['donors']) : false;
-	$donors = isset($post_a['donors']) ? explode(',', $post_a['donors']) : $donors;
 	$post_id = isset($get['id']) ? $get['id'] : false;
 	$post_id = isset($post_a['id']) ? $post_a['id'] : $post_id;
 	$html = isset($get['html']) ? $get['html'] : false;
@@ -240,9 +299,11 @@ function amwa_theme_return_projects($data, $post_types = 'tribe_events') {
 	$stacked = isset($post_a['stacked']) ? $post_a['stacked'] : $stacked;
 	$excerpt = isset($get['excerpt']) ? filter_var($get['excerpt'], FILTER_VALIDATE_BOOLEAN) : true;
 	$excerpt = isset($post_a['excerpt']) ? filter_var($post_a['excerpt'], FILTER_VALIDATE_BOOLEAN) : $excerpt;
-	$read_more = isset($get['read_more']) ? $get['read_more'] : 'View Project';
+	$read_more = isset($get['read_more']) ? $get['read_more'] : 'View Program';
 	$read_more = isset($post_a['read_more']) ? $post_a['read_more'] : $read_more;
 		
+	$current_date = current_time('timestamp', 1);
+
 	$args = [
 		'post_type' => $post_types,
 		'post_status' => 'publish',
@@ -250,31 +311,25 @@ function amwa_theme_return_projects($data, $post_types = 'tribe_events') {
 		'offset'=> $offset,
 		'ignore_sticky_posts' => true,
 		'ppp' => $posts_per_page,
-		'order' => 'DESC',
-		'orderby' => 'date',
+		'order' => 'ASC',
+		'meta_query' => [ 
+			'relation'  => 'AND',
+			[
+				'key' 		=> 'WooCommerceEventsDateTimestamp',
+				'compare' 	=> '>=',
+				'type'		=> 'NUMERIC',
+				'value'		=> $current_date
+			]
+		]
 	];
 
-
-	if ($post_types == 'tribe_events') {
-		$args['meta_query'] = [
-			'relation' => 'OR',
-			[
-				'key' => '_EventStartDate',
-			],
-		];
-	}
-
-	if ($cats != false) {
-		$args['cat'] = $cats;
-	}
-
-	if ($donors) {
+	if ($cats) {
 		$args['tax_query'][] =
 			[
-				'terms' => $donors,
-				'field' => 'term_id',
-				'taxonomy' => 'donors',
-			];
+				'terms' => $cats,
+				'field' => 'slug',
+				'taxonomy' => 'product_cat',
+		];
 	}
 
 	if($post_id != false) {
@@ -290,9 +345,12 @@ function amwa_theme_return_projects($data, $post_types = 'tribe_events') {
 			$query->the_post();
 			$id = get_the_ID();
 			if ($html == false) {
+				$time = date('g:i' , strtotime(get_post_meta($id, 'WooCommerceEventsHour', true) . get_post_meta($id, 'WooCommerceEventsMinutes', true) )) . ' ' . str_replace('.', '', get_post_meta($id, 'WooCommerceEventsPeriod',true));
 				$post = $query->post;
 				$postObj = new stdClass;
 				$postObj->ID = $id;
+				$postObj->date = date('F j', get_post_meta($id, 'WooCommerceEventsDateTimestamp', true));
+				$postObj->time = $time;
 				$postObj->title = $post->post_title;
 				$postObj->excerpt = wp_trim_words($post->post_content, 25, '...');
 				$postObj->link = get_the_permalink($id);
@@ -321,10 +379,10 @@ function amwa_theme_return_projects($data, $post_types = 'tribe_events') {
 }
 
 add_action( 'rest_api_init', function () {
-  register_rest_route( 'AMWA/v2', '/events/', 
+  register_rest_route( 'AMWA/v2', '/programs/', 
   	[
     	'methods' => 'GET, POST',
-    	'callback' => 'amwa_theme_return_projects',
+    	'callback' => 'amwa_theme_return_programs',
     	'permission_callback' => '__return_true'
   	] 
   );

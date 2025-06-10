@@ -156,22 +156,28 @@ body div.gform_wrapper .ginput_complex {
 	}
 }
 
+#TicketForm select.components-select-control__input,
+.ticket-form .select-field,
 div.gform_wrapper .ginput_container_select select {
  	appearance: none;
- 	background: white url(img/down-chevron.svg) no-repeat calc(100% - 15px) center / 15px;
+ 	background: $light-yellow url(img/down-chevron.svg) no-repeat calc(100% - 18px) center / 18px;
  	padding-left: 15px;
 	padding-right: 15px;
-	padding-top: 18px;
-	padding-bottom: 18px;
+	padding-top: 15px;
+	padding-bottom: 15px;
  	font-size: 18px;
 	line-height: 27px;
-	color: $body-color;
+	color: black;
 	font-family: $font-body;
-	font-weight: 300;
+	font-weight: 500;
 	margin-bottom: 0;
+	width: 100%;
+	border: none !important;
+	min-height: 50px;
  	@media screen and (min-width: $form-width) {
 		font-size: 22px;
 		line-height: 36px;
+		min-height: 68px;
 		margin-bottom: 0;
 	}
 }
@@ -307,12 +313,19 @@ div.gform_wrapper textarea {
 	resize: none;
 }
 
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+.ticket-form button[type="submit"],
 div.gform_wrapper input[type="submit"]:not([type=checkbox]):not([type=image]):not([type=file])	
  {
 	@extend .wp-block-button__link;
 	min-height: 62px;
 	width: auto;
-	padding-right: 45px; 
+	text-align: center;
 	@media only screen and (max-width: $form-width) {
 		line-height: 1;
 		width: 100%;
@@ -848,5 +861,75 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 	font-size: 26px;
 	line-height: 32px;
 	font-family: $font-body;
+}
 
+.ticket-form .date-picker {
+	position: relative;
+}
+
+#TicketForm .components-input-control__backdrop {
+	-webkit-appearance: none;
+	appearance: none;
+	background: transparent;
+	border: none;
+}
+
+#TicketForm .components-input-control__suffix {
+	display: none;
+}
+
+.ticket-form .date-picker h3 {
+	font-weight: 500;
+	font-family: $font-body;
+	color: black;
+	font-size: 18px;
+}
+
+.ticket-form .css-dq09ke {
+	color: grey;
+	text-transform: uppercase;
+	font-family: $font-body;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.ticket-form .row {
+	margin-bottom: 25px;
+	@media screen and (min-width: $small-width) {
+		margin-bottom: 50px
+	}
+}
+
+.ticket-form button.components-button {
+	color: lightgrey;
+	text-transform: uppercase;
+	font-family: $font-body;
+	font-size: 14px;
+	font-weight: 500;
+}
+
+.ticket-form button.components-button[aria-label*="There is"] {
+	color: black;
+}
+
+.ticket-form button svg path {
+	fill: black;
+}
+
+.ticket-form .date-picker.toggled .components-datetime__date {
+	display: block;
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: auto;
+	}
+}
+
+.ticket-form .components-datetime__date {
+	position: absolute;
+	display: none;
+	top: auto;
+	background: white;
+	z-index: 99;
+	padding: 10px;
+	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
 }

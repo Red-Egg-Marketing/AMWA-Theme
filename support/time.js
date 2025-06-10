@@ -53,9 +53,7 @@ const SaveTime = ( { attributes, reference } ) => {
 								let day = hour[0];
 								let dayHour = hour[1];
 								let closed = hour[2];
-
-								console.log(closed);
-
+								
 								return (
 									<Fragment>
 										<li>

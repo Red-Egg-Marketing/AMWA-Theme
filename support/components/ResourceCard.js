@@ -156,6 +156,8 @@ ResourceCard.View = (props) => {
 	let text = props.buttonText != null ? props.buttonText : 'Read More';
 	let displayType = props.displayType != null ? props.displayType : false;
 	let displayButton = props.displayButton != null ? props.displayButton : true;
+	let displayExcerpt = props.displayExcerpt != null ? props.displayExcerpt : true;
+	let displayDate = props.displayDate != null ? props.displayDate : false;
 	let typeClass= '';
 	if (props.resourceType == 'Whitepaper') {
 		typeClass = 'whitepaper';
@@ -197,6 +199,17 @@ ResourceCard.View = (props) => {
 								props.resourceTitle
 							}
 						/>
+						{displayDate == true && (
+						<RichText.Content
+							tagName="time"
+							className="resource-date"
+							allowedFormats={['']}
+							value={
+								props.resourceDate + ', ' + props.resourceTime
+							}
+						/>
+						)}
+						{displayExcerpt == true && (
 						<RichText.Content
 							tagName="p"
 							className="resource-excerpt"
@@ -205,6 +218,7 @@ ResourceCard.View = (props) => {
 								props.resourceExcerpt
 							}
 						/>
+						)}
 						{displayButton == true && (
 							<button className="wp-button">
 								{ text }

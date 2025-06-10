@@ -151,7 +151,6 @@ const EditResources = ( { attributes, setAttributes, clientId } ) => {
 				setAttributes({resources: posts });
 
 			});
-			console.log('the falue i' + value);
 			setAttributes({
 				postType: value
 			});

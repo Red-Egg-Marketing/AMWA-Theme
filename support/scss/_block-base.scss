@@ -74,6 +74,11 @@ h4 {
 	padding-right: 1.25rem;
 	max-width: $max-cont-w + 200px;
 	margin: 45px auto 45px;
+	display: flex;
+	flex-wrap: wrap;
+	@media screen and (min-width: $small-width) {
+		grid-column-gap: 60px;
+	}
 }
 
 .content p {
@@ -712,4 +717,10 @@ div#CybotCookiebotDialog {
 .wp-block-image picture {
 	display: block;
 	overflow: hidden;
+}
+
+.loading {
+	background: url(img/Loading_icon.gif) no-repeat center center / contain;
+	width: 100%;
+	height: 300px;
 }

@@ -21,6 +21,7 @@ const editBlocksPostsCSSPlugin = new ExtractTextPlugin( {
 const extractConfig = {
   use: [
     { loader: 'raw-loader' },
+    // { loader: 'css-loader' },
     {
       loader: 'postcss-loader',
       options: {
@@ -42,6 +43,7 @@ module.exports = {
   entry: {
     './assets/js/editor.blocks' : './blocks/index.js',
     '../js/time' : './time.js',
+    '../js/tickets' : './tickets.js',
     './assets/js/main' : './front-end.js',
   },
   output: {
