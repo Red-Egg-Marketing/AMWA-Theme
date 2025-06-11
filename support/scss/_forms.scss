@@ -933,3 +933,7 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 	padding: 10px;
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
 }
+
+.ticket-form button[disabled][type="submit"] {
+	background: $light-grey-2;
+}
