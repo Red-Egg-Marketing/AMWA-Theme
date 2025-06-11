@@ -908,6 +908,7 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 	font-weight: 500;
 }
 
+.ticket-form button.components-button[aria-label*="There are"],
 .ticket-form button.components-button[aria-label*="There is"] {
 	color: black;
 }
@@ -934,6 +935,11 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 	box-shadow: 0 0 10px 0 rgba(0, 0, 0, .2);
 }
 
+#TicketForm select.components-select-control__input[disabled] {
+	opacity: 0.5;
+}
+
+#TicketForm select.components-select-control__input[disabled],
 .ticket-form button[disabled][type="submit"] {
 	background: $light-grey-2;
 }

@@ -11,14 +11,13 @@ const SaveTickets = ( { attributes, reference } ) => {
 	  	
 	  	const [date, setDate] = useState(new Date());
 	  	const [events, setEvents] = useState(false);
+	  	const [quantity, setQuantity] = useState(1);
+	  	const [total, setTotal] = useState(false);
 	  	const [time, setTime] = useState(false);
 	  	const [type, setType] = useState(false);
-	  	const [currentTimes, setCurrentTimes] = useState([
-	  		{
-	  			label: __('Select Time'),
-	  			// value: '',
-	  		}
-	  	]);
+	  	const [selectedDates, setSelectedDates] = useState(false);
+	  	const [currentTimes, setCurrentTimes] = useState(false);
+	  	const [currentTypes, setCurrentTypes] = useState(false);
 
 	  	const handleClickOutside = (event) => {
   			let target = event.target;
@@ -28,13 +27,6 @@ const SaveTickets = ( { attributes, reference } ) => {
   			}
   
   		}
-
-	  	const [currentTypes, setCurrentTypes] = useState([
-	  		{
-	  			label: __('Choose Ticket Type'),
-	  			// value: '',
-	  		}
-	  	]);
 
   		React.useEffect( () => {
   			
@@ -51,7 +43,8 @@ const SaveTickets = ( { attributes, reference } ) => {
     						date : resource.date,
     						id: resource.ID,
     						time: resource.time,
-    						quantity: resource.tickets
+    						quantity: resource.tickets,
+    						variations: resource.variations
     					}
     				);
     			});
@@ -61,17 +54,82 @@ const SaveTickets = ( { attributes, reference } ) => {
 
   		}, [] );
 
-  		const setTimeTicket = () => {
+  		const setTimeTicket = (value) => {
+  			setTime(value);
+  			let matches = selectedDates.filter(date => {
+  				let time = date.time;
+  				return time == value;
+  			});
 
+  			let types = [];
+  			types.push({
+  				label: 'Select Ticket Type'
+  			});
+  			matches.map(match => {
+  				let variations = match.variations;
+				variations.forEach(variation => {
+					let type = variation.attributes['attribute_ticket-type'];
+					let id = variation.variation_id;
+					let typeObj = {
+						label: type,
+						value: id
+					};
+					types.push(typeObj);
+				});				
+  			});
+
+  			setCurrentTypes(types);
   		}
 
-  		const setTypeTicket = () => {
+  		const setTypeTicket = (value) => {
 
+  			setType(value);
+
+  			let matches = selectedDates.filter(date => {
+  				let variations = date.variations;
+  				let match = variations.find(variation => {
+					let id = variation.variation_id;
+					return id == value;
+				});
+				return match;
+  			});
+  			console.log(matches);
   		}
 
   		const setTicketDate = (newDate) => {
-  			console.log(newDate);
-  			console.log(events);
+  			// compare newDate with event date and return matching events
+  			let matches = events.filter(event => {
+  				let date = new Date(event.date).toDateString();
+  				newDate = new Date(newDate).toDateString();
+  				return date == newDate;
+  			});
+
+  			let times = [];
+  			times.push({
+  				label: 'Select Time'
+  			});
+  			matches.map(match => {
+  				let time = match.time;
+  				let timeObj = {
+  					label: time,
+  					value: time,
+  				};
+  				times.push(timeObj);
+  			});
+
+  			setCurrentTimes(times);
+
+  			setSelectedDates(matches);
+
+  		}
+
+  		const decreaseQuantity = () => {
+
+  		}
+
+
+  		const increaseQuantity = () => {
+
   		}
 
 
@@ -102,10 +160,10 @@ const SaveTickets = ( { attributes, reference } ) => {
 								<SelectControl
 									 value={ time }
 									 options={
-									 	currentTimes
+									 	currentTimes == false ? [{ label : 'Select Time' }] : currentTimes
 									 }
 									 onChange={ setTimeTicket }
-									 disabled={ true }
+									 disabled={ currentTimes == false ? true : false }
 
 								/>
 							</div>
@@ -113,16 +171,36 @@ const SaveTickets = ( { attributes, reference } ) => {
 								<SelectControl
 									 value={ type }
 									 options={
-									 	currentTypes
+									 	currentTypes == false ? [{ label : 'Select Ticket Type' }] : currentTypes
 									 }
 									 onChange={ setTypeTicket }
-									 disabled={ true }
-
+									 disabled={ currentTypes == false ? true : false }
 								/>
 							</div>
 
-							<div className="row">
-								<button disabled className="single_add_to_cart_button button" type="submit">Book Tickets</button>
+							<div className="row buttons">
+								{ type != false && (
+									<Fragment>
+										<div className="qty-input">
+											<button 
+												className="qty-count qty-count--minus" 
+												type="button"
+												onClick={ decreaseQuantity }
+												>-</button>
+											<input className="product-qty" type="number" name="product-qty" min="0" max={ total } value={ quantity } />
+											<button 
+												className="qty-count qty-count--add" 
+												type="button"
+												onClick={ increaseQuantity }
+												>+</button>
+										</div>
+									</Fragment>
+								)}
+								<button 
+									disabled={ type == false ? true : false }
+									className="single_add_to_cart_button button" 
+									type="submit"
+								>Book Tickets</button>
 							</div>
 						</Fragment>
 					)}
