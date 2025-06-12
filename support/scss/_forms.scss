@@ -943,3 +943,41 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 .ticket-form button[disabled][type="submit"] {
 	background: $light-grey-2;
 }
+
+.ticket-form .row.buttons {
+	display: flex;
+	align-items: stretch;
+	grid-column-gap: 25px;
+	@media screen and (min-width: $small-width) {
+		grid-column-gap: 45px;
+	}
+}
+.ticket-form .qty-input {
+	display: flex;
+	align-items: stretch;
+}
+
+.ticket-form input[type=number] {
+	height: auto;
+	border-color: $light-yellow;
+	border-radius: 0;
+	padding-left: 18px;
+	padding-right: 0;
+	font-size: 18px;
+	color: black;
+	@media screen and (min-width: $small-width) {
+		font-size: 22px;
+	}
+}
+
+.qty-count {
+	background: $light-yellow;
+	border: none;
+	font-size: 18px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	color: black;
+	@media screen and (min-width: $small-width) {
+		font-size: 22px;
+	}
+}

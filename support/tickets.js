@@ -18,6 +18,8 @@ const SaveTickets = ( { attributes, reference } ) => {
 	  	const [selectedDates, setSelectedDates] = useState(false);
 	  	const [currentTimes, setCurrentTimes] = useState(false);
 	  	const [currentTypes, setCurrentTypes] = useState(false);
+	  	const [finalProduct, setFinalProduct] = useState(false);
+	  	const [dateAttr, setDateAttr] = useState(__('Select Date'));
 
 	  	const handleClickOutside = (event) => {
   			let target = event.target;
@@ -31,6 +33,8 @@ const SaveTickets = ( { attributes, reference } ) => {
   		React.useEffect( () => {
   			
   			document.addEventListener("click", handleClickOutside);
+
+  			document.addEventListener('keyup', handleKeyPress);
 
     		wp.apiRequest({
         			url: apiUrl,
@@ -54,6 +58,14 @@ const SaveTickets = ( { attributes, reference } ) => {
 
   		}, [] );
 
+
+  		const handleKeyPress = (e) => {
+  			if (e.key === 'Escape') {
+  				let parent = reference.querySelector('.select-field').parentElement;
+  				parent.classList.remove('toggled');
+  			}
+  		}
+
   		const setTimeTicket = (value) => {
   			setTime(value);
   			let matches = selectedDates.filter(date => {
@@ -63,37 +75,51 @@ const SaveTickets = ( { attributes, reference } ) => {
 
   			let types = [];
   			types.push({
-  				label: 'Select Ticket Type'
+  				label: 'Select Ticket Type',
+  				value: ''
   			});
   			matches.map(match => {
   				let variations = match.variations;
 				variations.forEach(variation => {
 					let type = variation.attributes['attribute_ticket-type'];
 					let id = variation.variation_id;
+					let price = Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(variation.display_price);
 					let typeObj = {
-						label: type,
+						label: type + ' ' + price,
 						value: id
 					};
 					types.push(typeObj);
 				});				
   			});
 
-  			setCurrentTypes(types);
+  			if (matches.length > 0) {
+  				setCurrentTypes(types);
+  			} else {
+  				setCurrentTypes(false);
+  			}
+  			setType(false);
   		}
 
   		const setTypeTicket = (value) => {
+  			let updateVal = value == '' ? false : value;
+  			setType(updateVal);
 
-  			setType(value);
-
-  			let matches = selectedDates.filter(date => {
+  			let matches = selectedDates.find(date => {
   				let variations = date.variations;
   				let match = variations.find(variation => {
 					let id = variation.variation_id;
+					if (id == value) {
+						setFinalProduct(id);
+					}
 					return id == value;
 				});
 				return match;
   			});
-  			console.log(matches);
+
+			if (typeof matches != 'undefined') {
+  				let quant = matches.quantity;
+  				setTotal(quant);
+			}
   		}
 
   		const setTicketDate = (newDate) => {
@@ -106,7 +132,8 @@ const SaveTickets = ( { attributes, reference } ) => {
 
   			let times = [];
   			times.push({
-  				label: 'Select Time'
+  				label: 'Select Time',
+  				value: ''
   			});
   			matches.map(match => {
   				let time = match.time;
@@ -117,19 +144,52 @@ const SaveTickets = ( { attributes, reference } ) => {
   				times.push(timeObj);
   			});
 
-  			setCurrentTimes(times);
 
-  			setSelectedDates(matches);
+  			if (matches.length > 0) {
+  				let setDate = new Date(newDate).toLocaleDateString('en-US');
+  				setDateAttr(setDate);
+  				setSelectedDates(matches);
+  				setCurrentTimes(times);
+
+  			} else {
+  				let attr = 'There are no tours on that date';
+  				setDateAttr(attr);
+  				setSelectedDates(false);
+  				setCurrentTimes(false);
+  				setCurrentTypes(false);
+  				setType(false);
+  				setTime(false);
+  			}
 
   		}
 
   		const decreaseQuantity = () => {
+  			let updateQuan = quantity > 1 ? quantity-1 : quantity;
+  			setQuantity(updateQuan);
+  		}
 
+  		const increaseQuantity = () => {
+  			let updateQuan = quantity < total ? quantity+1 : quantity;
+  			setQuantity(updateQuan);
   		}
 
 
-  		const increaseQuantity = () => {
+  		const updateQuantity = (event) => {
+  			let value = event.target.value;
+  			let updateQuan = 1;
 
+  			if (value <= total && value >= 1) {
+  				updateQuan = value;
+  			}
+
+  			setQuantity(updateQuan);
+  		}
+
+  		const submitTickets = (event) => {
+  			// /?add-to-cart=PRODUCT_ID&quantity=QUANTITY
+  			let url = '?add-to-cart=' + finalProduct + '&quantity=' + quantity;
+  			window.location.href = '/cart' + url;
+  			event.preventDefault();
   		}
 
 
@@ -141,8 +201,9 @@ const SaveTickets = ( { attributes, reference } ) => {
 							<div className="row date-picker">
 								<input
 									label={__('Select Date')}
-									type="date"
-									className="select-field"
+									type="text"
+									className="select-field date-range"
+									value={ dateAttr }
 									onClick={ (event) => {
 											let parent = event.currentTarget.parentElement;
 											parent.classList.toggle('toggled');
@@ -160,7 +221,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 								<SelectControl
 									 value={ time }
 									 options={
-									 	currentTimes == false ? [{ label : 'Select Time' }] : currentTimes
+									 	currentTimes == false ? [{ label : 'Select Time', value: '' }] : currentTimes
 									 }
 									 onChange={ setTimeTicket }
 									 disabled={ currentTimes == false ? true : false }
@@ -171,7 +232,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 								<SelectControl
 									 value={ type }
 									 options={
-									 	currentTypes == false ? [{ label : 'Select Ticket Type' }] : currentTypes
+									 	currentTypes == false ? [{ label : 'Select Ticket Type', value: '' }] : currentTypes
 									 }
 									 onChange={ setTypeTicket }
 									 disabled={ currentTypes == false ? true : false }
@@ -187,7 +248,15 @@ const SaveTickets = ( { attributes, reference } ) => {
 												type="button"
 												onClick={ decreaseQuantity }
 												>-</button>
-											<input className="product-qty" type="number" name="product-qty" min="0" max={ total } value={ quantity } />
+											<input 
+												className="product-qty" 
+												type="number" 
+												name="product-qty" 
+												min="0" 
+												max={ total } 
+												value={ quantity }
+												onChange={ updateQuantity }
+											/>
 											<button 
 												className="qty-count qty-count--add" 
 												type="button"
@@ -200,6 +269,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 									disabled={ type == false ? true : false }
 									className="single_add_to_cart_button button" 
 									type="submit"
+									onClick={ submitTickets }
 								>Book Tickets</button>
 							</div>
 						</Fragment>
