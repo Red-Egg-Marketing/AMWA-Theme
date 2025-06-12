@@ -247,6 +247,49 @@ add_filter( 'upload_mimes', 'add_upload_mimes' );
 
 add_action( 'login_enqueue_scripts', 'amwa_login_logo' );
 
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+
+remove_filter( 'woocommerce_before_shop_loop_item_title', ['FooEvents_Woo_Helper', 'display_product_date'], 50);
+
+remove_action( 'woocommerce_before_main_content', 'woocommerce_breadcrumb', 20, 0 );
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 30 );
+
+remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
+
+remove_action( 'woocommerce_shop_loop_header', 'woocommerce_product_taxonomy_archive_header' );
+
+add_action('woocommerce_shop_loop_header', 'amwa_shop_header');
+
+
+function amwa_shop_header() {
+	if (is_shop()) {
+		?>
+		<header class="hero">
+			<div class="block-wrapper">
+				<div class="hero__inner">
+					<div class="content-wrap">
+						<div class="hero-block-content">
+							<div class="hero-block-wrap">
+								<h1>Museum Shop</h1>
+							</div>
+						</div>
+					</div>
+					<div class="hero-block-image">
+						<div class="hero-block-image-wrap">
+							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/shop-header.jpg" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</header>
+		<?php
+	}
+}
+
+
+
 /**
  * Implement the Custom Header feature.
  */

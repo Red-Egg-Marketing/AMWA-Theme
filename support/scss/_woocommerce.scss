@@ -1,0 +1,54 @@
+.post-type-archive {
+	background: $light-yellow;
+}
+
+.product a {
+	text-decoration: none;
+}
+
+.product .woocommerce-loop-product__title {
+	color: black;
+	font-family: $font-body;
+	font-weight: 500;
+	font-size: 18px;
+	line-height: 22px;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	transition-property: color;
+	transition-duration: 0.3s;
+	@media screen and (min-width: $small-width) {
+		font-size: 22px;
+		margin-top: 15px;
+		margin-bottom: 10px;
+		line-height: 28px;
+	}
+}
+
+.product .woocommerce-loop-product__title span {
+	font-style: normal !important;
+}
+
+.product a:hover .woocommerce-loop-product__title {
+	color: $light-orange;
+}
+
+.product .event-date {
+	display: none;
+}
+
+body.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product .price {
+	font-size: 18px;
+	color: black;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+	}
+}
+
+body.woocommerce .site-main > .wrapper {
+	margin-top: 50px;
+	margin-bottom: 50px;
+	@media screen and (min-width: $small-width) {
+		margin-top: 100px;
+		margin-bottom: 100px;
+	}
+}
