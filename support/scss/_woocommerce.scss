@@ -39,6 +39,7 @@
 body.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product .price {
 	font-size: 18px;
 	color: black;
+	font-weight: 500;
 	@media screen and (min-width: $small-width) {
 		font-size: 20px;
 	}
@@ -51,4 +52,51 @@ body.woocommerce .site-main > .wrapper {
 		margin-top: 100px;
 		margin-bottom: 100px;
 	}
+}
+
+.wp-singular .product {
+	width: 100%;
+}
+
+.woocommerce-product-gallery__image {
+	border: 1px solid black;
+}
+
+.product_title.entry-title {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 39px;
+	font-style: normal;
+	margin-bottom: 0;
+	@media screen and (min-width: $small-width) {
+		font-size: 45px;
+		line-height: 54px;
+	}
+}
+
+.product_title.entry-title span {
+	font-style: normal !important;
+}
+
+.woocommerce div.product form.cart {
+	display: flex;
+	align-items: stretch;
+}
+
+.woocommerce div.product form.cart .button {
+	margin-left: 25px;
+	@media screen and (min-width: $small-width) {
+		margin-left: 45px;
+	}
+}
+
+.woocommerce div.product .description {
+	margin-top: 20px;
+	@media screen and (min-width: $small-width) {
+		margin-top: 40px;
+	}
+}
+
+.related.products {
+	background: $light-yellow;
 }

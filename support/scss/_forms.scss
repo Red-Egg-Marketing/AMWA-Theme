@@ -319,6 +319,9 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
 }
 
+
+
+.woocommerce div.product form.cart .button,
 .ticket-form button[type="submit"],
 div.gform_wrapper input[type="submit"]:not([type=checkbox]):not([type=image]):not([type=file])	
  {
@@ -957,6 +960,13 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 	align-items: stretch;
 }
 
+form.cart .quantity {
+	display: flex;
+	align-items: stretch;
+	margin-right: 0 !important;
+}
+
+.quantity input[type=number],
 .ticket-form input[type=number] {
 	height: auto;
 	border-color: $light-yellow;

@@ -258,13 +258,42 @@ remove_action( 'woocommerce_before_shop_loop', 'woocommerce_catalog_ordering', 3
 
 remove_action( 'woocommerce_before_shop_loop', 'woocommerce_result_count', 20 );
 
-remove_action( 'woocommerce_shop_loop_header', 'woocommerce_product_taxonomy_archive_header' );
+add_action( 'template_redirect', 'remove_archive_header' );
 
-add_action('woocommerce_shop_loop_header', 'amwa_shop_header');
+remove_action('woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs');
+
+remove_action('woocommerce_single_product_summary', 'woocommerce_template_single_meta', 40);
+
+add_action('woocommerce_single_product_summary', 'amwa_product_description', 50);
+
+
+function amwa_product_description() {
+	global $post;
+
+	$product = wc_get_product($post->ID);
+	$description = $product->get_description();
+	$description = wpautop($description);
+	?>
+	<div class="description">
+	<?php
+		echo $description;
+	?>
+	</div>
+	<?php
+}
+
+function remove_archive_header() {
+	if (is_shop()) {
+		remove_action('woocommerce_shop_loop_header', 'woocommerce_product_taxonomy_archive_header');
+
+		add_action('woocommerce_shop_loop_header', 'amwa_shop_header');
+
+	}
+}
+
 
 
 function amwa_shop_header() {
-	if (is_shop()) {
 		?>
 		<header class="hero">
 			<div class="block-wrapper">
@@ -285,7 +314,63 @@ function amwa_shop_header() {
 			</div>
 		</header>
 		<?php
-	}
+}
+
+add_action( 'woocommerce_after_add_to_cart_quantity', 'amwa_quantity_plus_sign' );
+ 
+function amwa_quantity_plus_sign() {
+   echo '<button type="button" class="plus qty-count" >+</button>';
+}
+ 
+add_action( 'woocommerce_before_add_to_cart_quantity', 'amwa_quantity_minus_sign' );
+
+function amwa_quantity_minus_sign() {
+   echo '<button type="button" class="minus qty-count" >-</button>';
+}
+ 
+add_action( 'wp_footer', 'ts_quantity_plus_minus' );
+ 
+function ts_quantity_plus_minus() {
+   // To run this on the single product page
+   if ( ! is_product() ) return;
+   ?>
+   <script type="text/javascript">
+          
+      jQuery(document).ready(function($){   
+          
+            $('form.cart').on( 'click', 'button.plus, button.minus', function() {
+ 
+            // Get current quantity values
+            var qty = $( this ).closest( 'form.cart' ).find( '.qty' );
+            var val   = parseFloat(qty.val());
+            var max = parseFloat(qty.attr( 'max' ));
+            var min = parseFloat(qty.attr( 'min' ));
+            var step = parseFloat(qty.attr( 'step' ));
+ 
+            // Change the value if plus or minus
+            if ( $( this ).is( '.plus' ) ) {
+               if ( max && ( max <= val ) ) {
+                  qty.val( max );
+               } 
+            else {
+               qty.val( val + step );
+                 }
+            } 
+            else {
+               if ( min && ( min >= val ) ) {
+                  qty.val( min );
+               } 
+               else if ( val > 1 ) {
+                  qty.val( val - step );
+               }
+            }
+             
+         });
+          
+      });
+          
+   </script>
+   <?php
 }
 
 
