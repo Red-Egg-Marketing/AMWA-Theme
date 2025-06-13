@@ -28,10 +28,10 @@ if ( $related_products ) : ?>
 
 		if ( $heading ) :
 			?>
-			<h2><?php echo esc_html( $heading ); ?></h2>
+			<h2 class="related-products-header"><?php echo esc_html( $heading ); ?></h2>
 		<?php endif; ?>
 		<?php woocommerce_product_loop_start(); ?>
-
+		<div class="grid">
 			<?php foreach ( $related_products as $related_product ) : ?>
 
 					<?php
@@ -43,7 +43,7 @@ if ( $related_products ) : ?>
 					?>
 
 			<?php endforeach; ?>
-
+		</div><!-- .grid -->
 		<?php woocommerce_product_loop_end(); ?>
 		</div>
 	</section>

@@ -6,6 +6,8 @@
 	text-decoration: none;
 }
 
+
+.woocommerce ul.products li.product .woocommerce-loop-product__title,
 .product .woocommerce-loop-product__title {
 	color: black;
 	font-family: $font-body;
@@ -16,6 +18,7 @@
 	margin-bottom: 5px;
 	transition-property: color;
 	transition-duration: 0.3s;
+	padding-bottom: 0;
 	@media screen and (min-width: $small-width) {
 		font-size: 22px;
 		margin-top: 15px;
@@ -36,6 +39,7 @@
 	display: none;
 }
 
+body.woocommerce ul.products li.product .price,
 body.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product .price {
 	font-size: 18px;
 	color: black;
@@ -99,4 +103,57 @@ body.woocommerce .site-main > .wrapper {
 
 .related.products {
 	background: $light-yellow;
+	padding-top: 35px;
+	padding-bottom: 35px;
+	@media screen and (min-width: $small-width) {
+		padding-top: 70px;
+		padding-bottom: 70px;
+	}
+}
+
+.woocommerce ul.products li.product a img {
+	margin-bottom: 0;
+}
+
+.related.products h2.related-products-header {
+	font-size: 35px;
+	margin-top: 0;
+	@media screen and (min-width: $small-width) {
+		font-size: 45px;
+	}
+}
+
+body.woocommerce:where(body:not(.woocommerce-uses-block-theme)) ul.products li.product .price {
+	color: black;
+}
+
+body.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	float: none;
+	width: 100%;
+	margin: 0;
+}
+
+.product-gallery {
+	position: relative;
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: calc(50% - 30px);
+	}
+}
+
+body.woocommerce-page div.product div.summary {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: calc(50% - 30px);
+	}
+}
+
+.product.swiper {
+	border: 1px solid black;
+}
+
+.product.type-product {
+	display: flex;
+	flex-wrap: wrap;
+	grid-column-gap: 60px;
 }

@@ -329,6 +329,53 @@ function amwa_quantity_minus_sign() {
 }
  
 add_action( 'wp_footer', 'ts_quantity_plus_minus' );
+
+remove_action('woocommerce_before_single_product_summary', 'woocommerce_show_product_images', 20);
+
+add_action('woocommerce_before_single_product_summary', 'woocommerce_show_flex_slider_product_images', 20);
+
+function woocommerce_show_flex_slider_product_images() {
+	global $product;
+	$id = $product->get_id();
+	$feat = get_post_thumbnail_id($id);
+	$attachments = $product->get_gallery_image_ids();
+	
+	if (!empty($attachments)) {
+	?>
+		<div class="product-gallery">
+			<div class="product swiper">
+					<div class="swiper-wrapper">
+					<?
+					foreach($attachments as $key => $attachment) {
+					?>
+						<?php
+							if ($key == 0) {
+						?>
+							<div class="swiper-slide">
+								<?php
+									echo wp_get_attachment_image($feat, 'large');
+								?>
+							</div>
+						<?php
+							}
+						?>
+						<div class="swiper-slide">
+						<?php
+							echo wp_get_attachment_image($attachment, 'large');
+						?>
+						</div>
+					<?php
+					}?>
+				</div>
+			</div>
+			<div class="swiper-controls">
+				<div class="swiper-button-prev"></div>
+  				<div class="swiper-button-next"></div>
+  			</div>
+  		</div>
+  <?php 
+  }
+}
  
 function ts_quantity_plus_minus() {
    // To run this on the single product page

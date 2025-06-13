@@ -140,8 +140,6 @@
 }
 .swiper-button-prev,
 .swiper-button-next {
-  position: absolute;
-  top: 50%;
   width: calc(var(--swiper-navigation-size) / 44 * 27);
   height: var(--swiper-navigation-size);
   margin-top: calc(-1 * var(--swiper-navigation-size) / 2);
@@ -537,31 +535,49 @@ button.swiper-pagination-bullet {
 
 .swiper-button-next,
 .swiper-button-prev {
-  background: $teal;
+  top: 100%;
   width: 30px;
   height: 30px;
   border-radius: 50px;
   z-index: 9999;
+  margin-top: 0;
   @media screen and (min-width: $small-width) {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
   }
-}
-
-.fa.swiper-button-next:after,
-.fa.swiper-button-prev:after {
-  font-family: "Font Awesome 5 Free" !important;
-  color: white;
-  font-size: 18px;
-  @media screen and (min-width: $small-width) {
-    font-size: 32px;
-  }
-}
-
-.swiper-button-prev:after {
-  content: "\f060";
 }
 
 .swiper-button-next:after {
-  content: "\f061";
+  content: "";
+  position: relative;
+  display: block;
+  background: url($right-arrow) no-repeat center center / contain;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-button-prev:after {
+  content: "";
+  position: relative;
+  display: block;
+  background: url($left-arrow) no-repeat center center / contain;
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide img {
+  width: 100%;
+  display: block;
+  height: 100%; 
+}
+
+.swiper-controls {
+  position: relative;
+  margin-top: 25px;
+  display: flex;
+  grid-column-gap: 10px;
+  @media screen and (min-width: $small-width) {
+    margin-top: 60px;
+    grid-column-gap: 30px;
+  }
 }
