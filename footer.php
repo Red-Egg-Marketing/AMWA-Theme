@@ -86,7 +86,6 @@ if (function_exists('get_field')) {
 </div><!-- #page -->
 
 <?php 
-
 } // end if
 wp_footer(); 
 

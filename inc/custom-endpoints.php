@@ -50,7 +50,7 @@ function amwa_get_guided_tours() {
 			'relation' => 'AND',
 			[
 				'taxonomy' 	=> 'product_cat',
-				'terms'		=> 'guided-tours',
+				'terms'		=> 'guided-tour',
 				'field'		=> 'slug'
 			]
 		],
@@ -107,7 +107,8 @@ add_action( 'rest_api_init', function () {
 
 function amwa_get_business_hours() {
 	if (function_exists('get_field')) {
-		$current_date = date('Y-m-d');
+	
+		$current_date = date('F n, Y');
 		$display_date = date('l, F n ');
 		$current_day = date('l');
 		$closure = false;
@@ -120,11 +121,19 @@ function amwa_get_business_hours() {
 			'order'				=> 'DESC',
 			'meta_query'		=> [
 				'relation' 		=> 'AND',
-				'key'			=> 'expirydate',
+				'key'			=> 'WooCommerceEventsDate',
 				'compare'		=> '=',
 				'type'			=> 'DATE',
 				'value'			=> $current_date
-			]
+			],
+			'tax_query' => [
+					'relation' => 'AND',
+				[
+					'taxonomy' 	=> 'product_cat',
+					'terms'		=> 'closures',
+					'field'		=> 'slug'
+				]
+			],
 			
 		];
 

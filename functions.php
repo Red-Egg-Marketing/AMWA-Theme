@@ -166,7 +166,7 @@ function amwa_theme_scripts() {
     );
 
 
-	 if (is_tax('product_cat', 'guided-tours')){
+	 if (is_tax('product_cat', 'guided-tour')){
 	 	wp_register_script(
         	'site-tickets',
         	get_stylesheet_directory_uri() . '/js/tickets.js',
