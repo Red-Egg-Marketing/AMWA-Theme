@@ -258,6 +258,8 @@ h4 {
 
 .resource-card .content {
 	margin-top: 20px;
+	position: relative;
+	z-index: 3;
 }
 
 .resource-card {
@@ -277,14 +279,29 @@ h4 {
 .resource-card .resource-title,
 .resource-card .tax-item {
 	width: 100%;
+	color: white;
 }
 
 .resource-card .resource-extra {
 	width: 100%;
 }
+.resource-card .content  {
+	display: flex;
+	padding: 1.25rem;
+	align-items: flex-end;
+	@media screen and (min-width: $small-width) {
+		padding: 30px;
+	}
+}
 
 .resource-card .cont-wrap {
 	width: 100%;
+	min-height: 225px;
+	display: flex;
+	align-items: stretch;
+	@media screen and (min-width: $small-width) {
+		min-height: 325px;
+	}
 }
 
 .wp-block.event,
@@ -394,6 +411,7 @@ h4 {
 }
 
 .resource-card {
+	position: relative;
 	padding-bottom: 0.75rem;
 	@media screen and (min-width: $small-width) {
 		padding-bottom: 1rem;
@@ -415,12 +433,30 @@ h4 {
 	object-fit: cover;
 }
 
+.resource-card .cont-wrap {
+	position: relative;
+}
+
 .resource-card .image-cont {
     width: 100%;
+    height: 100%;
     position: relative;
-    padding-bottom: 50%;
     overflow: hidden;
-    border-radius: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.resource-card .image-cont:before {
+	position: absolute;
+	top: 0;
+	left: 0;
+	content: "";
+	width: 100%;
+	height: 100%;
+	z-index: 2;
+	background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 1.0));
+	opacity: 0.8;
 }
 
 .resource-card p.resource-excerpt {
@@ -534,10 +570,9 @@ h4.resource-type,
 
 h3.resource-title,
 .editor-styles-wrapper h3.resource-title {
-	color: $green;
 	font-size: 20px;
 	line-height: 25px;
-	font-weight: 700;
+	font-weight: 500;
 	font-family: $font-body;
 	text-transform: none;
 	margin-bottom: 0;
@@ -545,7 +580,6 @@ h3.resource-title,
 	@media screen and (min-width: $small-width) {
 		font-size: 22px;
 		line-height: 36px;
-		margin-top: 30px;
 	}
 }
 
@@ -731,4 +765,26 @@ div#CybotCookiebotDialog {
 	background: url(img/Loading_icon.gif) no-repeat center center / contain;
 	width: 100%;
 	height: 300px;
+}
+
+figure.wp-block-gallery {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-column-gap: 15px !important; 
+	grid-row-gap: 15px !important;
+	width: 100%;
+	@media screen and (min-width: $small-width) and (max-width: $med-width) {
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-column-gap: 25px !important;
+		grid-row-gap: 25px !important;
+	}
+	@media screen and (min-width: $med-width + 1px) {
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-column-gap: 30px !important;
+		grid-row-gap: 30px !important;
+	}
+}
+
+figure.wp-block-gallery figure {
+	width: 100% !important;
 }

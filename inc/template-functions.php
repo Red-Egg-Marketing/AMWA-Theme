@@ -290,53 +290,38 @@ function amwa_theme_posts_pagination() {
 }
 
 function amwa_theme_posts_footer(int $id) {
-	$post_types = ['post'];
-	$t = [];
-	$cats = get_the_terms($id, 'category');
-	$c = [];
 
-	// build cats array of ids
-	if (!empty($cats)) {
-		foreach($cats as $cat) {
-			$c[] = $cat->term_id;
-		}
-	}
-
+	$post_type = get_post_type($id);
+	
 	$args = [
-		'post_type' => $post_types,
+		'post_type' => $post_type,
 		'post_status' => 'publish',
-		'posts_per_page' => 3,
+		'posts_per_page' => -1,
 		'post__not_in' => [$id],
-		'tax_query' => [
-			'relation' => 'OR',
-			[
-				'taxonomy' => 'category',
-				'field' => 'term_id',
-				'terms' => $c
-			],
-		]
+		'orderby' => 'menu_order',
+		'order' => 'ASC'
 	];
 
 	$query = new WP_Query($args);
 			if ($query->have_posts()) {
 			?>
-			<div class="resources-grid resources-block light-grey">
+			<div class="resources-grid">
 				<header class="header">
-					<h2 class="header-title">Related Content</h2>
+					<h4>On Display</h4>
+					<h2>The Collection</h2>
 				</header>
-				<div class="block-wrapper">
+				<div class="collections swiper">
+				<div class="swiper-wrapper">
 				<?php
 				while($query->have_posts()) {
 					$query->the_post();
 					$id = get_the_ID();
 					$permalink = get_the_permalink();
 					$title = get_the_title();
-					$thumbnail = get_the_post_thumbnail_url($id, 'post-landscape') != false ? get_the_post_thumbnail_url($id, 'post-landscape') : get_the_post_thumbnail_url($id, 'thumbnail');
-					$excerpt = get_the_excerpt();
-					$typeClass = '';
+					$thumbnail = get_the_post_thumbnail_url($id, 'medium-large') != false ? get_the_post_thumbnail_url($id, 'medium-large') : get_the_post_thumbnail_url($id, 'thumbnail');
 					$cta = 'Read More';
 					?>
-						<div class="resource-card <?= $typeClass; ?>">
+						<div class="swiper-slide resource-card">
 							<div class="resource-extra">
 								<a class="resource-wrap" href="<?= $permalink ?>">
 									<div class="cont-wrap">
@@ -347,12 +332,9 @@ function amwa_theme_posts_footer(int $id) {
 										<?php } ?>
 										<div class="content">
 											<h3 class="resource-title"><?= $title; ?></h3>
-											<?php if ($excerpt != '') { ?>
-												<p class="resource-excerpt"><?= $excerpt; ?></p>
-											<?php } ?>
+						
 										</div>
 									</div>
-									<button class="wp-button"><?= $cta; ?></button>
 								</a>
 							</div>
 						</div>
@@ -360,7 +342,19 @@ function amwa_theme_posts_footer(int $id) {
 				}
 				wp_reset_postdata();
 			} ?>
-				</div><!-- .block-wrapper -->
+				</div><!-- .swiper-wrapper -->
+					<div class="controls-wrapper">
+						<div class="wp-block-buttons">
+							<div class="wp-button">
+								<a class="wp-block-button__link" href="<?php echo get_post_type_archive_link( $post_type ) ?>">View All Styles</a>
+							</div>
+						</div>
+						<div class="swiper-controls">
+							<div class="swiper-button-prev"></div>
+  							<div class="swiper-button-next"></div>
+  						</div>
+  					</div>
+  				</div>
 			</div><!-- .resources-grid -->
 	<?php
 }

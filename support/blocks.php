@@ -272,4 +272,35 @@ function amwa_theme_progress_block_assets() {
 }
 add_action( 'enqueue_block_assets', 'amwa_theme_progress_block_assets' );
 
+
+function amwa_parse_collections_blocks() {
+    global $post;
+    $post_id = $post->ID;
+    $blocks = parse_blocks( get_the_content( $post_id ) );
+    $content_markup = '';
+    foreach ( $blocks as $block ) {
+        // render_block renders a single block into a HTML string
+        $name = $block['blockName'];
+      
+        if ($name == 'core/gallery') {
+            $content_markup .= '</div>';
+            $content_markup .= '<section class="gallery-cont">';
+            $content_markup .= '<div class="wrapper">';
+            $content_markup .= render_block( $block );
+            $content_markup .= '</div>';
+            $content_markup .= '</section>';
+            $content_markup .= '<div class="post-content">';
+        } else {
+            $content_markup .= render_block( $block );
+        }
+    }
+    // this will apply the_content filters for shortcodes
+    // and embeds to contiune working
+    $new_content = apply_filters( 'the_content', $content_markup );
+
+    echo $new_content;
+
+}
+
+
 ?>

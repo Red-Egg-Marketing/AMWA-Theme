@@ -286,14 +286,21 @@ function remove_archive_header() {
 	if (is_shop()) {
 		remove_action('woocommerce_shop_loop_header', 'woocommerce_product_taxonomy_archive_header');
 
-		add_action('woocommerce_shop_loop_header', 'amwa_shop_header');
+		add_action('woocommerce_shop_loop_header', 'amwa_posts_header');
 
 	}
 }
 
 
 
-function amwa_shop_header() {
+function amwa_posts_header() {
+		global $post;
+		if (is_shop()) {
+			$image = '<img src="' . get_stylesheet_directory_uri() . '/img/shop-header.jpg" />';
+		} else {
+			$feat = get_post_thumbnail_id($post->ID);
+			$image = wp_get_attachment_image($feat, 'large');
+		}
 		?>
 		<header class="hero">
 			<div class="block-wrapper">
@@ -301,13 +308,17 @@ function amwa_shop_header() {
 					<div class="content-wrap">
 						<div class="hero-block-content">
 							<div class="hero-block-wrap">
-								<h1>Museum Shop</h1>
+								<?php if (is_shop()) { ?>
+									<h1>Museum Shop</h1>
+								<?php } else { ?>
+									<h1><?php echo get_the_title($post->ID); ?></h1>
+								<?php } ?>
 							</div>
 						</div>
 					</div>
 					<div class="hero-block-image">
 						<div class="hero-block-image-wrap">
-							<img src="<?php echo get_stylesheet_directory_uri(); ?>/img/shop-header.jpg" />
+							<?php echo $image; ?>
 						</div>
 					</div>
 				</div>
@@ -315,6 +326,8 @@ function amwa_shop_header() {
 		</header>
 		<?php
 }
+
+add_action( 'before_collections_content', 'amwa_posts_header');
 
 add_action( 'woocommerce_after_add_to_cart_quantity', 'amwa_quantity_plus_sign' );
  
@@ -340,38 +353,39 @@ function woocommerce_show_flex_slider_product_images() {
 	$feat = get_post_thumbnail_id($id);
 	$attachments = $product->get_gallery_image_ids();
 	
-	if (!empty($attachments)) {
+	if (!empty($attachments) || $feat) {
 	?>
 		<div class="product-gallery">
 			<div class="product swiper">
 					<div class="swiper-wrapper">
+					<div class="swiper-slide">
+						<?php
+							echo wp_get_attachment_image($feat, 'large');
+						?>
+					</div>
 					<?
 					foreach($attachments as $key => $attachment) {
-					?>
-						<?php
 							if ($key == 0) {
-						?>
+					?>
+							
 							<div class="swiper-slide">
-								<?php
-									echo wp_get_attachment_image($feat, 'large');
-								?>
+							<?php
+								echo wp_get_attachment_image($attachment, 'large');
+							?>
 							</div>
-						<?php
-							}
-						?>
-						<div class="swiper-slide">
-						<?php
-							echo wp_get_attachment_image($attachment, 'large');
-						?>
-						</div>
 					<?php
-					}?>
+							} // end if
+					}// end foreach
+					?>
+
 				</div>
 			</div>
+			<?php if (sizeof($attachments) > 0) { ?>
 			<div class="swiper-controls">
 				<div class="swiper-button-prev"></div>
   				<div class="swiper-button-next"></div>
   			</div>
+  			<?php } ?>
   		</div>
   <?php 
   }

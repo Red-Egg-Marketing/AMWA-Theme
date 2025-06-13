@@ -1,0 +1,70 @@
+.single.single-collections .post-content {
+	margin: 0 auto;
+	width: 100%;
+	max-width: $max-cont-w + 200px;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
+.single.single-collections .post-content > p, 
+.single.single-collections .post-content > h1, 
+.single.single-collections .post-content > h2,
+.single.single-collections .post-content > h3,
+.single.single-collections .post-content > h4,
+.single.single-collections .post-content > h5, 
+.single.single-collections .post-content > h6,
+.single.single-collections .post-content > ul,
+.single.single-collections .post-content > dl,
+.single.single-collections .post-content > ol,
+.single.single-collections .post-content > address,
+.single.single-collections .post-content > code,
+.single.single-collections .post-content > pre,
+.single.single-collections .post-content > figure,
+.single.single-collections .post-content > table,
+.single.single-collections .post-content > .wp-block-buttons {
+	max-width: $med-small-width;
+}
+
+.gallery-cont {
+	background: $light-yellow;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	@media screen and (min-width: $small-width) {
+		padding-top: 120px;
+		padding-bottom: 120px;
+	}
+}
+
+
+.entry-footer .header,
+.gallery-cont .wrapper {
+	text-align: left;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	max-width: $max-cont-w + 200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.entry-footer .header h4 {
+	margin-bottom: 0;
+}
+
+.entry-footer .header h2 {
+	margin-top: 10px;
+}
+
+
+.collections.swiper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	max-width: $max-cont-w + 200px;
+	width: 100%;
+	margin: 0 auto;
+	overflow: visible;
+}
+
+.collections.swiper .swiper-controls {
+	margin-top: 0;
+	justify-content: flex-end;
+}

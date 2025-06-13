@@ -576,8 +576,17 @@ button.swiper-pagination-bullet {
   margin-top: 25px;
   display: flex;
   grid-column-gap: 10px;
+  margin-left: auto;
   @media screen and (min-width: $small-width) {
     margin-top: 60px;
     grid-column-gap: 30px;
+  }
+}
+
+.swiper .controls-wrapper {
+  display: flex;
+  margin-top: 25px;
+  @media screen and (min-width: $small-width) {
+    margin-top: 50px;
   }
 }
