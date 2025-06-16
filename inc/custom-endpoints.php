@@ -107,9 +107,8 @@ add_action( 'rest_api_init', function () {
 
 function amwa_get_business_hours() {
 	if (function_exists('get_field')) {
-	
-		$current_date = date('F n, Y');
-		$display_date = date('l, F n ');
+		$current_date = date('F d, Y');
+		$display_date = date('l, F d ');
 		$current_day = date('l');
 		$closure = false;
 		// first check for any clousures
@@ -121,10 +120,12 @@ function amwa_get_business_hours() {
 			'order'				=> 'DESC',
 			'meta_query'		=> [
 				'relation' 		=> 'AND',
-				'key'			=> 'WooCommerceEventsDate',
-				'compare'		=> '=',
-				'type'			=> 'DATE',
-				'value'			=> $current_date
+				[
+					'key'			=> 'WooCommerceEventsExpire',
+					'compare'		=> 'LIKE',
+					'type'			=> 'CHAR',
+					'value'			=> $current_date
+				]
 			],
 			'tax_query' => [
 					'relation' => 'AND',

@@ -150,7 +150,10 @@ const SaveTickets = ( { attributes, reference } ) => {
   				setDateAttr(setDate);
   				setSelectedDates(matches);
   				setCurrentTimes(times);
-
+  				setCurrentTypes(false);
+  				setType(false);
+  				setTime(false);
+  			
   			} else {
   				let attr = 'There are no tours on that date';
   				setDateAttr(attr);
