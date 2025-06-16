@@ -18,26 +18,6 @@ const SaveContactColumn = ( { attributes } ) => {
 	
 		return (
 			<div {...blockProps}>
-				<Header.View
-					tag="h2"
-					title={ title }
-				/>
-				<Content.View
-					tag="div"
-					content={ content }
-					multiline="p"
-					classProp="content"
-				/>
-				<Header.View
-					tag="h4"
-					title={ subtitle }
-					classProp="header-suptitle"
-				/>
-				<Icons.View
-					rows={ icons }
-					color={ '#F79A6C' }
-					activeText={ true }
-				/>
 				<InnerBlocks.Content />
 			</div>
 		);

@@ -1,9 +1,4 @@
-body.logged-in .site-header {
-	margin-top: 32px;
-	@media screen and (max-width: 782px) {
-		margin-top: 46px;
-	}
-}
+
 
 body.nav-active {
 	overflow: hidden;
@@ -69,6 +64,7 @@ a.custom-logo-link {
 	transition-property: all;
 	transition-duration: 0.3s;
 	animation: transitionDown 0.75s ease forwards;
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
 .site-header.fixed {
@@ -354,7 +350,7 @@ a.custom-logo-link {
 	display: flex;
 	align-items: stretch;
 	@media screen and (min-width: $small-width) {
-		height: 90px;
+		height: 105px;
 	}
 }
 
@@ -422,16 +418,16 @@ li.menu-item.nav-button a {
 	@media screen and (min-width: $med-small-width) {
 		font-size: 17px;
 		line-height: 23px;
-		height: 44px;
 	}
+	&:hover:visited,
 	&:visited {
 		color: white;
 		background: $light-orange;
 	}
 	&:hover,
 	&:visited,
-	&:hover:visited {
-		color: $green;
+	 {
+		color: black;
 	}
 }
 
@@ -440,6 +436,11 @@ li.menu-item.nav-button a {
 	&:hover {
 		color: $teal;
 	}
+}
+
+.menu-main-menu-container {
+	display: flex;
+	align-items: stretch;
 }
 
 .main-navigation ul.sub-menu-child {
@@ -516,8 +517,8 @@ li.menu-item.nav-button a {
 		margin-right: 0.5rem;
 	}
 	@media screen and (min-width: $med-width + 1px) {
-		margin-left: 1.8rem;
-		margin-right: 1.8rem;
+		margin-left: 1.35rem;
+		margin-right: 1.35rem;
 	}
 }
 
@@ -533,12 +534,6 @@ li.menu-item.nav-button a {
 	}
 }
 
-.main-navigation .nav-menu > .menu-item.nav-button {
-	@media screen and (min-width: $med-small-width) {
-		padding-top: 22px;
-		padding-bottom: 22px;
-	}
-}
 
 .main-navigation .nav-menu > .menu-item {
 	width: 100%;
@@ -589,7 +584,7 @@ li.menu-item.nav-button a {
 		padding-bottom: 0;
 		padding-left: 0;
 		padding-right: 0;
-		margin-left: 45px
+		margin-left: 15px;
 	}
 }
 
@@ -826,7 +821,7 @@ li.menu-item.nav-button a {
 .menu-secondary-menu-container {
 	width: auto;
 	display: flex;
-	align-items: flex-end;
+	align-items: stretch;
 	justify-content: flex-end;
 }
 
@@ -954,11 +949,16 @@ li.menu-item.nav-button a {
     padding-left: 10px;
     margin-left: auto;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     position: relative;
     @media screen and (min-width: $med-small-width) {
     	padding-left: 20px;
     }
+}
+
+.site-header .time-navigation .time-wrapper {
+	display: flex;
+	align-items: stretch;
 }
 
 .site-header .time-navigation button {

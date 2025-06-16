@@ -1,0 +1,45 @@
+.timeline {
+	background: linear-gradient(to right, $light-yellow 40%, white 40%);
+}
+
+.timeline > .block-wrapper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+
+}
+
+.timeline > .block-wrapper > .block-content {
+	margin-left: 0;
+	@media screen and (min-width: $small-width) {
+		margin-left: 16.6667%;
+		background: linear-gradient(to right, $light-yellow calc(20% - 1.25rem), white calc(20% - 1.25rem));
+	}
+}
+
+.timeline .period .block-wrapper .block-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.timeline .content-column {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: 60%;
+	}
+}
+
+.timeline .image-column {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: 40%;
+		padding-right: 2.5rem;
+	}
+}
+
+.timeline .period {
+	margin-bottom: 40px;
+	@media screen and (min-width: $small-width) {
+		margin-bottom: 85px;
+	}
+}

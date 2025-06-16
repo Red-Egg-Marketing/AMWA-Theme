@@ -53,7 +53,6 @@ const EditCTA = ( { attributes, setAttributes, clientId } ) => {
 		});	
 
 		const blockHasImage = ( clientId ) => {
-			console.log('what up');
 			let innerBlocks = wp.data.select( 'core/editor' ).getBlock( clientId ).innerBlocks;
 			let find = innerBlocks.find((element) => {
 				let name = element.name;

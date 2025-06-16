@@ -10,7 +10,7 @@ registerBlockType( 'amwa-theme-block/contact-content', {
 	description: __( ' Can contain blocks for header and description in column format. Useful for introduction to section.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'align-center',
-	parent: ['amwa-theme-block/contact', 'amwa-theme-block/sign-up'],
+	parent: ['amwa-theme-block/contact', 'amwa-theme-block/sign-up', 'amwa-theme-block/period'],
 	category: 'layout',
 	attributes: {
 		title: {
@@ -34,6 +34,10 @@ registerBlockType( 'amwa-theme-block/contact-content', {
 		allowBlocks : {
 			type: 'array',
 			default: ['core/html', 'core/buttons', 'core/heading', 'core/paragraph']
+		},
+		template : {
+			type: 'array',
+			default: []
 		},
 		icons : {
 			type: 'array',

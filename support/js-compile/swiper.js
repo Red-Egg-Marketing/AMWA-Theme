@@ -22,7 +22,6 @@ import Swiper from 'swiper/bundle';
         }
     );
 
-    console.log('what up');
     let collections = new Swiper('.collections.swiper', 
         {
             loop: true,

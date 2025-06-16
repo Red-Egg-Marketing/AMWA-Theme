@@ -68,6 +68,14 @@ if (function_exists('get_field')) {
 							'walker' => new amwa_Menu_Walker()
 						)
 					);
+
+					wp_nav_menu(
+						array(
+							'theme_location' => 'menu-2',
+							'menu_id'        => 'Secondary-menu',
+							'menu_class'	 => 'nav-menu',
+						)
+					);
 				
 				?>
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'AMWA' ); ?></button>

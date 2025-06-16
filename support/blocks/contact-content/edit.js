@@ -8,7 +8,7 @@ import Content from '../../components/Content.js';
 import Icons from '../../components/Icons.js';
 import BackgroundColor from '../../components/BackgroundColor.js';
 
-const template = [
+const temp = [
 	['core/buttons', {},
 		[
 			['core/button', {'placeholder' : 'Cta here...'}]
@@ -20,8 +20,12 @@ const EditContactContent = ( { attributes, setAttributes } ) => {
 
 	
 		const {
-			title, content, icons, subtitle, allowBlocks
+			title, content, icons, subtitle, allowBlocks, template
 		} = attributes;
+
+		if (template.length == 0) {
+			setAttributes({template: temp});
+		}
 
 		const [rowNumber, setRownumber] = useState(null);
 		const [currentIconList, setIconList] = useState(null);

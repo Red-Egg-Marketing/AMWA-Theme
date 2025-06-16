@@ -52,6 +52,9 @@ import "./grid-buttons";
 // // import "./progress-block";
 // // import "./case-study";/
 import "./selected-programs";
+import "./timeline";
+import "./period";
+import "./images";
 // // import "./savings-calculator";
 // // import "./savings-form";
 // import "./cta";
