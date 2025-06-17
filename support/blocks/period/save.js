@@ -26,8 +26,8 @@ const SavePeriod = ( { attributes } ) => {
 					margin={ margin }
 					id={ blockId }
 				/>
-				<div {...blockProps}>
-					<div className="block-wrapper" data-period={ period }>
+				<div {...blockProps} data-period={ period }>
+					<div className="block-wrapper">
 						<div className="block-content">
 							<InnerBlocks.Content />
 						</div>

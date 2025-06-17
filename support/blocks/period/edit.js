@@ -71,8 +71,8 @@ const EditPeriod = ( { attributes, setAttributes, clientId } ) => {
 						setAttributes={ setAttributes }
 					/>
 				</InspectorControls>
-				<div {...blockProps}>
-					<div className="block-wrapper" data-period={ period }>
+				<div {...blockProps} data-period={ period }>
+					<div className="block-wrapper">
 						<div className="block-content">							
 							<InnerBlocks
 								template={ template }
