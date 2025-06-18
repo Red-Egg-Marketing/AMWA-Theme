@@ -37,6 +37,7 @@ const SaveTimeline = ({dates, parent}) => {
   				if (inView && target != undefined) {
   					let dateAttr = target.getAttribute('data-period');
   					let slides = swiper.slides;
+  					target.classList.add('active-period');
 	  				slides.forEach((slide) => {
 	  					let slideAttr = slide.getAttribute('data-time');
 	  					if (dateAttr == slideAttr) {

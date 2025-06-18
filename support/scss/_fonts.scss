@@ -156,14 +156,14 @@ h6 a {
 .site-main h3,
 .gs_team h3,
 .editor-visual-editor h3, .entry-content h3 {
-	color: $green;
+	color: black;
 	font-size: 28px;
 	line-height: 36px;
 	font-family: $font-head;
 	font-weight: 700;
 	@media screen and (min-width: $small-width) {
-		font-size: 34px;
-		line-height: 44px;
+		font-size: 38px;
+		line-height: 48px;
 	}
 }
 
@@ -200,7 +200,7 @@ h6 a {
 .site h5,
 .site-main h5,
 .editor-visual-editor h5, .entry-content h5 {
-	color: $green;
+	color: black;
 	line-height: 19px;
 	font-size: 14px;
 	font-family: $font-body;
@@ -214,7 +214,7 @@ h6 a {
 .site h6,
 .site-main h6,
 .editor-visual-editor h6, .entry-content h6 {
-	color: $green;
+	color: black;
 	line-height: 18px;
 	font-size: 14px;
 	font-weight: 700;
