@@ -3,6 +3,7 @@ const { Fragment } = wp.element;
 const { RichText, MediaUpload, InnerBlocks, InspectorControls, useBlockProps } = wp.blockEditor;
 const { Button, PanelBody, SelectControl, ColorPalette, ToggleControl, RangeControl } = wp.components;
 const { __ } = wp.i18n;
+import Content from '../../components/Content.js';
 import BackgroundColor from '../../components/BackgroundColor.js';
 import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
@@ -13,7 +14,7 @@ const template = [
 
 const EditTimeline = ( { attributes, setAttributes, clientId } ) => {
 
-		const { bgSlug, bgColor, padding, blockId, margin } = attributes;
+		const { bgSlug, bgColor, padding, blockId, margin, content } = attributes;
 
 		const blockProps = useBlockProps({
 			className: 'timeline' + (bgSlug != '' ? ' ' + bgSlug + ' with-bg' : '')
@@ -46,6 +47,16 @@ const EditTimeline = ( { attributes, setAttributes, clientId } ) => {
 				</InspectorControls>
 				<div {...blockProps}>
 					<div className="block-wrapper">
+						<div className="description-container">
+							<Content
+								tag="div"
+								classProp="description"
+								content={ content }
+								multiline="p"
+								setAttributes={ setAttributes }
+								placeholder="Timeline description..."
+							/>
+						</div>
 						<div className="time-navigation"></div>
 						<div className="block-content">							
 							<InnerBlocks

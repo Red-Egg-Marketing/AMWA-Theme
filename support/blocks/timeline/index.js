@@ -31,7 +31,14 @@ registerBlockType( 'amwa-theme-block/timeline', {
 			}
 		},
 		blockId: {
+			
 			type: 'string'
+		},
+		content: {
+			type: 'string',
+			source: 'html',
+			selector: '.description',
+			default: '',
 		}
 	},
 	edit: edit,

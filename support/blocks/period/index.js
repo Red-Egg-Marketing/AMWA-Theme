@@ -38,6 +38,7 @@ registerBlockType( 'amwa-theme-block/period', {
 			type: 'string'
 		}
 	},
+	anchor: true,
 	edit: edit,
 	save: save,
 } );
