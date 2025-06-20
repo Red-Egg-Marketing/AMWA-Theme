@@ -6,6 +6,9 @@
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 	position: relative;
+	@media screen and (min-width: $small-width) {
+		background: linear-gradient(to right, $light-yellow calc(33.3333%), white calc(33.3333%));
+	}
 }
 
 .timeline > .block-wrapper > .block-content {
@@ -13,7 +16,7 @@
 	overflow: hidden;
 	@media screen and (min-width: $small-width) {
 		margin-left: 16.6666%;
-		background: linear-gradient(to right, $light-yellow calc(20% - 1.25rem), white calc(20% - 1.25rem));
+/*		background: linear-gradient(to right, $light-yellow calc(20% - 1.25rem), white calc(20% - 1.25rem));*/
 	}
 }
 
@@ -210,16 +213,23 @@
 }
 
 .timeline .description-container {
-	background: linear-gradient(to right, $light-yellow calc(16.6667% - 1.25rem), white calc(16.6667% - 1.25rem));
+/*	background: linear-gradient(to right, $light-yellow calc(36.6667% - 2.5em), white calc(36.6667% - 2.5rem));*/
+	padding-top: 35px;
+	padding-bottom: 35px;
+	@media screen and (min-width: $small-width) {
+		padding-top: 90px;
+		padding-bottom: 90px;
+	}
 }
 
 .timeline .description {
-	background: $purple;
+	background: $purple url($down-arrow) no-repeat calc(100% - 10px) center / 20px;
 	overflow: hidden;
-	padding: 5px 20px;
+	padding: 5px 30px 5px 15px;
 	width: 66.6666%;
 	@media screen and (min-width: $small-width) {
-		padding: 10px 30px;
+		background: $purple url($down-arrow) no-repeat calc(100% - 25px) center / 30px;
+		padding: 10px 65px 10px 30px;
 	}
 }
 
