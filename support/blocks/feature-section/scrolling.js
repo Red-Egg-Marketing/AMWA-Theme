@@ -46,7 +46,7 @@ require('es6-promise/auto');
 	function animateFrom(progress, element, xPos, parent) {
 		let prog = (progress.progress * 4) < 1 ? progress.progress * 4 : 1;
 		let content = element.querySelector('.content-columns');
-		let image = element.querySelector('.image-col');
+		let image = element.querySelector('.image-column');
 		let PosNeg = Math.sign(xPos);
 		let newX = PosNeg < 0 ? Math.abs(xPos) : -xPos;
 		let progX = xPos + (newX * prog);

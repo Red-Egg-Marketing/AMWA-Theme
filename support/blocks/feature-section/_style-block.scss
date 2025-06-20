@@ -13,15 +13,10 @@
 
 .feature-section {
 	width: 100%;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
-	padding-top: 3.125rem;
-	padding-bottom: 3.125rem;
-	overflow: hidden;
-	@media screen and (min-width: $small-width) {
-		padding-top: 6.75rem;
-		padding-bottom: 6.75rem;
-	}
+}
+
+.feature-section .faq-section > .block-wrapper {
+	padding: 0;
 }
 
 .feature-section + .selected-case-studies {
@@ -31,20 +26,25 @@
 	}
 }
 
-.feature-section .block-wrapper {
-	max-width: $med-small-width;
+.feature-section > .block-wrapper {
 	width: 100%;
-	margin: 0 auto;
+	max-width: 100%;
+	position: relative;
+	padding-top: 45px;
+	padding-bottom: 45px;
 	@media screen and (min-width: $small-width) {
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
+		padding-top: 120px;
+		padding-bottom: 120px;
 	}
 }
 
 .feature-section > .block-wrapper > .block-content {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-start;
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
 }
 
 .feature-section .faq:last-of-type {
@@ -54,48 +54,56 @@
 .feature-section .content-columns {
 	width: 100%;
 	box-sizing: border-box;
+	max-width: ($max-cont-w + 200px) * .5;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	margin-left: auto;
 	@media screen and (min-width: $small-width) {
 		width: 50%;
-		padding-left: 2.5rem;
+	}
+}
+
+.feature-section .content-columns .wrap {
+	@media screen and (min-width: $small-width) {
+		margin-right: -16.6667%;
 	}
 }
 
 .feature-section.col-66 .content-columns {
 	width: 100%;
 	box-sizing: border-box;
+	max-width: ($max-cont-w + 200px) * .5;
 	@media screen and (min-width: $small-width) {
-		width: 66.6666666%;
-		padding-left: 2.5rem;
+		width: 50%;
 	}
 }
 
-.feature-section.col-66.img-right .content-columns {
+.feature-section .image-column {
 	width: 100%;
-	box-sizing: border-box;
 	@media screen and (min-width: $small-width) {
-		width: 66.6666666%;
-		padding-right: 2.5rem;
-	}
-}
-
-.feature-section.col-66 .image-col {
-	@media screen and (min-width: $small-width) {
-		width: calc(33.3333% - 34px);
-		max-width: calc(33.3333% - 34px);
-	}
-}
-
-.feature-section .image-col {
-	position: relative;
-	width: 100%;
-	box-sizing: border-box;
-	border-radius: 10px;
-	margin-bottom: 35px;
-	@media screen and (min-width: $small-width) {
-		width: calc(50% - 34px);
-		max-width: calc(50% - 34px);
+		width: 50%;
+		max-width: 50%;
 		margin-bottom: 0;
+		overflow: hidden;
+		position: sticky;
+		top: 0;
 	}
+}
+
+.feature-section .image-column figure {
+	margin-right: 0;
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+/*		margin-right: -100px;*/
+		padding-left: 16.66667%;
+	}
+	
+}
+
+
+.feature-section .image-column figure img,
+.feature-section .image-column figure a {
+	width: 100%;
 }
 
 .img-container img {

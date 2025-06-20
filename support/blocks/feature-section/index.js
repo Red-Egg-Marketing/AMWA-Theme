@@ -28,62 +28,6 @@ registerBlockType( 'amwa-theme-block/feature-section', {
 			type: 'string',
 			default: 'col-66'
 		},
-		contentAlign: {
-			type: 'string',
-			default: 'img-left',
-			selector: '.block-content'
-		},
-		withDrop: {
-			type: 'boolean',
-			default: true
-		},
-		media: {
-			type: 'object',
-			default: {
-				id: '',
-				alt: '',
-				srcSet: {
-					large: '',
-					medium: '',
-					small: '',
-				}
-			}
-		},
-		image : {
-			type: 'object',
-			default : {
-				url : '',
-				width : '',
-				height : '',
-				repeat: 'no-repeat',
-				position: 'top left',
-				size: '100',
-				sizekey: '',
-				attachment: 'scroll',
-				bgkeyword: 'keyword'
-			}
-		},
-		videothumb : {
-			type: 'object',
-			default : {
-				url: '',
-				width: '',
-				height: '',
-			}
-		},
-		videoID: {
-			type: 'number',
-		},
-		vidOrImg: {
-			type: 'string',
-			default: 'image'
-		},
-		videoURL: {
-			type: 'string',
-			source: 'attribute',
-			selector: '.source',
-			attribute: 'src',
-		},
 		animateScroll: {
 			type: 'boolean',
 			default: false

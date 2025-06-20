@@ -10,7 +10,7 @@ registerBlockType( 'amwa-theme-block/images', {
 	description: __( ' Can contain blocks for header and description in column format. Useful for introduction to section.', 'amwa-theme-block' ),
 	apiVersion: 2,
 	icon: 'align-center',
-	parent: ['amwa-theme-block/contact', 'amwa-theme-block/sign-up', 'amwa-theme-block/period'],
+	parent: ['amwa-theme-block/contact', 'amwa-theme-block/sign-up', 'amwa-theme-block/period', 'amwa-theme-block/feature-section'],
 	category: 'layout',
 	attributes: {
 		template : {

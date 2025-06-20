@@ -10,7 +10,7 @@ registerBlockType( 'amwa-theme-block/content-column', {
 	apiVersion: 2,
 	icon: 'columns',
 	category: 'layout',
-	parent: ['amwa-theme-block/image-text'],
+	parent: ['amwa-theme-block/image-text', 'amwa-theme-block/feature-section'],
 	edit: edit,
 	save: save,
 } );
