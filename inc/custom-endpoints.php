@@ -164,9 +164,10 @@ function amwa_get_business_hours() {
 					if ($w == $current_day) {
 						$h = $weekday[1];
 						$h = ltrim($h);
+						$hours[] = [$weekday[0], $weekday[1], $closure];
+
 						if ($closure == true) {
 							$day_language .= 'AMWA is closed today, ' . $display_date;
-							$hours[] = [$weekday[0], $weekday[1], true];
 						} else if ($h == 'Closed') {
 							$day_language .= 'AMWA is closed today';
 						} else {

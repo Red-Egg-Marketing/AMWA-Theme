@@ -12,6 +12,19 @@ registerBlockType( 'amwa-theme-block/feature-section', {
 	icon: 'columns',
 	category: 'layout',
 	attributes: {
+		padding: {
+			type: 'object',
+			default: {
+			}
+		},
+		margin: {
+			type: 'object',
+			default: {
+			}
+		},
+		blockId: {
+			type: 'string'
+		},
 		bgColor: {
 			type: 'string',
 			default: ''

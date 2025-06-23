@@ -4,13 +4,6 @@
 	box-sizing: border-box;
 }
 
-.header-intro-block + .feature-section {
-	padding-top: 1.5675rem;
-	@media screen and (min-width: $small-width) {
-		padding-top: 3.375rem;
-	}
-}
-
 .feature-section {
 	width: 100%;
 }
@@ -47,6 +40,15 @@
 	margin: 0 auto;
 }
 
+.feature-section > .block-wrapper > .block-content > .block-editor-inner-blocks,
+.feature-section > .block-wrapper > .block-content > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	width: 100%;
+}
+
+.feature-section > .block-wrapper > .block-content > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: flex;
+}
+
 .feature-section .faq:last-of-type {
 	margin-bottom: 0;
 }
@@ -64,6 +66,8 @@
 }
 
 .feature-section .content-columns .wrap {
+	position: relative;
+	z-index: 5;
 	@media screen and (min-width: $small-width) {
 		margin-right: -16.6667%;
 	}
@@ -80,6 +84,8 @@
 
 .feature-section .image-column {
 	width: 100%;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
 	@media screen and (min-width: $small-width) {
 		width: 50%;
 		max-width: 50%;
@@ -87,6 +93,8 @@
 		overflow: hidden;
 		position: sticky;
 		top: 0;
+		padding-left: 0;
+		padding-right: 0;
 	}
 }
 
@@ -151,7 +159,7 @@
 	}
 }
 
-.feature-section.animate-complete .image-col:before {
+/*.feature-section.animate-complete .image-col:before {
 	opacity: 1;
 	@media screen and (min-width: $small-width) and (max-width: $med-small-width) {
 		left: -15px;
@@ -177,64 +185,8 @@
 		right: -34px;
 	}
 }
+*/
 
-
-.feature-section.light-grey .image-col:before,
-.feature-section.light-blue .image-col:before,
-.feature-section.peach .image-col:before {
-	background: white;
-}
-
-.feature-section .image-col:before {
-	content: "";
-	position: absolute;
-	border-radius: 30px;
-	background: $light-blue;
-	height: 100%;
-	opacity: 0;
-	transition-duration: 0.75s;
-	transition-property: left, right, opacity;
-	@media screen and (min-width: $small-width) and (max-width: $med-small-width) {
-		top: 15px;
-		left: 0;
-		width: calc(100% - 15px);
-	}
-	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
-		top: 20px;
-		left: 0;
-		width: calc(100% - 20px);
-	}
-	@media screen and (min-width: $med-width) {
-		top: 34px;
-		left: 0;
-		width: calc(100% - 34px);
-	}
-}
-
-.feature-section.img-right .image-col:before {
-	content: "";
-	position: absolute;
-	border-radius: 30px;
-	height: 100%;
-	@media screen and (min-width: $small-width) and (max-width: $med-small-width) {
-		width: calc(100% - 15px);
-		top: 15px;
-		right: 0;
-		left: inherit;
-	}
-	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
-		width: calc(100% - 20px);
-		top: 20px;
-		right: 0;
-		left: inherit;
-	}
-	@media screen and (min-width: $med-width) {
-		width: calc(100% - 34px);
-		top: 34px;
-		left: inherit;
-		right: 0;
-	}
-}
 
 .feature-section.img-right .image-col {
 	@media screen and (min-width: $small-width) and (max-width: $med-small-width) {
@@ -278,35 +230,6 @@
 	}
 }
 
-
-.feature-section .wrap > *:first-child {
-	margin-top: 0;
-	margin-bottom: 15px;
-	@media screen and (min-width: $small-width) {
-		margin-bottom: 20px;
-	}
-}
-
-
-.feature-section .wrap h1 {
-	font-size: 32px;
-	line-height: 44px;
-	letter-spacing: 0.4px;
-	@media screen and (min-width: $small-width) {
-		font-size: 40px;
-		line-height: 53px;
-		letter-spacing: 0.5px;
-	}
-}
-
-.feature-section .wrap h2 {
-	font-size: 26px;
-	line-height: 37px;
-	@media screen and (min-width: $small-width) {
-		font-size: 30px;
-		line-height: 42px;
-	}
-}
 
 .feature-section video {
 	max-width: 100%;

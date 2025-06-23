@@ -95,10 +95,13 @@ h4 {
 
 // Backgrounds
 
+
+.has-light-orange-background-color,
 .light-orange {
 	background: $light-orange;
 }
 
+.has-light-yellow-background-color,
 .light-yellow {
 	background: $light-yellow;
 }
@@ -107,24 +110,13 @@ h4 {
 	color: $light-orange;
 }
 
+.has-teal-color-background-color,
 .teal {
 	background: $teal;
 }
 
 .teal-text {
 	color: $teal;
-}
-
-.red {
-	background: $red;
-}
-
-.red-text {
-	color: $red;
-}
-
-.navy {
-	background: $navy;
 }
 
 .white {
@@ -143,6 +135,7 @@ h4 {
 	background: $bg-color-5;
 }
 
+.has-orange-background-color,
 .orange {
 	background: $orange;
 }
@@ -155,6 +148,7 @@ h4 {
 	background: $dark-grey;
 }
 
+.has-purple-background-color,
 .purple {
 	background: $purple;
 }
@@ -191,6 +185,7 @@ h4 {
 	background: $green;
 }
 
+.has-green-background-color,
 .green {
 	background: $green;
 }
@@ -791,4 +786,10 @@ figure.wp-block-gallery {
 
 figure.wp-block-gallery figure {
 	width: 100% !important;
+}
+
+:root :where(.wp-block-heading.has-background),
+:root :where(p.has-background) {
+	margin: 0;
+	padding: 30px !important;
 }

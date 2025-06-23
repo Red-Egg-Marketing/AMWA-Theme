@@ -8,13 +8,16 @@
 			for (x = 0; x < faq.length; x++) {
 				let f = faq[x];
 				let head = f.querySelector('.header-title');
-				head.addEventListener('click', eventToggleAnswer);
+				if (head != null) {
+					head.addEventListener('click', eventToggleAnswer);
+				}
 			}
 
 		}
 
 		function eventToggleAnswer() {
 			// hide all faq
+			console.log('what up');
 			let that = this;
 			let parent = that.parentElement;
 			for (x = 0; x < faq.length; x++) {

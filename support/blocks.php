@@ -188,12 +188,7 @@ function amwa_theme_gutenberg_disable_custom_styles() {
             [
                 'name' => esc_html('Green', '@@textdomain'),
                 'slug' => 'green',
-                'color' => '#004F66'
-            ],
-            [
-                'name' => esc_html('Red', '@@textdomain'),
-                'slug' => 'red',
-                'color' => '#E03B45'
+                'color' => '#3B7E55'
             ],
             [
                 'name' => esc_html('Purple', '@@textdomain'),
@@ -203,17 +198,17 @@ function amwa_theme_gutenberg_disable_custom_styles() {
             [
                 'name' => esc_html('Orange', '@@textdomain'),
                 'slug' => 'orange',
-                'color' => '#F57F2D'
+                'color' => '#CB5E41'
             ],
             [
-                'name' => esc_html('Light Orange', '@@textdomain'),
-                'slug' => 'light-orange',
-                'color' => '#FEBF2D'
+                'name' => esc_html('Light yeloow', '@@textdomain'),
+                'slug' => 'light-yellow',
+                'color' => '#FBF3E8'
             ],
             [
-                'name' => esc_html('Teal', '@@textdomain'),
+                'name' => esc_html('Blue', '@@textdomain'),
                 'slug' => 'teal',
-                'color' => '#51B3A8'
+                'color' => '#2D9EC6'
             ],
             [
                 'name' => esc_html('White', '@@textdomain'),
