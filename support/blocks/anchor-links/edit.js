@@ -8,7 +8,13 @@ const { __ } = wp.i18n;
 const allowBlocks = ['core/list'];
 
 const template = [
-	['core/list']
+	['core/list', {},
+		[
+			['core/list-item'],
+			['core/list-item'],
+			['core/list-item']
+		]
+	]
 ];
 
 const EditAnchorLinks = ( { attributes, setAttributes } ) => {

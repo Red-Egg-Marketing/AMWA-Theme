@@ -11,15 +11,21 @@
 	margin: 0 auto;
 }
 
+.images-columns > .block-wrapper > .block-content > .block-editor-inner-blocks {
+	width: 100%;
+}
+
+.images-columns > .block-wrapper > .block-content > .block-editor-inner-blocks > .block-editor-block-list__layout,
 .images-columns > .block-wrapper > .block-content {
 	display: flex;
-	flex-wrap: wrap;
 	grid-column-gap: 30px;
+	width: 100%;
 }
 
 .images-columns .image-column {
 	width: 100%;
 	@media screen and (min-width: $small-width) {
-		width: 33.3333%;
+		width: calc(33.3333% - 13.333px);
+		margin: 0;
 	}
 }

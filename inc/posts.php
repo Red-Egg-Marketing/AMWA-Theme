@@ -34,4 +34,25 @@ function amwa_theme_update_video() {
 	}
 }
 
+
+function lesson_register_template() {
+    $post_type_object = get_post_type_object( 'lesson' );
+    $post_type_object->template = [
+        ['amwa-theme-block/anchor-links'],
+        [
+        	'core/heading', 
+        	[
+        		'placeholder' 	=> 'Lesson Header',
+        		'level' 		=> 1
+        	]	
+        ],
+        ['amwa-theme-block/images-columns'],
+        ['amwa-theme-block/feature-section'],
+        ['amwa-theme-block/portraits'],
+        ['amwa-theme-block/feature-section'],
+        ['amwa-theme-block/feature-section']
+    ];
+}
+add_action( 'init', 'lesson_register_template' );
+
 ?>
