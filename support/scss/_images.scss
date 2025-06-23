@@ -32,3 +32,10 @@
 	color: black;
 }
 
+.wp-block-image figcaption {
+	background: $light-yellow;
+	padding: 15px 20px;
+	@media screen and (min-width: $small-width) {
+		padding: 20px 30px;
+	}
+}

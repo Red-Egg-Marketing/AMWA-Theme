@@ -55,6 +55,7 @@ import "./selected-programs";
 import "./timeline";
 import "./period";
 import "./images";
+import "./images-columns";
 // // import "./savings-calculator";
 // // import "./savings-form";
 // import "./cta";

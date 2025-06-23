@@ -168,13 +168,13 @@
 }
 
 .single .wp-block-image figcaption {
-	text-align: center;
 	color: $head-color;
 	margin-top: 0;
 	font-family: $font-body;
-	font-size: 16px;
-	padding-top: 0.5rem;
-	padding-bottom: 0.5rem;
+	font-size: 18px;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+	}
 }
 
 .entry-footer .extra-wrap {

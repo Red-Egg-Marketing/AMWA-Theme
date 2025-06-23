@@ -1,0 +1,25 @@
+.images-columns {
+	width: 100%;
+	max-width: 100%;
+}
+
+.images-columns .block-wrapper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	max-width: $max-cont-w + 200px;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.images-columns > .block-wrapper > .block-content {
+	display: flex;
+	flex-wrap: wrap;
+	grid-column-gap: 30px;
+}
+
+.images-columns .image-column {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: 33.3333%;
+	}
+}
