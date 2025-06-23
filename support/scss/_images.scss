@@ -1,0 +1,34 @@
+.wrap_svl {
+	counter-reset: tips;
+}
+
+.wrap_svl .tips:after {
+	counter-increment: tips;
+	content: counter(tips);
+	line-height: 15px;
+	font-family: $font-body;
+	color: black;
+	display: block;
+	font-size: 15px;
+	z-index: 10;
+	position: relative;
+	pointer-events: none;
+	margin-top: -7px;
+	margin-left: -7px;
+	text-align: center;
+	width: 15px;
+}
+
+#powerTip {
+	background: $light-yellow;
+	border-radius: none;
+	color: black;
+	font-family: $font-body;
+	padding: 15px;
+}
+
+#powerTip * {
+	font-family: $font-body;
+	color: black;
+}
+

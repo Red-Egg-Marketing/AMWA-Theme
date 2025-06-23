@@ -20,7 +20,6 @@
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
-	border-radius: 20px;
 	margin-top: 75px;
 	@media screen and (min-width: $med-width + 1px) {
 		width: calc(33.3333% - 40px);
@@ -76,26 +75,19 @@
 }
 
 .text-card figure {
-	width: 110px;
-	height: 110px;
-	margin: 0 auto;
-	border-radius: 110px;
-	margin-top: -60px;
+	width: 100px;
+	height: 100px;
+	margin-top: -50px;
 	overflow: hidden;
-	border: 6px solid $green;
-	background: $green;
+	background: $purple;
 	max-width: 100%;
-	@media screen and (min-width: $small-width) and (max-width: $med-width) {
-		border-radius: 160px;
-		width: 160px;
-		height: 160px;
-		margin-top: -80px;
-	}
-	@media screen and (min-width: $med-width + 1px) {
-		border-radius: 220px;
-		width: 220px;
-		height: 220px;
-		margin-top: -110px;
+	margin-bottom: 0;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+	@media screen and (min-width: $small-width) {
+		width: 115px;
+		height: 115px;
+		margin-top: -57.5px;
 	}
 }
 
@@ -131,13 +123,18 @@
 	width: 100%;
 }
 
+.text-card h4 {
+	text-transform: none;
+	letter-spacing: 0;
+}
+
 
 .text-card .wp-block-heading { 
-	margin-top: 25px;
+	margin-top: 20px;
 	margin-bottom: 0;
-	color: $green;
+	color: black;
 	@media screen and (min-width: $small-width) {
-		margin-top: 30px;
+		margin-top: 25px;
 	}
 }
 
@@ -175,13 +172,10 @@
 .text-card .block-content {
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
-	padding-bottom: 1.25rem;
-	text-align: center;
 	width: 100%;
 	@media screen and (min-width: $small-width) {
-		padding-left: 1.25rem;
-		padding-right: 1.25rem;
-		padding-bottom: 2.5rem;
+		padding-left: 2.25rem;
+		padding-right: 2.25rem;
 	}
 }
 

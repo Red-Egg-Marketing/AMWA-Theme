@@ -8,7 +8,7 @@ import BackgroundColor from '../../components/BackgroundColor.js';
 
 const template = [
 	['core/image', {}],
-	['core/heading', {'level' : 3, 'placeholder' : 'Card Title...'}],
+	['core/heading', {'level' : 4, 'placeholder' : 'Card Title...'}],
 	['core/paragraph', {'placeholder' : 'Card Description...'}],
 	['core/buttons', {},
 		[
@@ -36,6 +36,14 @@ const BGOptions = [
     {
         label: __( 'None' ),
         value: '',
+    },
+    {
+        label: __( 'White' ),
+        value: 'white',
+    },
+    {
+        label: __( 'Light Yellow' ),
+        value: 'light-yellow',
     },
     {
         label: __( 'Light Grey' ),

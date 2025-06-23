@@ -110,6 +110,12 @@ h4 {
 	color: $light-orange;
 }
 
+
+.bright-orange {
+	background: $bright-orange;
+}
+
+
 .has-teal-color-background-color,
 .teal {
 	background: $teal;
@@ -194,14 +200,19 @@ h4 {
 	color: $green;
 }
 
-.border-red figure {
-	border-color: $red !important;
-	background: $red !important;
+.border-teal figure {
+	border-color: $teal !important;
+	background: $teal!important;
 }
 
 .border-orange figure {
 	border-color: $orange !important;
 	background: $orange !important;
+}
+
+.border-bright-orange figure {
+	border-color: $bright-orange !important;
+	background: $bright-orange !important;
 }
 
 .border-light-orange figure {
@@ -217,6 +228,16 @@ h4 {
 .border-purple figure {
 	border-color: $purple !important;
 	background: $purple !important;
+}
+
+.border-green figure {
+	border-color: $green !important;
+	background: $green !important;
+}
+
+.border-white figure {
+	border-color: white !important;
+	background: white !important;
 }
 
 .underline {

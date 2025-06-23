@@ -15,7 +15,7 @@ registerBlockType( 'amwa-theme-block/text-card', {
 	attributes: {
 		cardBG: {
 			type: 'string',
-			default: 'light-grey'
+			default: 'white'
 		},
 		bgColor: {
 			type: 'string',
