@@ -7,12 +7,6 @@
 .shortcode-section {
 	width: 100%;
 	max-width: 100%;
-	padding-top: 3.875rem;
-	padding-bottom: 1.875rem;
-	@media screen and (min-width: $small-width) {
-		padding-bottom: 2.75rem;
-		padding-top: 6.75rem;
-	}
 }
 
 .shortcode-section > .block-wrapper {

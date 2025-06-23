@@ -1,0 +1,38 @@
+.anchor-links .wrap {
+	max-width: $max-cont-w + 200px;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.anchor-links {
+	padding-top: 25px;
+	padding-bottom: 25px;
+	max-width: 100%;
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+}
+
+.anchor-links .wp-block-list {
+	padding: 0;
+	display: flex;
+	list-style-type: none;
+	max-width: 100%;
+}
+
+.anchor-links .wp-block-list a {
+	text-decoration: none;
+}
+
+.anchor-links .wp-block-list li {
+	margin-right: 4%;
+	font-size: 18px;
+	margin-left: 0;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+	}
+}

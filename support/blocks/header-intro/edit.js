@@ -89,14 +89,10 @@ const EditHeaderIntro = ( { attributes, setAttributes, clientId } ) => {
 					</PanelBody>
 				</InspectorControls>
 				<div {...blockProps} >
-					<div className="block-wrapper">
-						<div className="block-content">
-							<InnerBlocks
-								allowedBlocks={ ['core/heading', 'core/paragraph', 'core/list', 'core/buttons'] }
-								template={ template }
-							/>
-						</div>
-					</div>
+					<InnerBlocks
+						allowedBlocks={ ['core/heading', 'core/paragraph', 'core/list', 'core/buttons'] }
+						template={ template }
+					/>
 				</div>
 			</Fragment>
 		);

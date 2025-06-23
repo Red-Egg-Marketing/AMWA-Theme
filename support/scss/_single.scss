@@ -19,6 +19,13 @@
 	width: 100%;
 }
 
+.single.single-lesson .post-content {
+	max-width: 100%;
+	padding-left: 0;
+	padding-right: 0;
+	padding-bottom: 0;
+}
+
 .single .post-content {
 	max-width: $med-width;
 	padding-left: 1.25rem;

@@ -1,0 +1,85 @@
+.wp-block.portraits {
+	max-width: 100%;
+	width: 100%;
+	box-sizing: border-box;
+}
+
+.portraits {
+	width: 100%;
+}
+
+.portraits .faq-section > .block-wrapper {
+	padding: 0;
+}
+
+.portraits > .block-wrapper {
+	width: 100%;
+	max-width: $max-cont-w + 200px;
+	position: relative;
+	padding-top: 45px;
+	padding-bottom: 45px;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	@media screen and (min-width: $small-width) {
+		padding-top: 110px;
+		padding-bottom: 110px;
+	}
+}
+
+.portraits > .block-wrapper > .block-content {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-start;
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+	grid-column-gap: 60px;
+}
+
+.portraits > .block-wrapper > .block-content > .block-editor-inner-blocks,
+.portraits > .block-wrapper > .block-content > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	width: 100%;
+}
+
+.portraits > .block-wrapper > .block-content > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: flex;
+	grid-column-gap: 60px;
+	flex-wrap: wrap;
+	align-items: flex-start;
+}
+
+.portraits .header-intro-block {
+	width: 100%;
+	padding: 0;
+	text-align: left;
+}
+
+.portraits .shortcode-section {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: calc(50% - 30px);
+	}
+}
+
+.portraits .content-columns *:first-of-type {
+	@media screen and (min-width: $small-width) {
+		margin-top: 0;
+	}
+}
+
+.portraits .content-columns {
+	width: 100%;
+	box-sizing: border-box;
+	max-width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: calc(50% - 30px);
+		padding-right: 16.66667%;
+	}
+}
+
+.portraits .wp-block-buttons  {
+	margin-top: 25px;
+	@media screen and (min-width: $small-width) {
+		margin-top: 60px;
+	}
+}

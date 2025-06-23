@@ -49,11 +49,7 @@ const SaveHeaderIntro = ( { attributes } ) => {
 					id={ blockId }
 				/>
 				<div {...blockProps}>
-					<div className="block-wrapper">
-						<div className="block-content">
-							<InnerBlocks.Content />
-						</div>
-					</div>
+					<InnerBlocks.Content />
 				</div>
 			</Fragment>
 		);

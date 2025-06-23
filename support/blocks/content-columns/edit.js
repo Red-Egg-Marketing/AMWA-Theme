@@ -17,7 +17,7 @@ const template = [
 	]
 ];
 
-const EditContentColumns = ( { attributes, setAttributes } ) => {
+const EditAnchorLinks = ( { attributes, setAttributes } ) => {
 		
 		const blockProps = useBlockProps({
 			className: 'content-columns column'
@@ -37,4 +37,4 @@ const EditContentColumns = ( { attributes, setAttributes } ) => {
 		);
 }
 
-export default EditContentColumns;
+export default EditAnchorLinks;
