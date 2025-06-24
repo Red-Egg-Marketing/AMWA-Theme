@@ -53,6 +53,10 @@
 	margin-bottom: 0;
 }
 
+.text-section .content-columns *:first-of-type {
+	margin-top: 0;
+}
+
 .text-section .content-columns {
 	width: 100%;
 	box-sizing: border-box;

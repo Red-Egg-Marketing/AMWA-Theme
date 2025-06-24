@@ -19,9 +19,23 @@
 .editor-visual-editor dd, .entry-content dd {
 	font-family: $font-body;
 	font-size: 18px;
-	line-height: 25px;
+	line-height: 30px;
 	color: black;
 	font-weight: 300;
+	@media screen and (min-width: $small-width) {
+		font-size: 22px;
+		line-height: 33px;
+	}
+}
+
+.site-main li,
+.site li,
+.editor-visual-editor li, .page .entry-content li {
+	font-size: 18px;
+	line-height: 30px;
+	color: black;
+	font-weight: 300;
+	font-family: $font-body;
 	@media screen and (min-width: $small-width) {
 		font-size: 22px;
 		line-height: 33px;
@@ -80,20 +94,6 @@ italic {
 	margin-bottom: 5px;
 	@media screen and (min-width: $small-width) {
 		margin-bottom: 10px;
-	}
-}
-
-.site-main li,
-.site li,
-.editor-visual-editor li, .page .entry-content li {
-	font-size: 18px;
-	line-height: 30px;
-	color: black;
-	font-weight: 300;
-	font-family: $font-body;
-	@media screen and (min-width: $small-width) {
-		font-size: 20px;
-		line-height: 33px;
 	}
 }
 
