@@ -61,6 +61,7 @@ import "./images-columns";
 // import "./cta";
 // import "./filter-resources";
 import "./feature-section";
+import "./text-section";
 import "./sign-up";
 import "./portraits";
 import "./anchor-links";

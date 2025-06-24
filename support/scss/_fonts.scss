@@ -142,6 +142,13 @@ italic {
 	}
 }
 
+.single .entry-content h2 {
+	font-size: 32px;
+	@media screen and (min-width: $small-width) {
+		font-size: 45px;
+	}
+}
+
 h1 a,
 h2 a,
 h3 a,

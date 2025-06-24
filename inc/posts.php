@@ -47,10 +47,10 @@ function lesson_register_template() {
         	]	
         ],
         ['amwa-theme-block/images-columns'],
-        ['amwa-theme-block/feature-section'],
+        ['amwa-theme-block/text-section'],
         ['amwa-theme-block/portraits'],
-        ['amwa-theme-block/feature-section'],
-        ['amwa-theme-block/feature-section']
+        ['amwa-theme-block/text-section'],
+        ['amwa-theme-block/text-section']
     ];
 }
 add_action( 'init', 'lesson_register_template' );
