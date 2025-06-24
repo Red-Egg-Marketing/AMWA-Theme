@@ -86,15 +86,15 @@
 	max-width: ($max-cont-w + 200px);
 	margin-left: auto;
 	margin-right: auto;
-	@media screen and (min-width: $small-width) {
-		width: 100%;
-		padding-right: 33.3333%;
-	}
+	width: 100%;
 }
 
 .feature-section.col-66 .content-columns:only-child .wrap {
+	width: 100%;
 	@media screen and (min-width: $small-width) {
 		margin-right: 0;
+		width: 100%;
+		padding-right: 33.3333%;
 	}
 }
 

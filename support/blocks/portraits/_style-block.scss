@@ -56,8 +56,10 @@
 
 .portraits .shortcode-section {
 	width: 100%;
+	margin-bottom: 35px;
 	@media screen and (min-width: $small-width) {
 		width: calc(50% - 30px);
+		margin-bottom: 80px;
 	}
 }
 
@@ -71,9 +73,11 @@
 	width: 100%;
 	box-sizing: border-box;
 	max-width: 100%;
+	margin-bottom: 35px;
 	@media screen and (min-width: $small-width) {
 		width: calc(50% - 30px);
 		padding-right: 16.66667%;
+		margin-bottom: 80px
 	}
 }
 
