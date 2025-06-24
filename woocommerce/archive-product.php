@@ -19,7 +19,6 @@ defined( 'ABSPATH' ) || exit;
 
 get_header( 'shop' );
 
-
 /**
  * Hook: woocommerce_before_main_content.
  *
@@ -50,32 +49,59 @@ do_action( 'woocommerce_shop_loop_header' );
   $ordering['orderby']   = stristr($ordering['orderby'], 'price') ? 'meta_value_num' : $ordering['orderby'];
   $limit = 30;
   $paged = $GLOBALS['wp_query']->get( 'paged', 1 );
+
   if ($paged > 0) {
   	$offset = ($limit * $paged - $limit);
    } else {
    	$offset = 0;
    }
 
-  $cat_products         = wc_get_products(array(
+  
+
+  if (is_shop()) {
+    $cat_products         = wc_get_products(array(
     'stock_status'      => 'instock',
     'visibility'        => 'visible',
     'status'            => 'publish',
     'limit'             => $limit,
     'paginate'          => true,
-    'offset'			=> $offset,
+    'offset'             => $offset,
     'return'            => 'ids',
     'orderby'           => $ordering['orderby'],
     'order'             => $ordering['order'],
-    'tax_query'             => array(
-        array(
+    'tax_query'         => [
+        [
             'taxonomy'      => 'product_cat',
             'field'         => 'term_id',
             'terms'         => array('31'),
             'operator'      => 'IN',
-        )
-   )
-
-  ));
+        ]
+    ]
+    ));
+    
+  } elseif(is_archive()) {
+    $object = get_queried_object();
+    $term_id = $object->term_id;
+    $cat_products         = wc_get_products(array(
+    'stock_status'      => 'instock',
+    'visibility'        => 'visible',
+    'status'            => 'publish',
+    'limit'             => $limit,
+    'paginate'          => true,
+    'offset'            => $offset,
+    'return'            => 'ids',
+    'orderby'           => $ordering['orderby'],
+    'order'             => $ordering['order'],
+    'tax_query'         => [
+        [
+            'taxonomy'      => 'product_cat',
+            'field'         => 'term_id',
+            'terms'         => $term_id,
+            'operator'      => 'IN',
+        ]
+    ]
+    ));
+  }
 
 
  wc_set_loop_prop('total', $cat_products->total);
@@ -91,7 +117,7 @@ do_action( 'woocommerce_shop_loop_header' );
         $post_object = get_post($cat_product);
         setup_postdata($GLOBALS['post'] =& $post_object);
 
-        echo '<div '; wc_product_class( ' ', $product ); echo '>'; 
+        echo '<div '; wc_product_class( ' ', $cat_product ); echo '>'; 
 
             do_action( 'woocommerce_before_shop_loop_item' );
             do_action( 'woocommerce_before_shop_loop_item_title' );

@@ -1,8 +1,16 @@
+.wp-block.grid-buttons {
+	max-width: 100%;
+	width: 100%;
+}
+
+.grid-buttons > .block-wrapper > .block-editor-inner-blocks > .block-editor-block-list__layout,
 .grid-buttons .block-wrapper {
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
+	max-width: $max-cont-w + 200px;
+	margin: 0 auto;
 	@media screen and (min-width: $small-width) {
 		padding-top: 4.25rem;
 		padding-bottom: 4.25rem;
@@ -17,6 +25,7 @@
 	grid-row-gap: 15px;
 	grid-column-gap: 15px;
 	align-items: stretch;
+	max-width: 100%;
 	@media screen and (min-width: $med-width + 1px) {
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-row-gap: 30px;

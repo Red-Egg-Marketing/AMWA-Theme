@@ -178,6 +178,19 @@ function amwa_theme_scripts() {
     	wp_enqueue_script( 'site-tickets' );
 	 }
 
+
+	 if (is_tax('product_cat', 'self-guided-tours')){
+	 	wp_register_script(
+        	'self-tickets',
+        	get_stylesheet_directory_uri() . '/js/self-tickets.js',
+        	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
+        	'1.1.7',
+        	true
+    	);
+
+    	wp_enqueue_script( 'self-tickets' );
+	 }
+
 }
 
 add_action( 'wp_enqueue_scripts', 'amwa_theme_scripts' );

@@ -55,7 +55,7 @@ get_header( 'shop' );
 	do_action( 'woocommerce_shop_loop_header' );
 
 	?>
-	<div id="guided-tours" data-tax="<?php echo $term->term_id ?>">
+	<div id="guided-tours" data-tax="<?php echo $term->slug ?>">
 
 	</div>
 	</div>

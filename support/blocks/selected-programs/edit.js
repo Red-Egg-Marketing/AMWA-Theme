@@ -97,7 +97,7 @@ const EditSelectedCaseStudies = ( { setAttributes, attributes, isSelected, clien
 		const setCategoryPosts = (value) => {
 			activateSwipe(false);
 			wp.apiFetch({
-				url: apiUrl + '?category=' + value + '&post_types=product&ppp=15'
+				url: apiUrl + '?category=' + value + '&post_types=product&ppp=-1'
 			}).then(resourcelist => {
 				setAttributes({resources: resourcelist });
 				activateResources(resourcelist);

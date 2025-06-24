@@ -7,6 +7,7 @@ import save from './save';
 
 registerBlockType( 'amwa-theme-block/buttons-grid', {
 	title: __( 'Grid of Buttons', 'amwa-theme-block' ),
+	apiVersion: 2,
 	attributes: {
 		columns: {
 			type: 'string',

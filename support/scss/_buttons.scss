@@ -262,6 +262,24 @@ body.buddypress .buddypress-wrap input[type=submit].auto {
 
 .wp-block-button[class*="arrow"] .wp-block-button__link {
 	text-align: left;
+	font-size: 18px;
+	font-weight: 500;
+	font-size: 20px;
+	@media screen and (min-width: $small-width) {
+		font-size: 25px;
+		line-height: 35px;
+	}
+}
+
+.wp-block-button[class*="arrow"] .wp-block-button__link em {
+	margin-top: 15px;
+	display: block;
+	font-weight: normal;
+	font-size: 16px;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+		line-height: 33px;
+	}
 }
 
 .wp-block-button[class*="arrow"] .wp-block-button__link:after {

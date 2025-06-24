@@ -44,6 +44,7 @@ module.exports = {
     './assets/js/editor.blocks' : './blocks/index.js',
     '../js/time' : './time.js',
     '../js/tickets' : './tickets.js',
+    '../js/self-tickets' : './self-tickets.js',
     './assets/js/main' : './front-end.js',
   },
   output: {

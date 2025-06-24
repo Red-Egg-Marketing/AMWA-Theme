@@ -65,4 +65,6 @@ import "./text-section";
 import "./sign-up";
 import "./portraits";
 import "./anchor-links";
+import "./selected-lessons";
+import "./lessons";
 // import "./contact-alt";

@@ -20,6 +20,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 	  	const [currentTypes, setCurrentTypes] = useState(false);
 	  	const [finalProduct, setFinalProduct] = useState(false);
 	  	const [dateAttr, setDateAttr] = useState(__('Select Date'));
+	  	const [eventType, setEventType] = useState(false);
 
 	  	const handleClickOutside = (event) => {
   			let target = event.target;
@@ -36,9 +37,13 @@ const SaveTickets = ( { attributes, reference } ) => {
 
   			document.addEventListener('keyup', handleKeyPress);
 
+  			let slug = reference.getAttribute('data-tax');
+  			let object = {'tax-slug' : slug};
+  			setEventType(slug);
     		wp.apiRequest({
         			url: apiUrl,
     			    method: 'POST',
+    			    data: object
     		}).then(resourcelist => {
     			let tempEvent = [];
     			resourcelist.forEach(resource => {

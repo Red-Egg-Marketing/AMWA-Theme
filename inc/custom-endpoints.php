@@ -43,6 +43,11 @@ function amwa_get_guided_tours() {
 
 	$current_date = current_time('timestamp', 1);
 
+	$get = $_GET;
+	$post_a = $_POST;
+	$tax = isset($get['tax-slug']) ? explode(',', $get['tax-slug']) : false;
+	$tax = isset($post_a['tax-slug']) ? explode(',', $post_a['tax-slug']) : $tax;
+
 	$args = [
 		'limit' 	=> -1,
 		'orderby' 	=>  'date',
@@ -50,7 +55,7 @@ function amwa_get_guided_tours() {
 			'relation' => 'AND',
 			[
 				'taxonomy' 	=> 'product_cat',
-				'terms'		=> 'guided-tour',
+				'terms'		=> $tax,
 				'field'		=> 'slug'
 			]
 		],
@@ -398,6 +403,106 @@ add_action( 'rest_api_init', function () {
   	[
     	'methods' => 'GET, POST',
     	'callback' => 'amwa_theme_return_programs',
+    	'permission_callback' => '__return_true'
+  	] 
+  );
+ });
+
+
+function amwa_theme_return_lessons($data, $post_types = 'lesson') {
+
+	$get = $_GET;
+	$post_a = $_POST;
+	$cats = isset($get['category']) ? explode(',', $get['category']) : false;
+	$cats = isset($post_a['category']) ? explode(',', $post_a['category']) : $cats;
+	$post_id = isset($get['id']) ? $get['id'] : false;
+	$post_id = isset($post_a['id']) ? $post_a['id'] : $post_id;
+	$html = isset($get['html']) ? $get['html'] : false;
+	$html = isset($post_a['html']) ? $post_a['html'] : $html;
+	$offset = isset($get['offset']) ? $get['offset'] : 0;
+	$offset = isset($post_a['offset']) ? $post_a['offset'] : $offset;
+	$post_types = isset($get['post_types']) ? explode(',', $get['post_types']) : $post_types;
+	$post_types = isset($post_a['post_types']) ? explode(',', $post_a['post_types']) : $post_types;
+	$posts_per_page = isset($get['ppp']) ? $get['ppp'] : 1;
+	$posts_per_page = isset($post_a['ppp']) ? $post_a['ppp'] : $posts_per_page;
+	$stacked = isset($get['stacked']) ? $get['stacked'] : false;
+	$stacked = isset($post_a['stacked']) ? $post_a['stacked'] : $stacked;
+	$excerpt = isset($get['excerpt']) ? filter_var($get['excerpt'], FILTER_VALIDATE_BOOLEAN) : true;
+	$excerpt = isset($post_a['excerpt']) ? filter_var($post_a['excerpt'], FILTER_VALIDATE_BOOLEAN) : $excerpt;
+	$read_more = isset($get['read_more']) ? $get['read_more'] : 'View Program';
+	$read_more = isset($post_a['read_more']) ? $post_a['read_more'] : $read_more;
+		
+	$current_date = current_time('timestamp', 1);
+
+	$args = [
+		'post_type' => $post_types,
+		'post_status' => 'publish',
+		'posts_per_page' => $posts_per_page,
+		'offset'=> $offset,
+		'ignore_sticky_posts' => true,
+		'ppp' => $posts_per_page,
+		'order' => 'ASC',
+	];
+
+	if ($cats) {
+		$args['tax_query'][] =
+			[
+				'terms' => $cats,
+				'field' => 'slug',
+				'taxonomy' => 'category',
+		];
+	}
+
+	if($post_id != false) {
+		$args['p'] = $post_id;
+	}
+
+	$posts = $html == false ? [] : '';
+	$query = new WP_Query($args);
+	$x = 0;
+
+	if ($query->have_posts()) {
+		while($query->have_posts()) {
+			$query->the_post();
+			$id = get_the_ID();
+			if ($html == false) {
+		
+				$post = $query->post;
+				$postObj = new stdClass;
+				$postObj->ID = $id;
+				$postObj->title = $post->post_title;
+				$postObj->excerpt = wp_trim_words($post->post_content, 25, '...');
+				$postObj->link = get_the_permalink($id);
+				$post_type = get_post_type_object($post_types);
+				$postObj->label = $post_type->labels->singular_name;
+				$thumbnail = get_the_post_thumbnail_url($id, 'post-landscape') != false ? get_the_post_thumbnail_url($id, 'post-landscape') : get_the_post_thumbnail_url($id, 'thumbnail');
+				$postObj->featured_image = $thumbnail;
+				$posts[] = $postObj;
+			} elseif($html == true && $html != 'cards') {
+				
+				$posts .= amwa_theme_case_study_stat_block($id);
+				
+			} elseif($html == 'cards') {
+				$image = ($stacked == true && $x >= $posts_per_page - 2) ? false : true; 
+				$posts .= ($stacked == true && $x == $posts_per_page - 2) ? '<div class="resource-col">' : '';
+				$posts .= amwa_theme_resource_card($id, false, $read_more, $image, $excerpt);
+				$posts .= ($stacked == true && $x == $posts_per_page - 1) ? '</div>' : '';
+			}
+			$x++;
+		}
+
+		wp_reset_postdata();
+
+	}
+	return $posts;
+}
+
+
+add_action( 'rest_api_init', function () {
+  register_rest_route( 'AMWA/v2', '/lessons/', 
+  	[
+    	'methods' => 'GET, POST',
+    	'callback' => 'amwa_theme_return_lessons',
     	'permission_callback' => '__return_true'
   	] 
   );
