@@ -15,7 +15,6 @@ $id = get_the_id();
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="entry-content">
 
-		<div class="post-content">
 			<?php
 
 			the_content(
@@ -34,6 +33,5 @@ $id = get_the_id();
 			);
 			?>
 		
-		</div><!-- .entry-content -->
-	</div>
+	</div><!-- .entry-content -->
 </article><!-- #post-<?php the_ID(); ?> -->

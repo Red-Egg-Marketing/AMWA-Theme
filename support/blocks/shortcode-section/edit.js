@@ -47,7 +47,7 @@ const EditShortcodeSection = ( { attributes, setAttributes, clientId } ) => {
 				<div {...blockProps}>
 					<InnerBlocks
 						template={ template }
-						allowedBlocks={ ['core/shortcode'] }
+						allowedBlocks={ ['core/shortcode', 'core/heading', 'core/paragraph'] }
 					/>
 				</div>
 			</Fragment>

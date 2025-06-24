@@ -1,4 +1,17 @@
 
+.is-root-container > p,
+.is-root-container > h1,
+.is-root-container > h2,
+.is-root-container > h3,
+.is-root-container > h4,
+.is-root-container > h5,
+.is-root-container > h6,
+.is-root-container > address,
+.is-root-container > ul,
+.is-root-container > ol,
+.is-root-container > figure,
+.is-root-container > table,
+.is-root-container > .wp-block-buttons,
 .entry-content > p, 
 .entry-content > h1, 
 .entry-content > h2,
@@ -31,11 +44,9 @@ h1 {
 	text-transform: uppercase;
 	font-weight: 500;
 	letter-spacing: 0.75px;
-	margin-top: 2.5rem;
 	@media screen and (min-width: $small-width) {
 		font-size: 65px;
 		line-height: 80px;
-		margin-top: 0;
 	}
 }
 
