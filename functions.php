@@ -447,6 +447,24 @@ function ts_quantity_plus_minus() {
    <?php
 }
 
+function handle_custom_query_var( $query, $query_vars ) {
+	if ( ! empty( $query_vars['expiration_date'] ) ) {
+    	$current_date = current_time('timestamp', 1);
+
+		$query['meta_query'][] = array(
+			'key'     	=> 'WooCommerceEventsDateTimestamp',
+         'compare'   => '>=',
+         'type'      => 'NUMERIC',
+         'value'     => $current_date
+		);
+	}
+
+	return $query;
+}
+
+add_filter( 'woocommerce_product_data_store_cpt_get_products_query', 'handle_custom_query_var', 10, 2 );
+
+
 
 
 /**

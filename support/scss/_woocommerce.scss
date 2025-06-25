@@ -96,7 +96,8 @@ body.woocommerce .site-main > .wrapper {
 
 body.woocommerce .product-type-variable form.cart .variations_button,
 .woocommerce div.product .single_variation_wrap,
-.woocommerce div.product form.cart {
+body.woocommerce div.product form.cart,
+body.woocommerce div.product.product-type-simple form.cart {
 	display: flex !important;
 	flex-wrap: wrap;
 	align-items: stretch;

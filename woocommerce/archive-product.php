@@ -92,7 +92,9 @@ do_action( 'woocommerce_shop_loop_header' );
     'return'            => 'ids',
     'orderby'           => $ordering['orderby'],
     'order'             => $ordering['order'],
+    'expiration_date'   => true,
     'tax_query'         => [
+        'relation'  => 'AND',
         [
             'taxonomy'      => 'product_cat',
             'field'         => 'term_id',
