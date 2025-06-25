@@ -550,6 +550,7 @@ li.menu-item.nav-button a {
 		padding-top: 26px;
 		padding-bottom: 26px;
 		justify-content: center;
+		position: unset;
 	}
 	@media screen and (min-width: $med-width + 1px) {
 		margin-bottom: 0;
@@ -557,6 +558,7 @@ li.menu-item.nav-button a {
 		padding-top: 26px;
 		padding-bottom: 26px;
 		justify-content: center;
+		position: unset;
 	}
 }
 
@@ -600,13 +602,14 @@ li.menu-item.nav-button a {
 	padding-bottom: 10px;
 	display: none;
 	@media screen and (min-width:  $med-small-width) {
-		background: $light-yellow;
 		padding-top: 2rem;
 		padding-bottom: 1.5rem;
 		position: absolute;
+		background: $light-yellow;
 		width: 100%;
 	}
 }
+
 
 .main-navigation .nav-menu > .menu-item:not(.mega-menu) > .inner-wrap li a {
 	color: $green;

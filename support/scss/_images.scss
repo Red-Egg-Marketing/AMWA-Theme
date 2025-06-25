@@ -39,3 +39,7 @@
 		padding: 20px 30px;
 	}
 }
+
+.wp-block-gallery.has-nested-images figure.wp-block-image {
+	aspect-ratio: 1/1;
+}

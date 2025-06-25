@@ -23,13 +23,77 @@
 .images-columns > .block-wrapper > .block-content {
 	display: flex;
 	grid-column-gap: 30px;
+	grid-row-gap: 30px;
+	flex-wrap: wrap;
 	width: 100%;
+}
+
+.image-column figure img {
+	width: 100%;
+	display: block;
+}
+
+.images-columns .image-column figure a {
+	display: block;
+	width: 100%;
+	height: 100%;
 }
 
 .images-columns .image-column {
 	width: 100%;
 	@media screen and (min-width: $small-width) {
-		width: calc(33.3333% - 13.333px);
+		width: calc(33.3333% - 20px);
 		margin: 0;
 	}
+}
+
+.images-columns .image-column.width-50 {
+	@media screen and (min-width: $small-width) {
+		width: calc(50% - 15px);
+		margin: 0;
+	}
+}
+
+
+.images-columns .image-column.width-66 {
+	@media screen and (min-width: $small-width) {
+		width: calc(66.6666% - 15px);
+		margin: 0;
+	}
+}
+
+
+.images-columns .image-column.width-100 {
+	@media screen and (min-width: $small-width) {
+		width: 100%;
+		margin: 0;
+	}
+}
+
+
+.images-columns .image-column figcaption {
+	display: none;
+}
+
+
+.images-columns .image-column figure {
+	margin-bottom: 0;
+}
+
+
+.images-columns .image-column p {
+	display: block;
+	background: $light-yellow;
+	padding: 15px 20px;
+	margin-top: 0;
+	margin-bottom: 0;
+	font-size: 18px;
+	@media screen and (min-width: $small-width) {
+		padding: 20px 30px;
+		font-size: 20px;
+	}
+}
+
+.images-columns .image-column p + p {
+	padding-top: 0;
 }

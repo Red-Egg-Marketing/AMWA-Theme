@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.5.9' );
+	define( '_S_VERSION', '1.6.7' );
 }
 
 if ( ! function_exists( 'amwa_theme_setup' ) ) :
@@ -312,7 +312,7 @@ function amwa_posts_header() {
 			$image = '<img src="' . get_stylesheet_directory_uri() . '/img/shop-header.jpg" />';
 		} else {
 			$feat = get_post_thumbnail_id($post->ID);
-			$image = wp_get_attachment_image($feat, 'large');
+			$image = wp_get_attachment_image($feat, 'full');
 		}
 		?>
 		<header class="hero">

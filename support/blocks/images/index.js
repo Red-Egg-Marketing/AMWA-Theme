@@ -17,6 +17,14 @@ registerBlockType( 'amwa-theme-block/images', {
 			type: 'array',
 			default: []
 		},
+		allowBlock: {
+			type: 'array',
+			default: ['core/image', 'core/paragraph']
+		},
+		width: {
+			type: 'string',
+			default: ''
+		}
 	},
 	edit: edit,
 	save: save,

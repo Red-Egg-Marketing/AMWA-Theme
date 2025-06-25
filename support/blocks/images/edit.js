@@ -7,22 +7,62 @@ import BackgroundColor from '../../components/BackgroundColor.js';
 
 const temp = [
 	['core/image', {},],
+	['core/details', {},],
 ];
+
+const columnsArray = [
+	{
+		label: __('-'),
+	},
+	{
+		label: __('33%'),
+		value: 'width-33'
+	},
+	{
+		label: __('50%'),
+		value: 'width-50'
+	},
+	{
+		label: __('66%'),
+		value: 'width-66'
+	},
+	{
+		label: __('100%'),
+		value: 'width-100'
+	}
+];
+
+
 
 const EditImages = ( { attributes, setAttributes } ) => {
 
 	
 		const {
-			title, content, icons, subtitle, allowBlocks, template
+			 allowBlocks, width
 		} = attributes;
 
+
+		const setColumnWidths = (value) => {
+			setAttributes({width : value});
+		}
+
 		const blockProps = useBlockProps({
-			className: 'image-column column'
-		});	
+			className: 'image-column column ' + width
+		});
 
 		
 		return (
 			<Fragment>
+				<InspectorControls>
+					<SelectControl
+						label={ __('Width')}
+						value={ width }
+						options={
+							columnsArray
+						}
+						onChange={ setColumnWidths }
+					/>
+				</InspectorControls>
 				<div {...blockProps}>							
 					<InnerBlocks 
 						allowedBlocks={ allowBlocks }

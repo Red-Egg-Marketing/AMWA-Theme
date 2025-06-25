@@ -8,9 +8,13 @@ import Content from '../../components/Content.js';
 import Icons from '../../components/Icons.js';
 
 const SaveContactColumn = ( { attributes } ) => {
+
+		const {
+			width
+		} = attributes;
 	
 		const blockProps = useBlockProps.save({
-			className: 'image-column column'
+			className: 'image-column column ' + width
 		});
 	
 		return (
