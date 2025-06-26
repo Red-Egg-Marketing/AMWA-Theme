@@ -22,8 +22,13 @@
 	width: 100%;
 	margin: 0 auto;
 	position: relative;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
+.header-intro-block .block-wrapper * {
 	@media screen and (min-width: $small-width) {
-		padding-right: 33.3333%;
+		max-width: 66.666%;
 	}
 }
 

@@ -91,6 +91,8 @@ const EditLessons = ( { setAttributes, attributes, isSelected, clientId } ) => {
 			});
 		}
 
+		console.log(isSelected);
+
 		const setCategoryPosts = (value) => {
 			activateSwipe(false);
 			wp.apiFetch({
@@ -139,7 +141,7 @@ const EditLessons = ( { setAttributes, attributes, isSelected, clientId } ) => {
 					<div className="block-wrapper">
 						<div className="resources-wrap">
 							<div className="resources swiper">
-							{ tempSwip == true && (
+							{ !isSelected &&tempSwip == true && (
 								<Fragment>
 									<div className="swiper-wrapper">
 											{ (tempResources.length > 0) && tempResources.map((resource, resourceIndex) => {

@@ -145,7 +145,7 @@ const EditSelectedCaseStudies = ( { setAttributes, attributes, isSelected, clien
 							{ tempSwip == true && (
 								<Fragment>
 									<div className="swiper-wrapper">
-											{ (tempResources.length > 0) && tempResources.map((resource, resourceIndex) => {
+											{ !isSelected && (tempResources.length > 0) && tempResources.map((resource, resourceIndex) => {
 													let swip = new Swiper('.resources.swiper', 
 														{
 															loop: false,
