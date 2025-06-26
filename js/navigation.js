@@ -105,6 +105,7 @@
 
 	// Get all the link elements with children within the menu.
 	var linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
+	var listsWithChildren = menu.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
 
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( var link of links ) {
@@ -118,8 +119,20 @@
 	}
 
 
-	function positionChildMenu() {
+	for ( var link of listsWithChildren ) {
+		link.addEventListener( 'mouseover', positionChildMenu, false );
+	}
 
+
+	function positionChildMenu() {
+		if ( event.type === 'mouseover') {
+			let self = this;
+			let rect = self.getBoundingClientRect();
+			let left = rect.left;
+			let sub = self.querySelector('.sub-menu');
+			sub.style.left = left + 'px';
+	
+		}
 		
 	}
 

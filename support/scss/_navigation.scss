@@ -118,12 +118,7 @@ a.custom-logo-link {
 	font-style: italic;
 	font-weight: bold;
 	text-transform: capitalize;
-	font-size: 16px;
 	position: relative;
-	@media screen and (min-width: $med-small-width) {
-		font-size: 19px;
-		line-height: 24px;
-	}
 	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
 		margin-left: 0;
 		margin-right: 0;
@@ -159,9 +154,6 @@ a.custom-logo-link {
 .main-navigation .sub-menu li.menu-item a {
 	font-style: normal;
 	display: inline;
-	@media screen and (min-width: $med-small-width) {
-		display: block;
-	}
 }
 
 .main-navigation .nav-menu > .menu-item.mega-menu > .sub-menu > .menu-item {
@@ -240,8 +232,12 @@ a.custom-logo-link {
 }
 
 .main-navigation .sub-menu {
+	position: relative;
 	padding-top: 0;
 	padding-bottom: 0;
+	@media screen and (min-width: $med-small-width) {
+		display: inline-block;
+	}
 }
 
 
@@ -253,10 +249,14 @@ a.custom-logo-link {
 	width: 100%;
 	display: none;
 	@media screen and (min-width: $med-small-width) {
-		display: block;
+		display: inline-block;
+		flex-wrap: wrap;
 		max-width: 100%;
+		width: auto;
+		columns: 2;
 	}
 }
+
 
 .site-header .wrapper {
 	max-width: $max-cont-w + 200px;
@@ -306,6 +306,9 @@ a.custom-logo-link {
 	justify-content: flex-start;
 	align-items: stretch;
 	width: auto;
+	@media screen and (min-width: $med-small-width) {
+		margin-left: 2.5%;
+	}
 }
 
 .main-navigation .nav-menu>.menu-item:last-of-type {
@@ -602,8 +605,8 @@ li.menu-item.nav-button a {
 	padding-bottom: 10px;
 	display: none;
 	@media screen and (min-width:  $med-small-width) {
-		padding-top: 2rem;
-		padding-bottom: 1.5rem;
+		padding-top: 40px;
+		padding-bottom: 40px;
 		position: absolute;
 		background: $light-yellow;
 		width: 100%;
@@ -612,7 +615,7 @@ li.menu-item.nav-button a {
 
 
 .main-navigation .nav-menu > .menu-item:not(.mega-menu) > .inner-wrap li a {
-	color: $green;
+	color: black;
 }
 
 .main-navigation .nav-menu > .menu-item:not(.mega-menu):hover > .inner-wrap {
@@ -628,7 +631,6 @@ li.menu-item.nav-button a {
 		margin-bottom: 0;
 		padding-top: 0;
 		padding-bottom: 0;
-		display: block;
 	}
 }
 
@@ -737,7 +739,7 @@ li.menu-item.nav-button a {
 
 .main-navigation .sub-menu .menu-item a {
 	width: auto;
-	font-size: 20px;
+	font-size: 18px;
 	text-transform: none;
 	line-height: 24px;
 	position: relative;
@@ -745,8 +747,7 @@ li.menu-item.nav-button a {
 	font-weight: 500;
 	@media screen and (min-width:  $med-small-width) {
 		width: 100%;
-		font-size: 22px;
-		letter-spacing: 0.5px;
+		font-size: 20px;
 		line-height: 26px;
 		text-transform: none;
 	}
