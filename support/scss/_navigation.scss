@@ -67,8 +67,20 @@ a.custom-logo-link {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
+.site-header.fixed-pos {
+	@media screen and (min-width: $med-small-width) {
+		position: fixed;
+		background: transparent;
+		box-shadow: none;
+	}
+}
+
 .site-header.fixed {
-	background: white;
+	@media screen and (min-width: $med-small-width) {
+		background: white;
+		position: fixed;
+		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
+	}
 }
 
 .site-header svg .color-change {
@@ -488,6 +500,48 @@ li.menu-item.nav-button a {
 	color: black;
 	&:hover {
 		color: $light-orange;
+	}
+}
+
+.site-header.fixed-pos svg .color-change {
+	@media screen and (min-width:  $med-small-width) {
+		fill: white;
+	}
+}
+
+.site-header.fixed-pos .time-active svg .color-change {
+	@media screen and (min-width:  $med-small-width) {
+		fill: black;
+	}
+}
+
+.site-header.fixed-pos.fixed svg .color-change {
+	@media screen and (min-width:  $med-small-width) {
+		fill: black;
+	}
+}
+
+.site-header.fixed-pos .time-toggle {
+	@media screen and (min-width:  $med-small-width) {
+		color: white;
+	}
+}
+
+.site-header.fixed-pos .time-active .time-toggle {
+	@media screen and (min-width:  $med-small-width) {
+		color: black;
+	}
+}
+
+.site-header.fixed-pos .main-navigation .menu-item:not(.nav-button) a {
+	@media screen and (min-width:  $med-small-width) {
+		color: white;
+	}
+}
+
+.site-header.fixed-pos.fixed .main-navigation .menu-item:not(.nav-button) a {
+	@media screen and (min-width:  $med-small-width) {
+		color: black;
 	}
 }
 

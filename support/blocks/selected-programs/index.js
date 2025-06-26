@@ -1,24 +1,23 @@
 const { registerBlockType } = wp.blocks;
+const { RichText, MediaUpload, InnerBlocks } = wp.blockEditor;
+const { Button } = wp.components;
 const { __ } = wp.i18n;
 import edit from './edit';
 import save from './save';
 
-registerBlockType( 'amwa-theme-block/selected-case-study', {
-	apiVersion: 2,
+registerBlockType( 'amwa-theme-block/selected-programs', {
 	title: __( 'Selected Programs', 'amwa-theme-block' ),
-	description: __( 'Block for a selecting programs by category.', 'amwa-theme-block' ),
-	icon: 'welcome-write-blog',
+	apiVersion: 2,
+	icon: 'schedule',
 	category: 'layout',
 	attributes: {
-		resources: {
-			type: 'array',
-			default: []
-		},
-		category : {
+		bgColor: {
 			type: 'string',
+			default: ''
 		},
-		mainTitle : {
+		bgSlug: {
 			type: 'string',
+			default: ''
 		},
 		padding: {
 			type: 'object',
@@ -34,9 +33,6 @@ registerBlockType( 'amwa-theme-block/selected-case-study', {
 			type: 'string'
 		}
 	},
-	supports: {
-		anchor: true
-	},
 	edit: edit,
-	save: save
+	save: save,
 } );

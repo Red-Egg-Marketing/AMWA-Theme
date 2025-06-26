@@ -33,7 +33,7 @@ const EditLessons = ( { setAttributes, attributes, isSelected, clientId } ) => {
 		const { resources, mainTitle, category, padding, blockId, margin } = attributes;
 
 		const blockProps = useBlockProps({
-			className: 'selected-case-studies'
+			className: 'lessons'
 		});
 
 		const [searchActive, activateSearch] = useState({index: false, active: false});

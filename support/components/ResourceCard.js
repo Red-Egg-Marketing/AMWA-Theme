@@ -23,6 +23,7 @@ const ResourceCard = (props) => {
 			<div className={ `resource-card ${slideClass} ${typeClass}` } key={ props.resourceIndex }>
 				<div className="resource-extra">
 				<div className="resource-wrap" href={ props.resourceURL }>
+					<div className="cont-wrap">
 					{ (props.resourceID != 0 && props.updateResourceImage != null) && (
 						<Fragment>
 							<div className="media-controls">
@@ -142,6 +143,7 @@ const ResourceCard = (props) => {
 								{ text }
 							</button>
 						)}
+					</div>
 					</div>	
 				</div>
 				</div>
@@ -169,6 +171,7 @@ ResourceCard.View = (props) => {
 			<div className={ `resource-card ${slideClass} ${typeClass}` } key={ props.resourceIndex }>
 				<div className="resource-extra">
 				<a className="resource-wrap" href={ props.resourceURL }>
+					<div className="cont-wrap">
 					{ props.resourceImg != 'undefined' && (
 						<div className="image-cont"
 							data-imgid={ props.resourceImgID }
@@ -224,6 +227,7 @@ ResourceCard.View = (props) => {
 								{ text }
 							</button>
 						)}
+					</div>
 					</div>
 				</a>
 				</div>

@@ -11,6 +11,21 @@ registerBlockType( 'amwa-theme-block/content-column', {
 	icon: 'columns',
 	category: 'layout',
 	parent: ['amwa-theme-block/image-text', 'amwa-theme-block/feature-section', 'amwa-theme-block/portraits'],
+	attributes: {
+		padding: {
+			type: 'object',
+			default: {
+			}
+		},
+		margin: {
+			type: 'object',
+			default: {
+			}
+		},
+		blockId: {
+			type: 'string'
+		},
+	},
 	edit: edit,
 	save: save,
 } );

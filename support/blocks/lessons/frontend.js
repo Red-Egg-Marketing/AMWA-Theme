@@ -7,7 +7,7 @@ import Swiper from 'swiper/bundle';
 import ResourceCard from '../../components/ResourceCard.js';
 const apiUrl  = '/wp-json/AMWA/v2/lessons';
 
-const ResourcesRoot = document.querySelectorAll('.selected-case-studies');
+const ResourcesRoot = document.querySelectorAll('.lessons');
 
 const SaveSelectedProjects = ( {category, append} ) => {
 	  	
@@ -20,7 +20,7 @@ const SaveSelectedProjects = ( {category, append} ) => {
 			if (resources === false) {
 				data['ppp'] = 15;
 				data['category'] = category;
-				data['post_types'] = 'product';
+				data['post_types'] = 'lesson';
 				setData(data);
     			wp.apiRequest({
         			url: apiUrl,
@@ -30,7 +30,7 @@ const SaveSelectedProjects = ( {category, append} ) => {
     			    selectResources(resourcelist);
     			    new Swiper(append, 
 						{
-							autoHeight: true,
+							autoHeight: false,
 							loop: false,
 							slidesPerView: 1,
 							autoplay: true,
@@ -43,11 +43,11 @@ const SaveSelectedProjects = ( {category, append} ) => {
   							},
 							breakpoints: {
 								768: {
-									slidesPerView: 2.15
+									slidesPerView: 3
 								},
 								1200: {
-									slidesPerView: 3.25,
-									spaceBetween: 45
+									slidesPerView: 4,
+									spaceBetween: 30
 								}
 							}
 						}
@@ -72,12 +72,11 @@ const SaveSelectedProjects = ( {category, append} ) => {
 										resourceID={ resource.ID }
 										resourceImg={ resource.featured_image }
 										resourceTitle={ resource.title  }
-										resourceDate={ resource.date }
 										resourceTime={ resource.time }
 										resourceClass="swiper-slide"
 										displayButton={ false }
 										displayExcerpt={ false }
-										displayDate={ true }
+										displayDate={ false }
 									/>
 								</Fragment>
 							)
@@ -91,8 +90,12 @@ const SaveSelectedProjects = ( {category, append} ) => {
 						</Fragment>
 					)}
 				</div>
-				<div class="fa swiper-button-prev"></div>
-  				<div class="fa swiper-button-next"></div>
+				<div className="controls-wrapper">
+					<div className="swiper-controls">
+						<div class="fa swiper-button-prev"></div>
+  						<div class="fa swiper-button-next"></div>
+  					</div>
+  				</div>
 			</Fragment>
 		);
 }

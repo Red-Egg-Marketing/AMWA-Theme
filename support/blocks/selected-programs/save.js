@@ -1,43 +1,36 @@
-const { RichText, InnerBlocks, useBlockProps } = wp.blockEditor;
+const { useBlockProps } = wp.blockEditor;
 const { Fragment } = wp.element;
+const { registerBlockType } = wp.blocks;
+const { RichText, MediaUpload, InnerBlocks } = wp.blockEditor;
+const { Button } = wp.components;
 const { __ } = wp.i18n;
 import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
 
-const SaveSelectedCaseStudies = ( { attributes } ) => {
+const SaveSelectedLessons = ( { attributes } ) => {
 
-	const { resources, mainTitle, category, padding, blockId, margin } = attributes;
-
-	const blockProps = useBlockProps.save({
-		className: 'selected-case-studies',
-		id: blockId
-	});
-
-	return (
-		<Fragment>
-			<PaddingSelector.View 
-				padding={ padding }
-				id={ blockId }
-			/>
-			<MarginSelector.View 
-				margin={ margin }
-				id={ blockId  }
-			/>
-			<section {...blockProps}>
-				<div className="case-studies-block">
-					<div className="block-wrapper">
-						<div className="resources-wrap">
-							<div 
-								className="resources swiper"
-								data-cat={ category }
-							>
-							</div>
-						</div>
-					</div>
+		const { bgSlug, bgColor, padding, blockId, margin } = attributes;
+		
+		const blockProps = useBlockProps.save({
+			id: blockId,
+			className: 'selected-programs' + (bgSlug != '' ? ' ' + bgSlug + ' with-bg' : '')
+		});
+		
+		return (
+			<Fragment>
+				<PaddingSelector.View 
+					padding={ padding }
+					id={ blockId }
+				/>
+				<MarginSelector.View 
+					margin={ margin }
+					id={ blockId }
+				/>
+				<div {...blockProps}>
+					<InnerBlocks.Content />
 				</div>
-			</section>
-		</Fragment>
-	);
+			</Fragment>
+		);
 }
 
-export default SaveSelectedCaseStudies;
+export default SaveSelectedLessons;

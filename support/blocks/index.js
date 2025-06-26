@@ -51,6 +51,7 @@ import "./grid-buttons";
 // import "./stat-callout";
 // // import "./progress-block";
 // // import "./case-study";/
+import "./programs";
 import "./selected-programs";
 import "./timeline";
 import "./period";

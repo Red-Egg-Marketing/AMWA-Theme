@@ -9,7 +9,7 @@ const SaveLessons = ( { attributes } ) => {
 	const { resources, mainTitle, category, padding, blockId, margin } = attributes;
 
 	const blockProps = useBlockProps.save({
-		className: 'selected-case-studies',
+		className: 'lessons',
 		id: blockId
 	});
 

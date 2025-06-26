@@ -20,6 +20,7 @@ button.wp-button {
 	text-decoration: none;
 	border-radius: 0;
 	font-weight: 600;
+	letter-spacing: 0.3px;
 	&.is-small {
 		@media screen and (min-width: $small-width) {
 			font-size: 17px;
@@ -137,21 +138,21 @@ body.buddypress .buddypress-wrap input[type=submit].auto {
 	background: transparent;
 	color: white;
 	box-shadow: inset 0 0 0 2px #fff;
-	:visited:hover,
+	&:visited:hover,
 	&:hover {
 		background: white;
 		color: black;
 	}
 	&:visited {
 		background: white;
-		color: black;
+		color: white;
 	}
 }
 
 .wp-button.is-style-solid-white,
 .wp-block-button.is-style-solid-white .wp-block-button__link {
 	background: white;
-	color: $green;
+	color: black;
 	&:visited:hover,
 	&:hover {
 		background: $teal;

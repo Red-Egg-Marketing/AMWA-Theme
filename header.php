@@ -9,7 +9,12 @@
  * @package providence
  */
 
+global $post;
+$fixed_nav = false;
+
 if (function_exists('get_field')) {
+
+
     	$company_settings = [
     	    'name'          => get_field('business_name', 'options'),
     	    'phone'         => get_field('business_phone', 'options'),
@@ -19,6 +24,9 @@ if (function_exists('get_field')) {
     	    'state'         => get_field('business_state', 'options'),
     	    'icons'         => get_field('icons', 'options'),
     	];
+
+    	$fixed_nav = get_field('fixed_navigation', $post->ID);
+    	$fixed_nav = $fixed_nav == 'yes' ? 'fixed-pos' : '';
     
 	}
 ?>
@@ -37,7 +45,7 @@ if (function_exists('get_field')) {
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'AMWA' ); ?></a>
 
-	<header id="masthead" class="site-header">
+	<header id="masthead" class="site-header <?php echo $fixed_nav; ?>">
 		<div class="main-content-nav">
 		<div class="wrapper main-wrapper">
 			<div class="site-branding">

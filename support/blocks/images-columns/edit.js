@@ -30,12 +30,10 @@ const EditImageColumns = ( { attributes, setAttributes, clientId } ) => {
 		const {
 			contentAlign, image, bgColor, bgSlug, color, vidOrImg, videoID, videoURL, withDrop, fullWidth, padding, blockId, margin
 		} = attributes;
-		
 
 		const blockProps = useBlockProps({
 			className: 'images-columns' + (bgSlug != '' ? ' ' + bgSlug + ' with-bg' : '') + (withDrop == false ? ' no-ds' : ' with-ds'),
 		});	
-
 
     	React.useEffect( () => {
         	if ( ! blockId ) {

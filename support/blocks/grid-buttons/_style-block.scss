@@ -3,18 +3,22 @@
 	width: 100%;
 }
 
-.grid-buttons > .block-wrapper > .block-editor-inner-blocks > .block-editor-block-list__layout,
-.grid-buttons .block-wrapper {
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
+.grid-buttons {
 	padding-top: 2.5rem;
 	padding-bottom: 2.5rem;
-	max-width: $max-cont-w + 200px;
-	margin: 0 auto;
 	@media screen and (min-width: $small-width) {
 		padding-top: 4.25rem;
 		padding-bottom: 4.25rem;
 	}
+}
+
+.grid-buttons > .block-wrapper > .block-editor-inner-blocks > .block-editor-block-list__layout,
+.grid-buttons .block-wrapper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	max-width: $max-cont-w + 200px;
+	margin: 0 auto;
+	position: relative;
 }
 
 .grid-buttons .wp-block-buttons {

@@ -291,12 +291,20 @@ h4 {
 	margin-top: 20px;
 	position: relative;
 	z-index: 3;
+	transition-property: margin;
+	transition-duration: 0.35s;
+}
+
+
+.swiper-container-autoheight .swiper-slide {
+	height: 100%;
 }
 
 .resource-card {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	height: 100%;
 	@media screen and (min-width: $small-width) and (max-width: $med-width) {
 		width: calc(50% - 2.5rem);
 		margin: 0 1.25rem 2.5rem;
@@ -316,10 +324,26 @@ h4 {
 .resource-card .resource-extra {
 	width: 100%;
 }
+
+.resource-card .resource-date {
+	color: white;
+	font-style: italic;
+	font-size: 18px;
+	font-family: $font-body;
+	margin-top: 5px;
+	display: block;
+	@media screen and (min-width: $small-width) {
+		font-size: 20px;
+		margin-top: 8px;
+	}
+}
+
 .resource-card .content  {
-	display: flex;
+	display: block;
+	align-self: end;
 	padding: 1.25rem;
-	align-items: flex-end;
+	flex-wrap: wrap;
+	width: 100%;
 	@media screen and (min-width: $small-width) {
 		padding: 30px;
 	}
@@ -331,7 +355,14 @@ h4 {
 	display: flex;
 	align-items: stretch;
 	@media screen and (min-width: $small-width) {
-		min-height: 325px;
+		min-height: 350px;
+	}
+}
+
+.programs .resource-card .cont-wrap {
+	min-height: 350px;
+	@media screen and (min-width: $small-width) {
+		min-height: 475px;
 	}
 }
 
@@ -476,6 +507,8 @@ h4 {
     position: absolute;
     top: 0;
     left: 0;
+    transition-property: transform;
+    transition-duration: 0.5s;
 }
 
 .resource-card .image-cont:before {
@@ -486,7 +519,7 @@ h4 {
 	width: 100%;
 	height: 100%;
 	z-index: 2;
-	background: linear-gradient(to bottom, transparent 60%, rgba(0, 0, 0, 1.0));
+	background: linear-gradient(to bottom, transparent 20%, rgba(0, 0, 0, 1.0));
 	opacity: 0.8;
 }
 
@@ -540,6 +573,15 @@ h4 {
 	width: 100%;
 	height: 100%;
 	cursor: pointer;
+}
+
+.programs .resource-card a:hover .content {
+	margin-bottom: 15px;
+}
+
+.collections .resource-card a:hover .image-cont,
+.lessons .resource-card a:hover .image-cont {
+	transform: scale(1.075);
 }
 
 .resource-card .image-cont {

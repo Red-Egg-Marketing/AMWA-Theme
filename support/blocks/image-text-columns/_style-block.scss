@@ -8,13 +8,13 @@
 	width: 100%;
 }
 
-.image-columns:not(.full-width) {
+.image-columns {
 	width: 100%;
-	padding-top: 2rem;
-	padding-bottom: 2rem;
+	padding-top: 3.25rem;
+	padding-bottom: 3.25rem;
 	@media screen and (min-width: $small-width) {
-		padding-top: 3.75rem;
-		padding-bottom: 3.75rem;
+		padding-top: 7.5rem;
+		padding-bottom: 7.5rem;
 	}
 }
 
@@ -42,14 +42,10 @@
 }
 
 .image-columns.full-width .content-columns {
-	padding-top: 2.25rem;
-	padding-bottom: 2.25rem;
 	margin-top: 0;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 	@media screen and (min-width: $small-width) {
-		padding-top: 6.75rem;
-		padding-bottom: 6.75rem;
 		padding-left: 0;
 		padding-right: 0;
 	}

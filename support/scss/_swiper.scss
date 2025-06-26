@@ -571,6 +571,10 @@ button.swiper-pagination-bullet {
   height: 100%; 
 }
 
+.collections.swiper .controls-wrapper {
+  margin-top: 25px;
+}
+
 .swiper-controls {
   position: relative;
   margin-top: 25px;
@@ -578,15 +582,11 @@ button.swiper-pagination-bullet {
   grid-column-gap: 10px;
   margin-left: auto;
   @media screen and (min-width: $small-width) {
-    margin-top: 60px;
+    margin-top: 40px;
     grid-column-gap: 30px;
   }
 }
 
 .swiper .controls-wrapper {
-  display: flex;
-  margin-top: 25px;
-  @media screen and (min-width: $small-width) {
-    margin-top: 50px;
-  }
+  display: flex;  
 }

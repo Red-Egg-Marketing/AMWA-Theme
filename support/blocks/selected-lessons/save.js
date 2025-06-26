@@ -13,7 +13,7 @@ const SaveSelectedLessons = ( { attributes } ) => {
 		
 		const blockProps = useBlockProps.save({
 			id: blockId,
-			className: 'shortcode-section' + (bgSlug != '' ? ' ' + bgSlug + ' with-bg' : '')
+			className: 'selected-lessons' + (bgSlug != '' ? ' ' + bgSlug + ' with-bg' : '')
 		});
 		
 		return (
