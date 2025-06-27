@@ -9,11 +9,10 @@
  * @package providence
  */
 
-global $post;
+
 $fixed_nav = false;
 
 if (function_exists('get_field')) {
-
 
     	$company_settings = [
     	    'name'          => get_field('business_name', 'options'),
@@ -25,7 +24,13 @@ if (function_exists('get_field')) {
     	    'icons'         => get_field('icons', 'options'),
     	];
 
-    	$fixed_nav = get_field('fixed_navigation', $post->ID);
+		global $post;
+
+		if ($post) {
+
+    		$fixed_nav = get_field('fixed_navigation', $post->ID);
+    		
+    	}
     	$fixed_nav = $fixed_nav == 'yes' ? 'fixed-pos' : '';
     
 	}

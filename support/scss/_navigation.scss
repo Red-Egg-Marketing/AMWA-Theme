@@ -257,16 +257,18 @@ a.custom-logo-link {
 	display: block;
 }
 
-.main-navigation .menu-item.mega-menu .sub-menu {
+.nav-menu > .menu-item.mega-menu > .inner-wrap > .sub-menu {
 	width: 100%;
 	display: none;
 	@media screen and (min-width: $med-small-width) {
-		display: inline-block;
+		display: inline-flex;
 		flex-wrap: wrap;
-		max-width: 100%;
 		width: auto;
-		columns: 2;
 	}
+}
+
+.nav-menu > .menu-item.mega-menu > .inner-wrap > .sub-menu .sub-menu {
+	width: 100%;
 }
 
 

@@ -58,6 +58,11 @@ body.woocommerce .site-main > .wrapper {
 	}
 }
 
+.archive.tax-product_cat .col .woocommerce-products-header__title {
+	margin-top: 0;
+}
+
+
 .site-main > .woocommerce-products-header .woocommerce-products-header__title {
 	max-width: $max-cont-w + 200px;
 	padding-left: 1.25rem;

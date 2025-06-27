@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.6.8' );
+	define( '_S_VERSION', '1.6.9' );
 }
 
 if ( ! function_exists( 'amwa_theme_setup' ) ) :
@@ -171,7 +171,7 @@ function amwa_theme_scripts() {
         	'site-tickets',
         	get_stylesheet_directory_uri() . '/js/tickets.js',
         	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
-        	'1.1.7',
+        	'1.1.8',
         	true
     	);
 
@@ -184,7 +184,7 @@ function amwa_theme_scripts() {
         	'self-tickets',
         	get_stylesheet_directory_uri() . '/js/self-tickets.js',
         	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
-        	'1.1.7',
+        	'1.1.8',
         	true
     	);
 

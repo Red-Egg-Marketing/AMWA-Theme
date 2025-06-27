@@ -282,7 +282,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 							</div>
 						</Fragment>
 					)}
-					{events == false && (
+					{events === false && (
 						<div className="loading"></div>
 					)}
 				</form>

@@ -105,7 +105,7 @@
 
 	// Get all the link elements with children within the menu.
 	var linksWithChildren = menu.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-	var listsWithChildren = menu.querySelectorAll( '.menu-item-has-children, .page_item_has_children' );
+	var listsWithChildren = menu.querySelectorAll( '#primary-menu > .menu-item-has-children, #primary-menu > .page_item_has_children' );
 
 	// Toggle focus each time a menu link is focused or blurred.
 	for ( var link of links ) {
@@ -129,7 +129,7 @@
 			let self = this;
 			let rect = self.getBoundingClientRect();
 			let left = rect.left;
-			let sub = self.querySelector('.sub-menu');
+			let sub = self.querySelector(':scope > .inner-wrap > .sub-menu');
 			sub.style.left = left + 'px';
 	
 		}

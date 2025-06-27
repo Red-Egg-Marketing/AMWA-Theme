@@ -141,7 +141,7 @@ const EditLessons = ( { setAttributes, attributes, isSelected, clientId } ) => {
 					<div className="block-wrapper">
 						<div className="resources-wrap">
 							<div className="resources swiper">
-							{ !isSelected &&tempSwip == true && (
+							{ isSelected &&tempSwip == true && (
 								<Fragment>
 									<div className="swiper-wrapper">
 											{ (tempResources.length > 0) && tempResources.map((resource, resourceIndex) => {
