@@ -17,15 +17,15 @@ const SaveTimeline = ({dates, parent}) => {
 	  	const [isScrolling, setScroll] = useState(false);
 
 	  	const createObserver = (boxElement) => {
+
   			let observer;
   			let options = {
   			  root: null,
   			  rootMargin: "0px 0px 0px 0px",
-  			  threshold: buildThresholdList()
+  			  threshold: buildThresholdList(),
   			};
 
   			observer = new IntersectionObserver(handleIntersect, options);
-
   			observer.observe(boxElement);
 
 		}
@@ -51,7 +51,6 @@ const SaveTimeline = ({dates, parent}) => {
   				let top = entry.boundingClientRect.top;
   				let bottom = entry.boundingClientRect.bottom;
   				let rootHeight = entry.rootBounds.height;
-
   				if (inView) {
   					let dateAttr = target.getAttribute('data-period');
   					let bullets = parent.querySelectorAll('.pagination .slide');
@@ -83,13 +82,8 @@ const SaveTimeline = ({dates, parent}) => {
   						target.setAttribute('data-grayscale', 0);
   						target.classList.add('active-period');
   						let currentSlide = parent.querySelectorAll('.active-period');
-  						let dataPeriod = false;
-  						currentSlide.forEach((slide, index) => {
-  							if (index == currentSlide.length - 1) {
-  								dataPeriod = slide.getAttribute('data-period');
-  							}
-  						});
-
+  						let dataPeriod = target.getAttribute('data-period');
+  						
   						bullets.forEach((bullet) => {
   							let time = bullet.getAttribute('data-time');
   							let updateIndex = Number(bullet.getAttribute('data-index'));
@@ -116,13 +110,12 @@ const SaveTimeline = ({dates, parent}) => {
 
 	  	
 	  	const changeSlide = (event) => {
-
 	  		let target = event.target;
 	  		let index = Number(target.getAttribute('data-index'));
 	  		if (index == activeIndex) return;
 	  		let date = target.getAttribute('data-time');
 	  		let periods = parent.querySelectorAll('[data-period="' + date + '"]');
-	  		if (periods) {
+	  		if (periods.length > 0) {
 	  			let match = periods[0];
 	  			match.scrollIntoView({
 	  				behavior: 'smooth',
@@ -131,7 +124,6 @@ const SaveTimeline = ({dates, parent}) => {
 	  		}
 	  		setIndex(index);
 	  		setScroll(false);
-
 	  	}
 
 	  	const detectScroll = () => {
@@ -156,8 +148,7 @@ const SaveTimeline = ({dates, parent}) => {
 		}
 
 		React.useEffect( () => {
-			window.addEventListener('load', detectScroll);
-
+			window.addEventListener('load', detectScroll, false);
   		}, [] );
 
 
@@ -167,7 +158,6 @@ const SaveTimeline = ({dates, parent}) => {
 					<div className="wrapper pagination" direction="vertical">
 						{ (times.length > 0) && times.map((time, index) => {
 								let cl = index === activeIndex ? 'slide active' : 'slide';
-								
 								return (
 									<Fragment>
 										<a 
