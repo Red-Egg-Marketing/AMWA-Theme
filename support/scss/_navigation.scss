@@ -67,6 +67,10 @@ a.custom-logo-link {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
+.site-header svg {
+	max-height: 67px;
+}
+
 .site-header.fixed-pos {
 	@media screen and (min-width: $med-small-width) {
 		position: fixed;
