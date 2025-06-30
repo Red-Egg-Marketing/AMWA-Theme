@@ -7,7 +7,7 @@ import Swiper from 'swiper/bundle';
 import ResourceCard from '../../components/ResourceCard.js';
 const apiUrl  = '/wp-json/AMWA/v2/lessons';
 
-const ResourcesRoot = document.querySelectorAll('.collections');
+const ResourcesRoot = document.querySelectorAll('.wp-block-amwa-theme-block-collections');
 
 const SaveSelectedProjects = ( {category, append} ) => {
 	  	

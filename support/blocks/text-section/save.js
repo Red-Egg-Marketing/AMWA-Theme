@@ -13,6 +13,7 @@ const SaveTextSection = ( { attributes } ) => {
 		} = attributes;
 
 		const blockProps = useBlockProps.save({
+			id: blockId,
 			className: 'text-section' + ' ' +  (bgSlug != '' ? ' ' + bgSlug + ' with-bg' : '') + (withDrop == false ? ' no-ds' : ' with-ds') + (animateScroll == true ? ' scroll-activate' : '') + (' ' + columnwidth),
 		});
 

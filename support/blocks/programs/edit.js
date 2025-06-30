@@ -75,7 +75,7 @@ const EditSelectedCaseStudies = ( { setAttributes, attributes, isSelected, clien
 
 		if (currentCats == false || currentCats.length == 0) {
 			wp.apiFetch({
-				url: catUrl
+				url: catUrl + '?per_page=-1'
 			}).then(categories => {
 				let cats = [];
 				categories.forEach((category, index) => {

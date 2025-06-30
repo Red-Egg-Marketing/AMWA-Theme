@@ -292,14 +292,14 @@ function amwa_theme_posts_pagination() {
 function amwa_theme_posts_footer(int $id) {
 
 	$post_type = get_post_type($id);
-	
+
 	$args = [
 		'post_type' => $post_type,
 		'post_status' => 'publish',
 		'posts_per_page' => -1,
 		'post__not_in' => [$id],
 		'orderby' => 'menu_order',
-		'order' => 'ASC'
+		'order' => 'ASC',
 	];
 
 	$query = new WP_Query($args);
