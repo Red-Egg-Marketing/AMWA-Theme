@@ -173,7 +173,7 @@ a.custom-logo-link {
 
 .main-navigation .mega-menu > .inner-wrap > .sub-menu > .menu-item-has-children > a {
 	@media screen and (min-width: $med-small-width) {
-		color: $light-orange;
+		color: $light-orange !important;
 		text-transform: uppercase;
 		font-weight: bold;
 	}
@@ -573,7 +573,7 @@ li.menu-item.nav-button a {
 	}
 }
 
-.site-header.fixed-pos .main-navigation .menu-item:not(.nav-button) a {
+.site-header.fixed-pos .main-navigation .nav-menu > .menu-item:not(.nav-button) > a {
 	@media screen and (min-width:  $med-small-width) {
 		color: white;
 	}
@@ -592,7 +592,7 @@ li.menu-item.nav-button a {
 	font-size: 20px;
 	line-height: 28px;
 	text-align: left;
-	font-weight: 600;
+	font-weight: 500;
 	transition-property: color;
 	transition-duration: 0.3s;
 	text-transform: capitalize;
@@ -602,7 +602,7 @@ li.menu-item.nav-button a {
 	@media screen and (min-width: $med-small-width) {
 		text-align: left;
 		color: white;
-		font-weight: 600;
+		font-weight: 500;
 		font-size: 20px;
 		line-height: 24px;
 	}
@@ -1041,7 +1041,7 @@ li.menu-item.nav-button a {
 	color: black;
 	font-family: $font-body;
 	font-size: 20px;
-	font-weight: 600;
+	font-weight: 500;
 	transition-property: color;
 	transition-duration: 0.3s;
 	white-space: nowrap;

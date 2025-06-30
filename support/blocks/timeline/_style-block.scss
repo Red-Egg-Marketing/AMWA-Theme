@@ -1,4 +1,5 @@
 .timeline {
+	background: linear-gradient(to right, $light-yellow 16.6667%, white 16.6667%);
 	@media screen and (min-width: $small-width) {
 		background: linear-gradient(to right, $light-yellow 40%, white 40%);
 	}
@@ -22,8 +23,10 @@
 .timeline > .block-wrapper > .block-content {
 	margin-left: 0;
 	overflow: hidden;
+	padding-left: 1.25rem;
 	@media screen and (min-width: $small-width) {
 		margin-left: 16.6666%;
+		padding-left: 0;
 /*		background: linear-gradient(to right, $light-yellow calc(20% - 1.25rem), white calc(20% - 1.25rem));*/
 	}
 }
@@ -36,6 +39,7 @@
 
 .timeline .content-column {
 	width: 100%;
+	margin-top: 25px;
 	@media screen and (min-width: $small-width) {
 		width: 60%;
 		margin-top: 55px;
@@ -105,13 +109,21 @@
 	transform: translateY(0) !important;
 }
 
+.time-navigation .navigation {
+	padding-left: 1.25rem;
+	@media screen and (min-width: $small-width) {
+		padding-left: 0;
+	}
+}
+
 .timeline .time-navigation {
 	position: sticky;
-	top: 130px;
+	top: 90px;
 	float: left;
 	width: 16.6667%;
 	@media screen and (min-width: $small-width) {
 		margin-bottom: 90px;
+		top: 130px;
 	}
 }
 
@@ -121,12 +133,14 @@
 	max-height: 650px;
 	min-height: 45vh;
 	top: 0 !important;
-	padding-left: 25px;
+	padding-left: 10px;
 	transform: none !important;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
-	overflow: auto;
+	@media screen and (min-width: $small-width) {
+		padding-left: 25px;
+	}
 }
 
 
@@ -217,7 +231,11 @@
 	display: flex;
 	z-index: 99;
 	height: 30px;
-	grid-column-gap: 10px;
+	margin-left: -.5rem;
+	@media screen and (min-width: $small-width) {
+		grid-column-gap: 10px;
+		margin-left: 0;
+	}
 }
 
 .timeline .arrow-navigation .button[data-active="false"] {
