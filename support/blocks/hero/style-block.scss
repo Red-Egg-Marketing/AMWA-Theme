@@ -161,13 +161,6 @@
 	color: white;
 }
 
-.hero-block-content {
-	width: 100%;
-	@media screen and (min-width: $small-width) {
-		width: 50%;
-	}	
-}
-
 .hero-block-content .wp-block-buttons {
 	margin-top: 10px;
 	@media screen and (min-width: $small-width) {
@@ -207,6 +200,9 @@
 	z-index: 2;
 	margin-top: 40px;
 	margin-bottom: 40px;
+	max-width: $max-cont-w + 200px;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
 	@media screen and (min-width: $small-width) {
 		position: relative;
 		width: 100%;
@@ -217,9 +213,6 @@
 
 .hero-block-wrap {
 	width: 100%;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
-	max-width: ($max-cont-w + 200px)/2;
 	margin-left: auto;
 	margin-bottom: 1.25vh;
 	@media screen and (min-width: $small-width) {

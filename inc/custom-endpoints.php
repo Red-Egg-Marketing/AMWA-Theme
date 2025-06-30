@@ -431,6 +431,8 @@ function amwa_theme_return_lessons($data, $post_types = 'lesson') {
 	$excerpt = isset($post_a['excerpt']) ? filter_var($post_a['excerpt'], FILTER_VALIDATE_BOOLEAN) : $excerpt;
 	$read_more = isset($get['read_more']) ? $get['read_more'] : 'View Program';
 	$read_more = isset($post_a['read_more']) ? $post_a['read_more'] : $read_more;
+	$orderby = isset($get['orderby']) ? $get['orderby'] : 'date';
+	$orderby = isset($post_a['orderby']) ? $post_a['orderby'] : $orderby;
 		
 	$current_date = current_time('timestamp', 1);
 
@@ -442,6 +444,7 @@ function amwa_theme_return_lessons($data, $post_types = 'lesson') {
 		'ignore_sticky_posts' => true,
 		'ppp' => $posts_per_page,
 		'order' => 'ASC',
+		'orderby' => $orderby
 	];
 
 	if ($cats) {

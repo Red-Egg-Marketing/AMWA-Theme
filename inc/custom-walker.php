@@ -1,6 +1,6 @@
 <?php
 
-class amwa_Menu_Walker extends Walker_Nav_Menu {
+class AMWA_Menu_Walker extends Walker_Nav_Menu {
 
 	/**
 	 * Traverses elements to create list from elements.
@@ -249,7 +249,7 @@ class amwa_Menu_Walker extends Walker_Nav_Menu {
 		}
 
 		$indent = str_repeat( $t, $depth );
-		$button = $depth == 0 || $depth == 1 ? '<button class="toggle-menu" toggled=false>Toggle</button>' : '';
+		$button = $depth == 0 ? '<button class="toggle-menu" toggled=false>Toggle</button>' : '';
 
 		// Default class.
 		$classes = array( 'sub-menu' );
@@ -269,6 +269,7 @@ class amwa_Menu_Walker extends Walker_Nav_Menu {
 		if ($depth == 0) {
 			$output .= "{$n}{$indent}{$button}<div class='inner-wrap'><ul$class_names>{$n}";
 		} else {
+			
 			$output .= "{$n}{$indent}{$button}<ul$class_names>{$n}";
 		}
 	}

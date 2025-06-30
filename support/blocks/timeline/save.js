@@ -29,6 +29,7 @@ const SaveTimeline = ( { attributes } ) => {
 				/>
 				<div {...blockProps}>
 					<div className="block-wrapper">
+						{ content && (
 						<div className="description-container">
 							<Content.View
 								tag="div"
@@ -37,6 +38,7 @@ const SaveTimeline = ( { attributes } ) => {
 								multiline="p"
 							/>
 						</div>
+						)}
 						<div className="time-navigation"></div>
 						<div className="block-content">
 							<InnerBlocks.Content />

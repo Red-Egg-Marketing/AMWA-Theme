@@ -32,6 +32,7 @@ const SaveLessons = ( { attributes } ) => {
 								data-cat={ category }
 							>
 							</div>
+							<InnerBlocks.Content />
 						</div>
 					</div>
 				</div>

@@ -68,4 +68,6 @@ import "./portraits";
 import "./anchor-links";
 import "./selected-lessons";
 import "./lessons";
+import "./selected-collections";
+import "./collections";
 // import "./contact-alt";

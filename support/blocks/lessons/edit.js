@@ -188,6 +188,9 @@ const EditLessons = ( { setAttributes, attributes, isSelected, clientId } ) => {
   								</Fragment>
   							)}
 							</div>
+							<InnerBlocks
+								allowedBlocks={['core/buttons']}
+							/>
 						</div>
 					</div>
 					</div>

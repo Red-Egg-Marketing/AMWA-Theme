@@ -1,14 +1,22 @@
 .timeline {
-	background: linear-gradient(to right, $light-yellow 40%, white 40%);
+	@media screen and (min-width: $small-width) {
+		background: linear-gradient(to right, $light-yellow 40%, white 40%);
+	}
 }
 
 .timeline > .block-wrapper {
-	padding-left: 1.25rem;
+	padding-left: 0;
 	padding-right: 1.25rem;
 	position: relative;
 	@media screen and (min-width: $small-width) {
 		background: linear-gradient(to right, $light-yellow calc(33.3333%), white calc(33.3333%));
+		padding-left: 1.25rem;
+		padding-right: 1.25rem;
 	}
+}
+
+.site-header .time-navigation {
+	justify-self: end;
 }
 
 .timeline > .block-wrapper > .block-content {
@@ -121,7 +129,27 @@
 	overflow: auto;
 }
 
-.timeline .pagination:after {
+
+.timeline .pagination .slide:first-of-type:after {
+	top: 50%;
+	height: 50%;
+}
+
+.timeline .pagination .slide:last-of-type:after {
+	top: 0%;
+	height: 50%;
+}
+
+.timeline .pagination .slide:after {
+	content: "";
+	position: absolute;
+	height: 100%;
+	top: 0%;
+	left: -20px;
+	background: black;
+	width: 2px;
+}
+/*.timeline .pagination:after {
 	content: "";
 	position: absolute;
 	height: calc(100% - 4vh);
@@ -129,6 +157,15 @@
 	background: black;
 	width: 2px;
 	left: 5px;
+}*/
+
+.image-column figcaption {
+	margin-top: 0;
+}
+
+.timeline .period .image-column a {
+	width: 100%;
+	display: block;
 }
 
 

@@ -131,18 +131,21 @@ a.custom-logo-link {
 	font-weight: bold;
 	text-transform: capitalize;
 	position: relative;
+	margin-top: 15px;
 	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
 		margin-left: 0;
 		margin-right: 0;
+		margin-top: 0;
 	}
 	@media screen and (min-width: $med-width + 1px) {
 		margin-left: 0;
 		margin-right: 0;
+		margin-top: 0;
 	}
 }
 
 .main-navigation .sub-menu li.menu-item:last-of-type {
-	@media screen and (min-width: $small-width) {
+	@media screen and (min-width: $med-small-width) {
 		margin-bottom: 0;
 	}
 }
@@ -166,6 +169,14 @@ a.custom-logo-link {
 .main-navigation .sub-menu li.menu-item a {
 	font-style: normal;
 	display: inline;
+}
+
+.main-navigation .mega-menu > .inner-wrap > .sub-menu > .menu-item-has-children > a {
+	@media screen and (min-width: $med-small-width) {
+		color: $light-orange;
+		text-transform: uppercase;
+		font-weight: bold;
+	}
 }
 
 .main-navigation .nav-menu > .menu-item.mega-menu > .sub-menu > .menu-item {
@@ -217,7 +228,6 @@ a.custom-logo-link {
 	height: 25px;
 	background: url(img/nav-open.svg) no-repeat center center / 100%;
 	order: 2;
-	margin-left: 7%;
 	cursor: pointer;
 	align-self: center;
 	@media screen and (min-width: $med-small-width) {
@@ -244,10 +254,10 @@ a.custom-logo-link {
 }
 
 .main-navigation .sub-menu {
-	position: relative;
 	padding-top: 0;
 	padding-bottom: 0;
 	@media screen and (min-width: $med-small-width) {
+		position: relative;
 		display: inline-block;
 	}
 }
@@ -259,7 +269,7 @@ a.custom-logo-link {
 
 .nav-menu > .menu-item.mega-menu > .inner-wrap > .sub-menu {
 	width: 100%;
-	display: none;
+	display: block;
 	@media screen and (min-width: $med-small-width) {
 		display: inline-flex;
 		flex-wrap: wrap;
@@ -292,7 +302,7 @@ a.custom-logo-link {
 }
 
 .main-navigation button.toggle-menu {
-	background: transparent url(img/down-chevron.svg) no-repeat center center / 15px;
+	background: transparent url($plus) no-repeat center center / 20px;
 	width: 30px;
 	height: 30px;
 	border: none;
@@ -301,13 +311,14 @@ a.custom-logo-link {
 	margin-top: -3px;
 	cursor: pointer;
 	padding: 0 10px;
+	margin-left: auto;
 	@media screen and (min-width: $med-small-width) {
 		display: none;
 	}
 }
 
 .main-navigation button.toggle-menu[toggled="true"] {
-	background: transparent url(img/up-chevron.svg) no-repeat center center / 15px;
+	background: transparent url($minus) no-repeat center center / 20px;
 }
 
 .site-branding {
@@ -317,21 +328,22 @@ a.custom-logo-link {
 
 .main-navigation {
 	display: flex;
-	justify-content: flex-start;
 	align-items: stretch;
-	width: auto;
+	justify-content: flex-end;
+	width: 100%;
 	@media screen and (min-width: $med-small-width) {
+		justify-content: flex-start;
 		margin-left: 2.5%;
 	}
 }
 
-.main-navigation .nav-menu>.menu-item:last-of-type {
+/*.main-navigation .nav-menu>.menu-item:last-of-type {
 	padding-bottom: 100px;
 	@media screen and (min-width: $med-small-width) {
 		padding-bottom: 26px;
 	}
 }
-
+*/
 .main-navigation.toggled .menu-primary-menu-container {
 	display: block;
 	width: 100%;
@@ -366,7 +378,7 @@ a.custom-logo-link {
 	height: 80px;
 	display: flex;
 	align-items: stretch;
-	@media screen and (min-width: $small-width) {
+	@media screen and (min-width: $med-small-width) {
 		height: 105px;
 	}
 }
@@ -455,9 +467,35 @@ li.menu-item.nav-button a {
 	}
 }
 
+.main-navigation.toggled .menu-main-menu-container {	
+	@media screen and (max-width: $med-small-width - 1px) {
+		position: absolute;
+		display: block;
+		width: 100%;
+		background: $light-yellow;
+		left: 0;
+		top: 80px;
+		height: calc(100vh - 80px);
+		overflow: auto;
+	}
+}
+
 .menu-main-menu-container {
-	display: flex;
-	align-items: stretch;
+	display: none;
+	@media screen and (min-width: $med-small-width) {
+		display: flex;
+		align-items: stretch;
+	}
+}
+
+.site-header .menu-main-menu-container .time-navigation {
+	display: block;
+	justify-self: center;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	@media screen and (min-width: $med-small-width) {
+		display: none;
+	}
 }
 
 .main-navigation ul.sub-menu-child {
@@ -575,7 +613,11 @@ li.menu-item.nav-button a {
 		margin-left: 0.5rem;
 		margin-right: 0.5rem;
 	}
-	@media screen and (min-width: $med-width + 1px) {
+	@media screen and (min-width: $med-width + 1px ) and (max-width: $large-width) {
+		margin-left: .75rem;
+		margin-right: .75rem;
+	}
+	@media screen and (min-width: $large-width + 1px) {
 		margin-left: 1.35rem;
 		margin-right: 1.35rem;
 	}
@@ -593,16 +635,27 @@ li.menu-item.nav-button a {
 	}
 }
 
+.main-navigation .nav-menu > .menu-item.nav-button {
+	padding-top: 20px;
+	padding-bottom: 20px;
+	display: flex;
+	align-items: center;
+	@media screen and (min-width: $med-width + 1px) {
+		padding-top: 26px;
+		padding-bottom: 26px;
+	}	
+}
 
-.main-navigation .nav-menu > .menu-item {
+.main-navigation .nav-menu > .menu-item:not(.nav-button) {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: center;
 	justify-content: flex-start;
-	padding-top: 6px;
-	margin-bottom: 10px;
+	padding-top: 20px;
+	padding-bottom: 20px;
 	position: unset;
+	border-bottom: 2px solid $light-orange;
 	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
 		margin-bottom: 0;
 		width: auto;
@@ -610,6 +663,7 @@ li.menu-item.nav-button a {
 		padding-bottom: 26px;
 		justify-content: center;
 		position: unset;
+		border-bottom: unset;
 	}
 	@media screen and (min-width: $med-width + 1px) {
 		margin-bottom: 0;
@@ -618,7 +672,12 @@ li.menu-item.nav-button a {
 		padding-bottom: 26px;
 		justify-content: center;
 		position: unset;
+		border-bottom: unset;
 	}
+}
+
+.main-navigation .nav-menu > .menu-item:not(.nav-button):last-of-type {
+	border-bottom: none;
 }
 
 .main-navigation .menu-item:last-of-type {
@@ -635,16 +694,15 @@ li.menu-item.nav-button a {
 	width: 100%;
 	justify-content: flex-end;
 	flex-wrap:wrap;
-	padding-bottom: 30px;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
-	box-sizing: content-box;
-	padding-top: 30px;
 	@media screen and (min-width:  $med-small-width) {
 		padding-top: 0;
 		padding-bottom: 0;
 		padding-left: 0;
 		padding-right: 0;
+	}
+	@media screen and (min-width:  $large-width) {
 		margin-left: 15px;
 	}
 }
@@ -667,6 +725,10 @@ li.menu-item.nav-button a {
 		background: $light-yellow;
 		width: 100%;
 	}
+}
+
+.main-navigation .nav-menu > .menu-item.active > .inner-wrap {
+	display: block;
 }
 
 
@@ -818,9 +880,9 @@ li.menu-item.nav-button a {
 
 
 .main-navigation .sub-menu .sub-menu {
-	margin-top: 8px;
+	margin-top: 10px;
 	@media screen and (min-width:  $med-small-width) {
-		margin-top: 12px;
+		margin-top: 20px;
 	}
 }
 
@@ -830,6 +892,7 @@ li.menu-item.nav-button a {
 	color: #000;
 	@media screen and (min-width:  $med-small-width) {
 		font-size: 20px;
+		font-weight: 500;
 	}
 }
 
@@ -928,20 +991,30 @@ li.menu-item.nav-button a {
 }
 
 .time-active .shortcode-wrap {
-	position: absolute;
-	top: 0;
-	left: auto;
-	right: -10px;
+	width: 100%;
 	display: block;
-	width: 500px;
-	background: white;
-	padding: 20px;
+	flex-wrap: wrap;
+	order: 2;
+	@media screen and (min-width: $med-small-width) {
+		position: absolute;
+		top: 0;
+		left: auto;
+		right: -10px;
+		display: block;
+		width: 500px;
+		background: white;
+		padding: 20px;
+	}
 } 
 
 .time-active .shortcode-wrap .inner-wrap {
 	border: 1px solid $light-orange;
-	margin-top: 75px;
+	margin-top: 15px;
 	padding: 25px;
+	background: white;
+	@media screen and (min-width: $med-small-width) {
+		margin-top: 75px;
+	}
 }
 
 .time-active .time-toggle svg {
@@ -971,7 +1044,8 @@ li.menu-item.nav-button a {
 	font-weight: 600;
 	transition-property: color;
 	transition-duration: 0.3s;
-	@media screen and (min-width: $small-width) {
+	white-space: nowrap;
+	@media screen and (min-width: $med-small-width) {
 		padding-top: 26px;
 		padding-bottom: 26px;
 	}
@@ -1002,23 +1076,32 @@ li.menu-item.nav-button a {
 }
 
 .site-header .time-navigation {
-    padding-left: 10px;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
     margin-left: auto;
-    display: flex;
+    display: none;
     align-items: stretch;
     position: relative;
     @media screen and (min-width: $med-small-width) {
+    	display: flex;
     	padding-left: 20px;
+    	padding-right: 0;
     }
 }
 
 .site-header .time-navigation .time-wrapper {
 	display: flex;
 	align-items: stretch;
+	justify-self: center;
+	flex-wrap: wrap;
+	width: 100%;
+
 }
 
 .site-header .time-navigation button {
-
+	margin: 0 auto;
+	position: relative;
+	order: 1;
 }
 
 .main-wrapper.search-active nav.main-navigation {

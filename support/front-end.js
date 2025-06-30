@@ -10,6 +10,7 @@ import "./blocks/posts-category/frontend.js";
 import "./blocks/filter-resources/frontend.js";
 import "./blocks/programs/frontend.js";
 import "./blocks/lessons/frontend.js";
+import "./blocks/collections/frontend.js";
 // import "./blocks/selected-insights/selected-insights.js";
 // import "./blocks/progress-block/scroll.js";
 import "./blocks/contact/contact.js";

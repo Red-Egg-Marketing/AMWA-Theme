@@ -26,7 +26,10 @@
 	padding-right: 1.25rem;
 }
 
-.header-intro-block .block-wrapper * {
+
+.header-intro-block .block-wrapper *:not(.block-editor-inner-blocks):not(.block-editor-block-list__layout) {
+	margin-left: 0;
+	margin-right: 0;
 	@media screen and (min-width: $small-width) {
 		max-width: 66.666%;
 	}

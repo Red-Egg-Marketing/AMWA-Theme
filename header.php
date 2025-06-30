@@ -78,7 +78,8 @@ if (function_exists('get_field')) {
 							'theme_location' => 'menu-1',
 							'menu_id'        => 'primary-menu',
 							'menu_class'	 => 'nav-menu',
-							'walker' => new amwa_Menu_Walker()
+							'walker' => new AMWA_Menu_Walker(),
+							'items_wrap' => '<div class="time-navigation">' . do_shortcode('[base_time_shortcode]') . '</div><ul id="%1$s" class="%2$s">%3$s</ul>'
 						)
 					);
 
@@ -92,11 +93,12 @@ if (function_exists('get_field')) {
 				
 				?>
 				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'AMWA' ); ?></button>
+				<div class="time-navigation">
+					<?php echo do_shortcode('[base_time_shortcode]'); ?>
+				</div>
 			</nav><!-- #site-navigation -->
 
-			<div class="time-navigation">
-				<?php echo do_shortcode('[base_time_shortcode]'); ?>
-			</div>
+			
 
 		</div><!-- .wrapper -->
 		</div>

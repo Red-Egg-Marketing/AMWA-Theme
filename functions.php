@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.6.9' );
+	define( '_S_VERSION', '1.7.0' );
 }
 
 if ( ! function_exists( 'amwa_theme_setup' ) ) :
