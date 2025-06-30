@@ -67,6 +67,13 @@ a.custom-logo-link {
 	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16);
 }
 
+.nav-active .site-header {
+	background: $light-yellow;
+	@media screen and (min-width: $med-small-width) {
+		background: white;
+	}
+}
+
 .site-header svg {
 	max-height: 67px;
 }
@@ -1048,7 +1055,6 @@ li.menu-item.nav-button a {
 	font-weight: 500;
 	transition-property: color;
 	transition-duration: 0.3s;
-	white-space: nowrap;
 	@media screen and (min-width: $med-small-width) {
 		padding-top: 26px;
 		padding-bottom: 26px;
