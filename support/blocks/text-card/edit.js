@@ -17,6 +17,16 @@ const template = [
 	],
 ];
 
+const defcolors = [
+    { name: 'Light Orange', color: 'rgba(236, 171, 49)', slug: 'light-orange' },
+    { name: 'Blue', color: 'rgba(45, 158, 198)', slug: 'teal' },
+    { name: 'Purple', color: 'rgba(117, 86, 125)', slug: 'purple' },
+    { name: 'Orange', color: 'rgba(203, 94, 65)', slug: 'orange' },
+    { name: 'Bright Orange', color: 'rgba(244, 128, 116)', slug: 'bright-orange' },
+    { name: 'White', color: 'rgba(255, 255, 255)', slug: 'white' },
+    { name: 'Green', color: 'rgba(59, 126, 85)', slug: 'green' }
+];
+
 const widthOptions = [
     {
         label: __( '--' ),
@@ -120,6 +130,7 @@ const EditCTA = ( { attributes, setAttributes, clientId } ) => {
 						bgSlug={ bgSlug }
 						setAttributes={ setAttributes }
 						title="Image Border & Background Color"
+						colors={ defcolors }
 					/>
 				</InspectorControls>
 				<div 

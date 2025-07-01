@@ -7,6 +7,7 @@ import BackgroundSelector from '../../components/BackgroundSelector.js';
 import Anchor from '../../components/Anchor.js';
 import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
+import Header from '../../components/Header.js';
 
 const VidImg = [
     {
@@ -32,7 +33,7 @@ const FullHeightOptions = [
 
 const EditHero = ( { attributes, setAttributes, clientId } ) => {
 
-		const { image, anchor, vidOrImg, videoID, videoURL, videothumb, padding, blockId, margin, fullHeight, withBranding } = attributes;
+		const { image, anchor, vidOrImg, videoID, videoURL, videothumb, padding, blockId, margin, fullHeight, withBranding, title } = attributes;
 
         const blockProps = useBlockProps({
         	className: 'hero' + (fullHeight == 'yes' ? ' full-height' : '')
@@ -242,6 +243,14 @@ const EditHero = ( { attributes, setAttributes, clientId } ) => {
 											}
 										/>
 									</div>
+								</div>
+								<div className="featured-link">
+									<Header
+											tag="h4"
+											title={ title }
+											setAttributes={ setAttributes }
+											placeholder={__('Featured Link...', 'AMWA')}
+									/>
 								</div>
 							</div>
 							<div className="hero-block-image">

@@ -70,7 +70,13 @@ registerBlockType( 'amwa-theme-block/hero', {
 		},
 		blockId: {
 			type: 'string'
-		}
+		},
+		title : {
+			type: 'string',
+			source: 'html',
+			selector: '.header-title',
+			default: '',
+		},
 	},
 	edit: edit,
 	save: save,

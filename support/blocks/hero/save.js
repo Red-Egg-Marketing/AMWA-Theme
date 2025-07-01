@@ -5,9 +5,10 @@ const { Button } = wp.components;
 const { __ } = wp.i18n;
 import PaddingSelector from '../../components/Padding.js';
 import MarginSelector from '../../components/Margin.js';
+import Header from '../../components/Header.js';
 
 const SaveHero = ( { attributes } ) => {
-		const { image, anchor, vidOrImg, videoID, videoURL, videothumb, padding, blockId, margin, fullHeight, withBranding } = attributes;
+		const { image, anchor, vidOrImg, videoID, videoURL, videothumb, padding, blockId, margin, fullHeight, withBranding, title } = attributes;
 
 		const blockProps = useBlockProps.save({
 			id: blockId,
@@ -42,7 +43,16 @@ const SaveHero = ( { attributes } ) => {
 									<div className="hero-block-wrap">
 										<InnerBlocks.Content />
 									</div>
+									
 								</div>
+								{ title != '' && (
+									<div className="featured-link">
+										<Header.View
+											tag="h4"
+											title={ title }
+										/>
+									</div>
+								)}
 							</div>
 							<div className="hero-block-image">
 								{ (image && vidOrImg == 'image' ) && (

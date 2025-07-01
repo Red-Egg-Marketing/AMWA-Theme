@@ -60,6 +60,7 @@
 	left: 0;
 }
 
+.hero.full-height,
 .wp-block.hero.full-height {
 	@media screen and (min-width: $small-width) {
 		height: 100vh;
@@ -80,6 +81,10 @@
 .hero .media-controls {
 	 position: absolute;
 	 z-index: 2;
+}
+
+.hero * {
+	color: white;
 }
 
 .hero {
@@ -120,6 +125,30 @@
 	height: 100%;
 }
 
+.hero .featured-link {
+	margin-left: auto;
+	width: 100%;
+	margin-top: 25px;
+	@media screen and (min-width: $small-width) {
+		width: auto;
+		margin-top: 0;
+	}
+}
+
+.hero .featured-link .header-title {
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.hero .featured-link:after {
+	content: "";
+	display: block;
+	height:  2px;
+	position: absolute;
+	background: white;
+	width: 100%;
+}
+
 .hero-block-image-wrap {
 	height: 100%;
 	display: flex;
@@ -135,8 +164,13 @@
 	}
 }
 
+.hero a,
+.hero h6,
+.hero h5,
+.hero h4,
+.hero h3,
+.hero h2,
 .hero h1 {
-	margin-top: 0;
 	color: white;
 }
 
@@ -184,6 +218,13 @@
 	}
 }
 
+.hero-block-content {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: 50%;
+	}
+}
+
 .hero-block-image-wrap .img-container {
 	width: 100%;
 	display: flex;
@@ -201,28 +242,20 @@
 	max-width: $max-cont-w + 200px;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
+	padding-bottom: 45px;
 	@media screen and (min-width: $small-width) {
 		position: relative;
+		padding-bottom: 10vh;
 		width: 100%;
 		margin-top: 80px;
 		margin-bottom: 80px;
+		grid-column-gap: 60px;
 	}
 }
 
 .hero-block-wrap {
 	width: 100%;
 	margin-left: auto;
-	margin-bottom: 1.25vh;
-	@media screen and (min-width: $small-width) {
-		margin-bottom: 2.5vh;
-	}
-}
-
-.hero.full-height .hero-block-wrap {
-	margin-bottom: 4vh;
-	@media screen and (min-width: $small-width) {
-		margin-bottom: 7.5vh;
-	}
 }
 
 .hero .wp-block-buttons {

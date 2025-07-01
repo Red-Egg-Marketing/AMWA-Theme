@@ -42,7 +42,7 @@ const SaveImage = ( { attributes, setAttributes } ) => {
 							</video>
 						</Fragment>
 					)}
-					
+					<InnerBlocks.Content />
 				</div>
 			</Fragment>
 		);

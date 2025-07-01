@@ -130,6 +130,12 @@ a.custom-logo-link {
 	}
 }
 
+/*.main-navigation .nav-menu > .menu-item.mega-menu > .inner-wrap > .sub-menu > li.menu-item {
+	@media screen and (min-width: $med-small-width) {
+		width: 50%;
+	}
+}
+*/
 .main-navigation .menu-item .sub-menu li.menu-item {
 	@media screen and (min-width: $med-small-width) {
 		margin-bottom: 20px;
@@ -279,12 +285,10 @@ a.custom-logo-link {
 }
 
 .nav-menu > .menu-item.mega-menu > .inner-wrap > .sub-menu {
-	width: 100%;
 	display: block;
 	@media screen and (min-width: $med-small-width) {
-		display: inline-flex;
-		flex-wrap: wrap;
-		width: auto;
+		display: inline-grid;
+		grid-template-columns: 1fr 1fr;
 	}
 }
 
@@ -474,7 +478,7 @@ li.menu-item.nav-button a {
 .main-navigation .sub-menu .sub-menu .menu-item a {
 	font-family: $font-body;
 	&:hover {
-		color: $teal;
+		color: $light-orange;
 	}
 }
 
@@ -745,6 +749,10 @@ li.menu-item.nav-button a {
 
 .main-navigation .nav-menu > .menu-item:not(.mega-menu) > .inner-wrap li a {
 	color: black;
+}
+
+.main-navigation .nav-menu > .menu-item:not(.mega-menu) > .inner-wrap li a:hover {
+	color: $light-orange;
 }
 
 .main-navigation .nav-menu > .menu-item:not(.mega-menu):hover > .inner-wrap {
