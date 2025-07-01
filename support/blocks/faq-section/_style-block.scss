@@ -26,6 +26,10 @@ html :where(.wp-block) {
 }
 
 
+.light-yellow.faq .header-title {
+	background-color: $light-yellow;
+}
+
 .wp-block.faq .content-column.hide-this .header-title,
 .faq .header-title {
 	padding-left: calc(2.5rem - 12px);

@@ -119,12 +119,22 @@
 	}
 }
 
+.feature-section .image-column figure:first-of-type {
+	width: 100%;
+	max-width: 100%;
+	@media screen and (min-width: $small-width) {
+		max-width: 100%;
+	}
+}
+
+
 .feature-section .image-column figure {
 	margin-right: 0;
-	width: 100%;
+	max-width: 100%;
 	@media screen and (min-width: $small-width) {
 /*		margin-right: -100px;*/
 		padding-left: 16.66667%;
+		max-width: $max-cont-w * .55;
 	}
 	
 }

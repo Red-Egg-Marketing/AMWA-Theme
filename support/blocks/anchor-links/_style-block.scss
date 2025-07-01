@@ -7,8 +7,8 @@
 }
 
 .anchor-links {
-	padding-top: 25px;
-	padding-bottom: 25px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 	max-width: 100%;
 	width: 100%;
 	background: white;
@@ -16,8 +16,8 @@
 	top: 80px;
 	z-index: 99;
 	@media screen and (min-width: $small-width) {
-		padding-top: 40px;
-		padding-bottom: 40px;
+		padding-top: 20px;
+		padding-bottom: 20px;
 		top: 105px;
 	}
 }
@@ -25,6 +25,7 @@
 .anchor-links .wp-block-list {
 	padding: 0;
 	display: flex;
+	flex-wrap: wrap;
 	list-style-type: none;
 	max-width: 100%;
 }
@@ -34,10 +35,12 @@
 }
 
 .anchor-links .wp-block-list li {
-	margin-right: 4%;
-	font-size: 18px;
+	font-size: 16px;
 	margin-left: 0;
+	margin-right: 15px;
 	@media screen and (min-width: $small-width) {
 		font-size: 20px;
+		margin-right: 4%;
+
 	}
 }

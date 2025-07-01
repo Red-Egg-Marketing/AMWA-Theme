@@ -3,19 +3,22 @@
 	max-width: 100%;
 }
 
+.map {
+	padding-top: 3.25rem;
+	padding-bottom: 3.25rem;
+	@media screen and (min-width: $small-width) {
+		padding-top: 7.5rem;
+		padding-bottom: 7.5rem;
+	}
+}
+
 .map > .block-wrapper {
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 	display: flex;
 	align-items: flex-start;
 	grid-column-gap: 30px;
-	padding-top: 3.25rem;
-	padding-bottom: 3.25rem;
 	flex-wrap: wrap;
-	@media screen and (min-width: $small-width) {
-		padding-top: 7.5rem;
-		padding-bottom: 7.5rem;
-	}
 }
 
 .map > .block-wrapper > .block-editor-inner-blocks {

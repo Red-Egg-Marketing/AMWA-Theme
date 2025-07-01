@@ -6,6 +6,13 @@
 	text-decoration: none;
 }
 
+.woocommerce-notices-wrapper {
+	margin-bottom: 25px;
+}
+
+.woocommerce-notices-wrapper:empty {
+	margin-bottom: 0;
+}
 
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .product .woocommerce-loop-product__title {
