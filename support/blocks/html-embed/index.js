@@ -6,9 +6,10 @@ import edit from './edit';
 import save from './save';
 
 registerBlockType( 'amwa-theme-block/html-embed', {
-	title: __( 'Full Width HTML Embed', 'cls-blocks' ),
+	title: __( 'HTML Embed', 'cls-blocks' ),
 	description: __( 'Can be used for full width Google map', 'amwa-theme-block' ),
 	apiVersion: 2,
+	parent: ['amwa-theme-block/map'],
 	icon: 'admin-site',
 	category: 'layout',
 	edit: edit,

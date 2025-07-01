@@ -1,0 +1,76 @@
+.slider-group.wp-block {
+	width: 100%;
+	max-width: 100%;
+}
+
+.slider-group > .block-wrapper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	display: flex;
+	align-items: flex-start;
+	grid-column-gap: 30px;
+	padding-top: 3.25rem;
+	padding-bottom: 3.25rem;
+	flex-wrap: wrap;
+	@media screen and (min-width: $small-width) {
+		padding-top: 7.5rem;
+		padding-bottom: 7.5rem;
+	}
+}
+
+.slider-group > .block-wrapper > .block-editor-inner-blocks {
+	width: 100%;
+}
+
+.slider-group > .block-wrapper > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: flex;
+	width: 100%;
+}
+
+
+.slider-group .header-intro-block .block-wrapper {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.slider-group .slider {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: 83.3333%;
+	}
+}
+
+.slider .slide {
+	display: flex;
+	flex-wrap: wrap;
+	background: white;
+	align-items: stretch;
+}
+
+.slider .slide .wp-block-image {
+	width: 100%;
+	margin: 0;
+	@media screen and (min-width: $small-width) {
+		width: 60%;
+	}
+}
+
+.slider .slide .wp-block-image a,
+.slider .slide .wp-block-image img {
+	display: block;
+	height: 100%;
+}
+
+.slider .slide .content-columns {
+	width: 100%;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	@media screen and (min-width: $small-width) {
+		width: 40%;
+		box-sizing: border-box;
+		padding-top: 40px;
+		padding-bottom: 40px;
+		padding-left: 5%;
+		padding-right: 5%;
+	}
+}

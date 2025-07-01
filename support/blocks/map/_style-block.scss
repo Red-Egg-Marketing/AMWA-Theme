@@ -1,0 +1,42 @@
+.map.wp-block {
+	width: 100%;
+	max-width: 100%;
+}
+
+.map > .block-wrapper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+	display: flex;
+	align-items: flex-start;
+	grid-column-gap: 30px;
+	padding-top: 3.25rem;
+	padding-bottom: 3.25rem;
+	flex-wrap: wrap;
+	@media screen and (min-width: $small-width) {
+		padding-top: 7.5rem;
+		padding-bottom: 7.5rem;
+	}
+}
+
+.map > .block-wrapper > .block-editor-inner-blocks {
+	width: 100%;
+}
+
+.map > .block-wrapper > .block-editor-inner-blocks > .block-editor-block-list__layout {
+	display: flex;
+	width: 100%;
+}
+
+.map .content-columns {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: calc(33.3333% - 15px);
+	}
+}
+
+.map .html-embed {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: calc(66.6666% - 15px);
+	}
+} 
