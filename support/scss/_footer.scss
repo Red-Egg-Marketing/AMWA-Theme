@@ -20,20 +20,21 @@
 	flex-wrap: wrap;
 	align-items: flex-start;
 	justify-content: center;
+	grid-column-gap: 30px;
 	margin: 0 auto;
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
 }
 
 .site-footer .wrapper .col {
 	width: 100%;
 	@media screen and (min-width: $small-width) {
-		width: 25%;
-		padding-right: 1.25rem;
-		padding-left: 1.25rem;
+		width: calc(25% - 22.5px);
 	}
 }
 
 .site-footer .col {
-	margin-bottom: 45px;
+	margin-bottom: 30px;
 	@media screen and (min-width: $small-width) {
 		margin-bottom: 0;
 	}
@@ -65,13 +66,14 @@
 
 ul.social {
 	padding: 0;
-	margin: 0;
+	margin: 15px 0 0 0;
 	display: flex;
 	flex-wrap: wrap;
 	list-style-type: none;
-	justify-content: center;
+	justify-content: flex-start;
 	@media screen and (min-width: $small-width) {
 		justify-content: left;
+		margin-top: 20px;
 	}
 }
 
@@ -81,7 +83,7 @@ ul.social a {
 }
 
 ul.social a:hover {
-	color: $blue;
+	color: $light-orange;
 }
 
 ul.social a:visited {
@@ -89,7 +91,11 @@ ul.social a:visited {
 }
 
 ul.social li {
-	flex: 0 15%;
+	margin-right: 10px;
+	@media screen and (min-width: $small-width) {
+		flex: 0 15%;
+		margin-right: 0;
+	}
 }
 
 .site-footer .logo-columns {
@@ -99,13 +105,13 @@ ul.social li {
 }
 
 a.footer-home {
-	width: 139px;
+	width: 92px;
 	max-width: 100%;
-	height: 154px;
+	height: 92px;
 	display: block;
 	text-indent: -10000px;
-	margin: 0 auto;
 	background: url(img/AMWA-logo.svg) no-repeat center center / 100%;
+	background-size: contain;
 	@media screen and (min-width: $small-width) {
 		width: 139px;
 		height: 154px;
@@ -138,10 +144,7 @@ a.footer-home {
 }
 
 .site-footer .col {
-	text-align: center;
-	@media screen and (min-width: $small-width) {
-		text-align: left;
-	}
+	text-align: left;
 }
 
 .site-footer .menu {
@@ -180,16 +183,27 @@ a.footer-home {
 }
 
 .contact-link:before {
+	position: absolute;
 	content: url($phone);
-	margin-right: 10px;
+	left: 0;
+	margin-top: 4px;	
 }
 
 .contact-link.address:before {
 	content: url($marker);
 }
 
+.contact-link.email:before {
+	content: url($email);
+}
+
 .site-footer .contact-link {
 	display: block;
+	position: relative;
+	padding-left: 35px;
+	@media screen and (min-width: $small-width) {
+		padding-left: 38px;
+	}
 }
 
 .site-footer .contact-link:last-of-type {
@@ -284,29 +298,39 @@ a.footer-home {
 	}
 }
 
+
+.site-footer div.gform_wrapper h2.gform_title {
+	color: white;
+	font-family: $font-body;
+}
+
 .site .site-footer p, 
-.site-footer div.gform_wrapper h2.gform_title,
 .site-footer address p,
 .site-footer .contact-link,
 .site-footer .menu-item li,
 .site-footer .menu-item a {
 	color: white;
-	font-weight: 400;
+	font-weight: 300;
 	text-decoration: none;
 	font-family: $font-body;
 	font-size: 18px;
 	line-height: 26px;
 	@media screen and (min-width: $med-small-width) {
-		font-size: 20px;
-		line-height: 31px;
+		font-size: 18px;
+		line-height: 28px;
 	}
+}
+
+.site-footer .description {
+	font-style: italic;
+	margin-bottom: 0;
 }
 
 .site-footer .contact-link,
 .site-footer li.menu-item {
-	margin-bottom: 10px;
+	margin-bottom: 20px;
 	@media screen and (min-width: $med-small-width) {
-		margin-bottom: 15px;
+		margin-bottom: 25px;
 	}
 }
 
@@ -350,6 +374,7 @@ a.footer-home {
 	padding-top: 25px;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
+	text-align: center;
 }
 
 .entry-footer {

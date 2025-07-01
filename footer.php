@@ -32,18 +32,22 @@ if (function_exists('get_field')) {
                 
                 <div class="col">
                     <p>
+                        <a href="tel:<?= $company_settings['email']; ?>" class="contact-link email"><?= $company_settings['email'] ?></a>
                         <a href="tel:<?= $company_settings['phone']; ?>" class="contact-link phone"><?= $company_settings['phone'] ?></a>
                     </p>
                     <address>
                         <p class="contact-link address">
-                            <?= $company_settings['street'] ?>,<br />
+                            <?= $company_settings['street'] ?>,
                             <?= $company_settings['city'] . ', ' . $company_settings['state'] . ' ' . $company_settings['zip'] ?>
                         </p>
                     </address>
+                    <p class="description">
+                        <?= $company_settings['description'] ?>
+                    </p>
                 </div>
                 <div class="col">
                     <?php 
-                        echo do_shortcode('[gravityform id="5"]');
+                        echo do_shortcode('[gravityform id="' . $company_settings['form'] . '"]');
                     ?>
                     <ul class="social">
                         <?php
@@ -71,7 +75,6 @@ if (function_exists('get_field')) {
                         );
                 
                     ?>
-                    <p>Copyright &copy; <?= date('Y'); ?> <?= $company_settings['name']; ?></p>
                 </div>
                 <div class="col">
                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" class="footer-home"><?php bloginfo( 'name' ); ?></a>  
@@ -80,7 +83,7 @@ if (function_exists('get_field')) {
             
         </div><!-- .site-info -->
          <div class="footer-copyright">
-                <p>Website Design by <a href="https://redeggmarketing.com/" target="_blank">Red Egg Marketing</a> | <a href="<?= $company_settings['privacy']; ?>">Privacy Policy</a> </p>
+                <p>Copyright &copy; <?= date('Y'); ?> <?= $company_settings['name']; ?> | <a href="<?= $company_settings['privacy']; ?>">Privacy Policy</a> | Website Design by <a href="https://redeggmarketing.com/" target="_blank">Red Egg Marketing</a>  </p>
         </div>
     </footer><!-- #colophon -->
 </div><!-- #page -->
