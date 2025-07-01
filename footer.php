@@ -83,7 +83,7 @@ if (function_exists('get_field')) {
             
         </div><!-- .site-info -->
          <div class="footer-copyright">
-                <p>Copyright &copy; <?= date('Y'); ?> <?= $company_settings['name']; ?> | <a href="<?= $company_settings['privacy']; ?>">Privacy Policy</a> | Website Design by <a href="https://redeggmarketing.com/" target="_blank">Red Egg Marketing</a>  </p>
+                <p>Copyright &copy; <?= date('Y'); ?> <?= $company_settings['name']; ?> | <a href="<?= $company_settings['disclaimer']; ?>">Terms of Use</a> | <a href="<?= $company_settings['privacy']; ?>">Privacy Policy</a> | Website Design by <a href="https://redeggmarketing.com/" target="_blank">Red Egg Marketing</a>  </p>
         </div>
     </footer><!-- #colophon -->
 </div><!-- #page -->

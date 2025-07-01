@@ -55,6 +55,10 @@
 	}
 }
 
+.slider .slide .wp-block-image img {
+	object-fit: cover;
+}
+
 .slider .slide .wp-block-image a,
 .slider .slide .wp-block-image img {
 	display: block;
