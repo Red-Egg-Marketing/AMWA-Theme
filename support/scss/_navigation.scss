@@ -34,6 +34,46 @@ a.custom-logo-link {
 	display: block;
 }
 
+.menu-item.cart {
+	text-indent: -10000px;
+	margin-left: 15px;
+	@media screen and (min-width: $med-small-width) {
+		margin-left: 0;
+	}
+}
+
+li.menu-item.cart a,
+.menu-item.cart {
+	display: flex;
+	align-items: center;
+}
+
+.menu-item.cart svg {
+	text-indent: 0;
+	display: block;
+	width: 25px;
+	height: 25px;
+
+}
+
+.menu-item.cart svg circle,
+.menu-item.cart svg path {
+	transition-duration: 0.3s;
+	transition-property: stroke;
+}
+
+.site-header.fixed-pos .menu-item.cart svg circle,
+.site-header.fixed-pos .menu-item.cart svg path {
+	@media screen and (min-width: $med-small-width) {
+		stroke: white;
+	}
+}
+
+.site-header.fixed-pos.fixed .menu-item.cart svg circle,
+.site-header.fixed-pos.fixed .menu-item.cart svg path {
+	stroke: black;
+}
+
 .main-content-nav {
 	position: relative;
 	background: transparent;
@@ -614,7 +654,11 @@ li.menu-item.nav-button a {
 	&:hover {
 		color: $orange;
 	}
-	@media screen and (min-width: $med-small-width) {
+	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
+		font-size: 18px;
+		line-height: 24px;
+	}
+	@media screen and (min-width: $med-width + 1px) {
 		text-align: left;
 		color: white;
 		font-weight: 500;
@@ -708,7 +752,6 @@ li.menu-item.nav-button a {
 	display: flex;
 	width: 100%;
 	justify-content: flex-end;
-	flex-wrap:wrap;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 	@media screen and (min-width:  $med-small-width) {
@@ -1063,9 +1106,16 @@ li.menu-item.nav-button a {
 	font-weight: 500;
 	transition-property: color;
 	transition-duration: 0.3s;
+	@media screen and (min-width: $med-small-width) and (max-width: $med-width) {
+		font-size: 18px;
+		line-height: 24px;
+	}
 	@media screen and (min-width: $med-small-width) {
 		padding-top: 26px;
 		padding-bottom: 26px;
+	}
+	@media screen and (min-width: $med-width + 1px) {
+		font-size: 20px;
 	}
 }
 

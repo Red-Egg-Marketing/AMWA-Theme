@@ -87,6 +87,7 @@ if (function_exists('get_field')) {
 						array(
 							'theme_location' => 'menu-2',
 							'menu_id'        => 'Secondary-menu',
+							'walker' => new AMWA_Menu_Walker(),
 							'menu_class'	 => 'nav-menu',
 						)
 					);
