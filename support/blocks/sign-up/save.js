@@ -14,7 +14,8 @@ const SaveSignUp = ( { attributes } ) => {
 		} = attributes;
 	
 		const blockProps = useBlockProps.save({
-			className: 'sign-up column'
+			className: 'sign-up column',
+			id: blockId,
 		});
 	
 		return (

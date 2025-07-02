@@ -1,3 +1,5 @@
+body.woocommerce-page form .form-row .input-text,
+body.woocommerce-page form .form-row select,
 div.gform_wrapper input[type=color],
 div.gform_wrapper input[type=date],
 div.gform_wrapper input[type=datetime-local],
@@ -14,11 +16,11 @@ div.gform_wrapper input[type=url],
 div.gform_wrapper input[type=week],
 div.gform_wrapper select,
 div.gform_wrapper textarea {
-	background: #FCF7EC;
-	border: none;
+	background: white;
+	border: 1px solid black;
 	border-radius: 0;
-	font-family: $font-head;
-  color: $body-color;
+	font-family: $font-body;
+  color: black;
   font-size: 18px;
   line-height: 30px;
   padding-left: 0.75rem;
@@ -156,16 +158,17 @@ body div.gform_wrapper .ginput_complex {
 	}
 }
 
+.woocommerce .select2-container .select2-selection--single,
 .woocommerce div.product form.cart .variations select,
 #TicketForm select.components-select-control__input,
 .ticket-form .select-field,
 div.gform_wrapper .ginput_container_select select {
- 	appearance: none;
- 	background: $light-yellow url(img/down-chevron.svg) no-repeat calc(100% - 18px) center / 18px;
+ 	background: white;
  	padding-left: 15px;
 	padding-right: 15px;
-	padding-top: 15px;
-	padding-bottom: 15px;
+	padding-top: 0;
+	border-radius: 0;
+	padding-bottom: 0;
  	font-size: 18px;
 	line-height: 27px;
 	color: black;
@@ -173,8 +176,8 @@ div.gform_wrapper .ginput_container_select select {
 	font-weight: 500;
 	margin-bottom: 0;
 	width: 100%;
-	border: none !important;
-	min-height: 50px;
+	border: 1px solid black !important;
+	min-height: 50px !important;
  	@media screen and (min-width: $form-width) {
 		font-size: 22px;
 		line-height: 36px;
@@ -366,7 +369,7 @@ div.gform_wrapper h2.gform_title {
 	text-transform: uppercase;
 	font-family: $font-head;
 	font-weight: 500;
-	text-align: center;
+	text-align: left;
 	margin-bottom: 0;
 	@media screen and (min-width: $form-width) {
 		font-size: 22px;

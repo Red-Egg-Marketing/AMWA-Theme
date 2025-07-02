@@ -112,9 +112,9 @@ add_action( 'rest_api_init', function () {
 
 function amwa_get_business_hours() {
 	if (function_exists('get_field')) {
-		$current_date = date('F d, Y');
-		$display_date = date('l, F d ');
-		$current_day = date('l');
+		$current_date = wp_date('F d, Y');
+		$display_date = wp_date('l, F d ');
+		$current_day = wp_date('l');
 		$closure = false;
 		// first check for any clousures
 
@@ -165,7 +165,6 @@ function amwa_get_business_hours() {
 				$weekday = explode('|', $d);
 				if (is_array($weekday)) {
 					$w = str_replace(' ', '', $weekday[0]);
-					
 					if ($w == $current_day) {
 						$h = $weekday[1];
 						$h = ltrim($h);
@@ -332,6 +331,7 @@ function amwa_theme_return_programs($data, $post_types = 'product') {
 		'ignore_sticky_posts' => true,
 		'ppp' => $posts_per_page,
 		'order' => 'ASC',
+		'orderby' => 'meta_value_num',
 		'meta_query' => [ 
 			'relation'  => 'AND',
 			[

@@ -1,5 +1,5 @@
 .timeline {
-	background: linear-gradient(to right, $light-yellow 16.6667%, white 16.6667%);
+	background: linear-gradient(to right, $light-yellow 22.5%, white 22.5%);
 	@media screen and (min-width: $small-width) {
 		background: linear-gradient(to right, $light-yellow 40%, white 40%);
 	}
@@ -120,7 +120,7 @@
 	position: sticky;
 	top: 90px;
 	float: left;
-	width: 16.6667%;
+	width: 22.5%;
 	@media screen and (min-width: $small-width) {
 		margin-bottom: 90px;
 		top: 130px;
@@ -193,9 +193,11 @@
 	display: flex;
 	align-items: center;
 	font-family: $font-body;
-	font-size: 18px;
-	font-family: $font-body;
+	font-size: 16px;
 	cursor: pointer;
+	@media screen and (min-width: $small-width) {
+		font-size: 18px;
+	}
 }
 
 .timeline .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
@@ -281,9 +283,10 @@
 	background: $purple url($down-arrow) no-repeat calc(100% - 10px) center / 20px;
 	overflow: hidden;
 	padding: 5px 30px 5px 15px;
-	width: 66.6666%;
+	width: 100%;
 	@media screen and (min-width: $small-width) {
 		background: $purple url($down-arrow) no-repeat calc(100% - 25px) center / 30px;
+		width: 66.6666%;
 		padding: 10px 65px 10px 30px;
 	}
 }

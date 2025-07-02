@@ -17,6 +17,12 @@
 	padding-right: 1.25rem;
 	position: relative;
 	z-index: 15;
+	padding-top: 3.25rem;
+	padding-bottom: 3.25rem;
+	@media screen and (min-width: $small-width) {
+		padding-top: 7.5rem;
+		padding-bottom: 7.5rem;
+	}
 }
 
 .sign-up .wrapper {

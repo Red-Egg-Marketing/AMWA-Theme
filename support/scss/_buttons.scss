@@ -1,4 +1,8 @@
-
+.woocommerce #payment #place_order, 
+body.woocommerce-page #payment #place_order,
+#add_payment_method .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button,
+.woocommerce-checkout .wc-proceed-to-checkout a.checkout-button,
 #CybotCookiebotDialogBodyButtonAccept,
 .buddypress .buddypress-wrap input[type=button],
 .buddypress .buddypress-wrap .button,
