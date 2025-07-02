@@ -49,7 +49,7 @@ function amwa_get_guided_tours() {
 	$tax = isset($post_a['tax-slug']) ? explode(',', $post_a['tax-slug']) : $tax;
 
 	$args = [
-		'limit' 	=> -1,
+		'posts_per_page' 	=> -1,
 		'orderby' 	=>  'date',
 		'tax_query' => [
 			'relation' => 'AND',

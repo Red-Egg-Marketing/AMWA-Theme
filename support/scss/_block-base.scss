@@ -867,3 +867,14 @@ figure.wp-block-gallery figure {
 	margin: 0;
 	padding: 30px !important;
 }
+
+.closures .content {
+	padding: 10px 1.25rem;
+	width: 100%;
+	margin-bottom: 45px;
+	@media screen and (min-width: $small-width) {
+		width: 66.666%;
+		margin-bottom: 120px;
+
+	}
+}
