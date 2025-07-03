@@ -261,8 +261,19 @@ body.woocommerce-page div.product div.summary {
 	grid-column-gap: 60px;
 }
 
+
+.woocommerce-page .entry-content > .woocommerce {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
 .woocommerce-notices-wrapper, 
 .woocommerce-page .entry-content > .woocommerce {
 	max-width: $max-cont-w + 200px;
 	margin: 0 auto;
+}
+
+.woocommerce > .wrapper {
+	max-width: $max-cont-w + 200px;
+	margin: 45px auto 45px;
 }
