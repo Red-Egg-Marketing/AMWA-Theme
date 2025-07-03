@@ -22,11 +22,11 @@
 	align-items: stretch;
 	margin-top: 75px;
 	@media screen and (min-width: $med-width + 1px) {
-		width: calc(33.3333% - 40px);
+		width: calc(33.3333% - 20px);
 		margin-top: 110px;
 	}
 	@media screen and (min-width: $small-width) and (max-width: $med-width) {
-		width: calc(50% - 45px);
+		width: calc(50% - 20px);
 		margin-bottom: 0;
 		margin-top: 110px;
 	}
@@ -43,10 +43,10 @@
 
 .text-cards-grid.columns-4 .text-card {
 	@media screen and (min-width: $med-width + 1px) {
-		width: calc(25% - 45px);
+		width: calc(25% - 20px);
 	}
 	@media screen and (min-width: $small-width) and (max-width: $med-width) {
-		width: calc(33.3333% - 45px);
+		width: calc(33.3333% - 20px);
 	}
 }
 

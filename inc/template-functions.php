@@ -293,6 +293,8 @@ function amwa_theme_posts_footer(int $id) {
 
 	$post_type = get_post_type($id);
 
+	$collection_link = get_field('collections_page', 'options');
+
 	$args = [
 		'post_type' => $post_type,
 		'post_status' => 'publish',
@@ -346,7 +348,7 @@ function amwa_theme_posts_footer(int $id) {
 					<div class="controls-wrapper">
 						<div class="wp-block-buttons">
 							<div class="wp-button">
-								<a class="wp-block-button__link" href="<?php echo get_post_type_archive_link( $post_type ) ?>">View All Styles</a>
+								<a class="wp-block-button__link" href="<?php echo $collection_link; ?>">View All Styles</a>
 							</div>
 						</div>
 						<div class="swiper-controls">

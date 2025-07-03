@@ -78,7 +78,7 @@
 	position: relative;
 	min-height: 450px;
 	@media screen and (min-width: $small-width) {
-		min-height: 690px;
+		min-height: 540px;
 	}
 }
 
@@ -98,7 +98,7 @@
 	flex-wrap: wrap;
 	align-items: stretch;
 	@media screen and (min-width: $small-width) {
-		min-height: 690px;
+		min-height: 540px;
 	}
 }
 
@@ -133,15 +133,27 @@
 	margin-left: auto;
 	width: 100%;
 	margin-top: 25px;
+	
 	@media screen and (min-width: $small-width) {
 		width: auto;
 		margin-top: 0;
+		min-width: 30%;
 	}
+}
+
+.hero .featured-link a {
+	transition-property: all;
+	transition-duration: 0.3s;
 }
 
 .hero .featured-link .header-title {
 	margin-bottom: 10px;
 	margin-top: 10px;
+	font-size: 19px;
+}
+
+.hero .featured-link .header-title a:hover {
+	color: $light-orange;
 }
 
 .hero .featured-link:after {

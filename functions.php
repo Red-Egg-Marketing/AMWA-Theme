@@ -403,6 +403,17 @@ function woocommerce_show_flex_slider_product_images() {
   <?php 
   }
 }
+
+remove_action( 'woocommerce_before_shop_loop_item_title', 'woocommerce_template_loop_product_thumbnail', 10 );
+add_action( 'woocommerce_before_shop_loop_item_title', 'amwa_custom_loop_product_thumbnail', 10 );
+function amwa_custom_loop_product_thumbnail() {
+    global $product;
+    $size = 'woocommerce_thumbnail';
+
+    $image_size = apply_filters( 'single_product_archive_thumbnail_size', $size );
+
+    echo $product ? '<div class="image-wrap">' . $product->get_image( $image_size ) . '</div>' : '';
+}
  
 function ts_quantity_plus_minus() {
    // To run this on the single product page
@@ -465,6 +476,19 @@ function handle_custom_query_var( $query, $query_vars ) {
 add_filter( 'woocommerce_product_data_store_cpt_get_products_query', 'handle_custom_query_var', 10, 2 );
 
 
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	ob_start();
+
+	?>
+	<span class="total cart-total">' . $woocommerce->cart->get_cart_total() . '</span>
+	<?php
+	$fragments['span.cart-total'] = ob_get_clean();
+	return $fragments;
+}
 
 
 /**

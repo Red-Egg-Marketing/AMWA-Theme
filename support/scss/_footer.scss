@@ -316,8 +316,8 @@ a.footer-home {
 	font-size: 18px;
 	line-height: 26px;
 	@media screen and (min-width: $med-small-width) {
-		font-size: 18px;
-		line-height: 28px;
+		font-size: 16px;
+		line-height: 26px;
 	}
 }
 
@@ -328,9 +328,9 @@ a.footer-home {
 
 .site-footer .contact-link,
 .site-footer li.menu-item {
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	@media screen and (min-width: $med-small-width) {
-		margin-bottom: 25px;
+		margin-bottom: 10px;
 	}
 }
 

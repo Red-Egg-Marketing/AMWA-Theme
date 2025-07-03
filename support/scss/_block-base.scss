@@ -183,7 +183,7 @@ h4 {
 }
 
 .light-brown {
-	background: $light-brown;
+	background: $light-yellow;
 }
 
 .light-blue {
@@ -354,6 +354,7 @@ h4 {
 	min-height: 225px;
 	display: flex;
 	align-items: stretch;
+	height: 100%;
 	@media screen and (min-width: $small-width) {
 		min-height: 350px;
 	}
@@ -865,7 +866,11 @@ figure.wp-block-gallery figure {
 :root :where(.wp-block-heading.has-background),
 :root :where(p.has-background) {
 	margin: 0;
-	padding: 30px !important;
+	padding: 20px 30px !important;
+}
+
+:root :where(p.has-background) + p.has-background {
+	padding-top: 0 !important;
 }
 
 .closures .content {
@@ -877,4 +882,8 @@ figure.wp-block-gallery figure {
 		margin-bottom: 120px;
 
 	}
+}
+
+.wonderplugingallery-container {
+	margin-left: 0 !important;
 }

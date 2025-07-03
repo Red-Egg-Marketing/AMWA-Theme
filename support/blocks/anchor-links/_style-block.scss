@@ -38,6 +38,10 @@
 	text-decoration: none;
 }
 
+.anchor-links .wp-block-list a:hover {
+	color: $light-orange;
+}
+
 .anchor-links .wp-block-list li {
 	font-size: 16px;
 	margin-left: 0;

@@ -26,10 +26,15 @@
 	}
 }
 
+.portraits .header-intro-block .block-wrapper {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .portraits > .block-wrapper > .block-content {
 	display: flex;
 	flex-wrap: wrap;
-	align-items: flex-start;
+	align-items: stretch;
 	position: relative;
 	width: 100%;
 	margin: 0 auto;
@@ -69,11 +74,19 @@
 	}
 }
 
+.portraits .content-columns .wrap {
+	@media screen and (min-width: $small-width) {
+		position: sticky;
+		top: 175px;
+	}
+}
+
 .portraits .content-columns {
 	width: 100%;
 	box-sizing: border-box;
 	max-width: 100%;
 	margin-bottom: 35px;
+	position: relative;
 	@media screen and (min-width: $small-width) {
 		width: calc(50% - 30px);
 		padding-right: 16.66667%;

@@ -6,7 +6,7 @@ const { __ } = wp.i18n;
 
 const defcolors = [
     { name: 'White', color: 'rgba(255, 255, 255, 1)', slug: 'white' },
-    { name: 'Light Brown', color: 'rgba(240, 232, 215, 1)', slug: 'light-brown' },
+    { name: 'Light Yellow', color: 'rgba(251, 242, 232, 1)', slug: 'light-yellow' },
 ];
 
 const BackgroundColor = (props) => {

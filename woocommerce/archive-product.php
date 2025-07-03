@@ -47,7 +47,7 @@ do_action( 'woocommerce_shop_loop_header' );
   $ordering              = WC()->query->get_catalog_ordering_args();
   $ordering['orderby']   = array_shift(explode(' ', $ordering['orderby']));
   $ordering['orderby']   = stristr($ordering['orderby'], 'price') ? 'meta_value_num' : $ordering['orderby'];
-  $limit = 30;
+  $limit = 12;
   $paged = $GLOBALS['wp_query']->get( 'paged', 1 );
 
   if ($paged > 0) {

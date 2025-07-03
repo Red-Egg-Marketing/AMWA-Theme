@@ -50,8 +50,8 @@ button.wp-button {
 		color: white;
 	}
 	&:visited {
-		background: black;
-		color: white;
+		background: $light-orange;
+		color: black;
 	}
 	&[disabled] {
 		opacity: .5;
@@ -78,6 +78,10 @@ button.wp-button {
 		line-height: 21px;
 		width: initial;
 	}
+}
+
+.wp-block-buttons.is-layout-flex {
+	gap: 1.5em
 }
 
 body.buddypress .buddypress-wrap input[type=submit].auto {

@@ -42,6 +42,30 @@
 	color: $light-orange;
 }
 
+.product .woocommerce-loop-product__link .image-wrap {
+	position: relative;
+}
+
+.product .woocommerce-loop-product__link .image-wrap:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 1) url($shop) no-repeat 7.5% 92.5% / 25px;
+	opacity: 0;
+	transition-duration: 0.3s;
+	transition-property: opacity;
+	@media screen and (min-width: $small-width) {
+		background: rgba(0, 0, 0, 1) url($shop) no-repeat 7.5% 92.5% / 45px;
+	}
+}
+
+.product .woocommerce-loop-product__link .image-wrap:hover:after {
+	opacity: .4;
+}
+
 .product .event-date {
 	display: none;
 }
@@ -59,15 +83,30 @@ body.woocommerce:where(body:not(.woocommerce-uses-block-theme)) div.product .pri
 body.woocommerce .site-main > .wrapper {
 	margin-top: 50px;
 	margin-bottom: 50px;
+	align-items: stretch;
 	@media screen and (min-width: $small-width) {
 		margin-top: 100px;
 		margin-bottom: 100px;
 	}
 }
 
+body.woocommerce .site-main > .wrapper .col-image {
+	display: flex;
+	align-items: stretch;
+}
+
+.col-image img {
+	display: block;
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
 .archive.tax-product_cat .col .woocommerce-products-header__title {
 	@media screen and (min-width: $small-width) {
 		margin-top: 0;
+		font-size: 45px;
+		margin-bottom: 25px;
 	}
 }
 
@@ -102,6 +141,27 @@ body.woocommerce .site-main > .wrapper {
 		font-size: 45px;
 		line-height: 54px;
 	}
+}
+
+.woocommerce nav.woocommerce-pagination ul {
+	margin-top: 35px;
+	@media screen and (min-width: $small-width) {
+		margin-top: 60px;
+	}
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+	font-size: 16px;
+	color: black;
+	padding: 1em;
+	background: white;
+	font-family: $font-body;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+	background: black;
+	color: white;
 }
 
 .product_title.entry-title span {
@@ -204,7 +264,5 @@ body.woocommerce-page div.product div.summary {
 .woocommerce-notices-wrapper, 
 .woocommerce-page .entry-content > .woocommerce {
 	max-width: $max-cont-w + 200px;
-	padding-left: 1.25rem;
-	padding-right: 1.25rem;
 	margin: 0 auto;
 }

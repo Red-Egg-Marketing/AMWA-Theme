@@ -23,8 +23,8 @@
 	color: black;
 	font-weight: 300;
 	@media screen and (min-width: $small-width) {
-		font-size: 22px;
-		line-height: 33px;
+		font-size: 19px;
+		line-height: 32px;
 	}
 }
 
@@ -37,8 +37,8 @@
 	font-weight: 300;
 	font-family: $font-body;
 	@media screen and (min-width: $small-width) {
-		font-size: 22px;
-		line-height: 33px;
+		font-size: 19px;
+		line-height: 32px;
 	}
 }
 
@@ -395,8 +395,17 @@ block a:after {
 	font-size: 20px !important;
 	line-height: 29px;
 	@media screen and (min-width: $small-width) {
-		font-size: 22px !important;
+		font-size: 23px !important;
 		line-height: 34px;
+	}
+}
+
+.entry-content p.has-small-font-size {
+	font-size: 16px !important;
+	line-height: 28px;
+	@media screen and (min-width: $small-width) {
+		font-size: 16px !important;
+		line-height: 28px;
 	}
 }
 
