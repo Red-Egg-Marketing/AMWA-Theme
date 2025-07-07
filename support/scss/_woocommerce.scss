@@ -267,6 +267,11 @@ body.woocommerce-page div.product div.summary {
 	padding-right: 1.25rem;
 }
 
+.site-main > .woocommerce-notices-wrapper {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+
 .woocommerce-notices-wrapper, 
 .woocommerce-page .entry-content > .woocommerce {
 	max-width: $max-cont-w + 200px;

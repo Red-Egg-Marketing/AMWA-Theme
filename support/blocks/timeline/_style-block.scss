@@ -261,12 +261,14 @@
 
 .timeline h2 {
 	font-size: 60px;
+	line-height: 60px;
 	color: $light-orange;
 	margin-top: 0;
 	margin-bottom: 20px;
 	font-family: $font-body;
 	@media screen and (min-width: $small-width) {
 		font-size: 75px;
+		line-height: 75px;
 		margin-bottom: 30px;
 	}
 }

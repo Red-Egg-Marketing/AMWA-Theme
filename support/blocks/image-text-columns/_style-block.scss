@@ -67,6 +67,16 @@
 	}
 }
 
+.image-columns h1 {
+	font-weight: 700;
+	font-size: 30px;
+	line-height: 39px;
+	@media screen and (min-width: $small-width) {
+		font-size: 45px;
+		line-height: 54px;
+	}
+}
+
 .image-columns.full-width .img-right .content-columns {
 	@media screen and (min-width: $small-width) {
 		margin-left: auto;
@@ -245,7 +255,7 @@
 	}
 }
 
-.image-columns .content-columns br {
+/*.image-columns .content-columns br {
 	display: block;
 	@media screen and (min-width: $xx-width) and (max-width: $small-width) {
 		display: none;
@@ -265,7 +275,7 @@
 	@media screen and (min-width: $max-cont-w) {
 		display: block;
 	}
-}
+}*/
 
 
 .image-columns .wrap > *:first-child {

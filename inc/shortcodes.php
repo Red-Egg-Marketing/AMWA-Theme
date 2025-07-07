@@ -66,7 +66,12 @@ function amwa_get_closures( $atts = [] ) {
 		$html .= '</div>';
 		wp_reset_postdata();
 	} else {
-		$html = 'No closures';
+		$html .= '<div class="block-wrapper closures">';
+		$html .= '<h5>' . $title . '</h5>';
+		$html .= '<div class="light-yellow content">';
+		$html .= '<p>No closures</p>';
+		$html .= '</div>';
+		$html .= '</div>';
 	}
 
 	return $html;

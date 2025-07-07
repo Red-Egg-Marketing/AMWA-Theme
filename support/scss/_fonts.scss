@@ -164,12 +164,12 @@ h6 a {
 .editor-visual-editor h3, .entry-content h3 {
 	color: black;
 	font-size: 30px;
-	line-height: 36px;
+	line-height: 39px;
 	font-family: $font-head;
 	font-weight: 700;
 	@media screen and (min-width: $small-width) {
-		font-size: 42px;
-		line-height: 48px;
+		font-size: 45px;
+		line-height: 54px;
 	}
 }
 
@@ -401,22 +401,12 @@ block a:after {
 
 .entry-content p.has-small-font-size {
 	font-size: 16px !important;
-	line-height: 28px;
+	line-height: 23px;
 	@media screen and (min-width: $small-width) {
 		font-size: 16px !important;
-		line-height: 28px;
+		line-height: 25px;
 	}
 }
-
-.entry-content p.has-large-font-size {
-	font-size: 24px !important;
-	line-height: 36px;
-	@media screen and (min-width: $small-width) {
-		font-size: 30px !important;
-		line-height: 42px;
-	}
-}
-
 
 /* arrows */
 arrow:after {

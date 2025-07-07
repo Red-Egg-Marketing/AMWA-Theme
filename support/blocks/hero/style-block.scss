@@ -76,7 +76,7 @@
 	width: 100%;
 	margin-bottom: 0;
 	position: relative;
-	min-height: 450px;
+	min-height: 300px;
 	@media screen and (min-width: $small-width) {
 		min-height: 540px;
 	}
@@ -91,9 +91,17 @@
 	color: white;
 }
 
+.wp-block.hero.full-height,
+.hero.full-height {
+	min-height: 450px;
+	@media screen and (min-width: $small-width) {
+		min-height: 540px;
+	}
+}
+
 .hero {
 	position: relative;
-	min-height: 450px;
+	min-height: 300px;
 	display: flex;
 	flex-wrap: wrap;
 	align-items: stretch;
@@ -110,7 +118,7 @@
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
-	align-items: center;
+	align-items: flex-end;
 	position: relative;
 	max-width: 100%;
 	@media screen and (min-width: $small-width) {
@@ -165,10 +173,17 @@
 	width: 100%;
 }
 
+.hero.full-height .hero-block-image-wrap {
+	min-height: 450px;
+	@media screen and (min-width: $small-width) {
+		min-height: 690px;
+	}
+}
+
 .hero-block-image-wrap {
 	height: 100%;
 	display: flex;
-	min-height: 450px;
+	min-height: 300px;
 	flex-wrap: wrap;
 	width: 100%;
 	overflow: hidden;
@@ -246,6 +261,13 @@
 	display: flex;
 }
 
+.hero.full-height .hero__inner .content-wrap {
+	padding-bottom: 30px;
+	@media screen and (min-width: $small-width) {
+		padding-bottom: 80px;
+	}
+}
+
 .hero__inner .content-wrap {
 	position: relative;
 	width: 100%;
@@ -258,13 +280,11 @@
 	max-width: $max-cont-w + 200px;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
-	padding-bottom: 45px;
+	padding-bottom: 0;
 	@media screen and (min-width: $small-width) {
 		position: relative;
-		padding-bottom: 10vh;
 		width: 100%;
 		margin-top: 80px;
-		margin-bottom: 80px;
 		grid-column-gap: 60px;
 	}
 }

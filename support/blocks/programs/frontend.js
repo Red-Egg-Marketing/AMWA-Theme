@@ -31,8 +31,8 @@ const SaveSelectedProjects = ( {category, append} ) => {
     			    new Swiper(append, 
 						{
 							loop: false,
-							slidesPerView: 1,
-							autoplay: true,
+							slidesPerView: 1.5,
+							autoplay: false,
 							effect: 'slide',
 							spaceBetween: 15,
 							speed: 1500,

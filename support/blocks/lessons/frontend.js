@@ -32,7 +32,7 @@ const SaveSelectedProjects = ( {category, append} ) => {
 						{
 							autoHeight: false,
 							loop: false,
-							slidesPerView: 1,
+							slidesPerView: 1.5,
 							autoplay: true,
 							effect: 'slide',
 							spaceBetween: 15,
