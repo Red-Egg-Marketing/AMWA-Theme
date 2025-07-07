@@ -14,6 +14,13 @@
 	margin-bottom: 0;
 }
 
+.woocommerce-cart table.cart td.actions .coupon .input-text {
+	min-width: 200px;
+	@media screen and (min-width: $small-width) {
+		min-width: 300px;
+	}
+}
+
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .product .woocommerce-loop-product__title {
 	color: black;

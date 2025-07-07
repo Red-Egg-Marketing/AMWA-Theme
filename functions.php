@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.8.7' );
+	define( '_S_VERSION', '1.8.8' );
 }
 
 if ( ! function_exists( 'amwa_theme_setup' ) ) :
@@ -146,7 +146,6 @@ add_action( 'widgets_init', 'amwa_theme_widgets_init' );
  */
 function amwa_theme_scripts() {
 	global $post;
-
 	wp_enqueue_style('AMWA-theme-fonts', 'https://fonts.googleapis.com/css2?family=Bona+Nova:ital,wght@0,400;0,700;1,400&family=Figtree:ital,wght@0,300..900;1,300..900&display=swap', [], null);
 	wp_enqueue_style( 'AMWA-theme-style', get_stylesheet_uri(), ['AMWA-theme-fonts' , 'wp-components'], _S_VERSION );
 	wp_style_add_data( 'AMWA-theme-style', 'rtl', 'replace' );
@@ -193,7 +192,17 @@ function amwa_theme_scripts() {
 
 }
 
-add_action( 'wp_enqueue_scripts', 'amwa_theme_scripts' );
+add_action( 'wp_enqueue_scripts', 'amwa_theme_scripts');
+
+
+function amwa_cart_scripts() {
+	if (is_cart()) {
+		wp_enqueue_script( 'wc-cart-fragments' );
+
+	}
+}
+
+add_action('wp_enqueue_scripts', 'amwa_cart_scripts');
 
 
 function amwa_theme_browser_body_class($classes) {
@@ -476,7 +485,7 @@ function handle_custom_query_var( $query, $query_vars ) {
 add_filter( 'woocommerce_product_data_store_cpt_get_products_query', 'handle_custom_query_var', 10, 2 );
 
 
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment', 50, 1);
 
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
@@ -484,11 +493,12 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	ob_start();
 	$items_count = WC()->cart->get_cart_contents_count();
 	?>
-	<span class="total cart-total"><?php echo $items_count ? $items_count : '&nbsp;'; ?></span>
+	<span id="CartTotal" class="total cart-total"><?php echo $items_count ? $items_count : '0'; ?></span>
 	<?php
-	$fragments['span.cart-total'] = ob_get_clean();
+	$fragments['#CartTotal'] = ob_get_clean();
 	return $fragments;
 }
+
 
 
 /**

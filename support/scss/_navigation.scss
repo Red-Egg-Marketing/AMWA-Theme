@@ -798,7 +798,22 @@ li.menu-item.nav-button a {
 		padding-bottom: 40px;
 		position: absolute;
 		background: $light-yellow;
+		transition-property: opacity;
+		transition-duration: 0.3s;
+		opacity: 0;
+		display: block;
 		width: 100%;
+	}
+}
+
+.main-navigation ul.nav-menu > li:hover > .inner-wrap,
+.main-navigation ul.nav-menu > li.focus > .inner-wrap {
+	@media screen and (min-width: $med-small-width) {
+		margin: 0 auto;
+		left: 0;
+		right: 0;
+		transform: translateY(0px);
+		opacity: 1;
 	}
 }
 
@@ -1044,16 +1059,6 @@ li.menu-item.nav-button a {
 	@media screen and (min-width: $small-width) and (max-width: $med-width) {
 		font-size: 14px;
 		line-height: 18px;
-	}
-}
-
-.main-navigation ul.nav-menu > li:hover > .inner-wrap,
-.main-navigation ul.nav-menu > li.focus > .inner-wrap {
-	@media screen and (min-width: $med-small-width) {
-		margin: 0 auto;
-		left: 0;
-		right: 0;
-		display: block;
 	}
 }
 
