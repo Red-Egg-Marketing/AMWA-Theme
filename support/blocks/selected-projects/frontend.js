@@ -32,7 +32,7 @@ const SaveSelectedProjects = () => {
 						{
 							loop: false,
 							slidesPerView: 1,
-							autoplay: false,
+							autoplay: true,
 							effect: 'slide',
 							spaceBetween: 15,
 							speed: 1500,

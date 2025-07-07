@@ -27,6 +27,20 @@
 	padding: 15px;
 }
 
+#powerTip.n:before {
+    border-top: 10px solid $light-yellow;
+}
+#powerTip.s:before {
+    border-bottom: 10px solid $light-yellow;
+}
+#powerTip.e:before {
+    border-right: 10px solid $light-yellow;
+}
+#powerTip.w:before {
+    border-left: 10px solid $light-yellow;
+    right: -10px
+}
+
 #powerTip * {
 	font-family: $font-body;
 	color: black;
@@ -42,4 +56,12 @@
 
 .wp-block-gallery.has-nested-images figure.wp-block-image {
 	aspect-ratio: 1/1;
+}
+
+#baguetteBox-overlay .full-image figcaption {
+	background: $light-yellow;
+	color: black;
+	font-size: 18px;
+	padding-top: 15px;
+	padding-bottom: 15px;
 }
