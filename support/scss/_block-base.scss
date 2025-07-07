@@ -93,6 +93,10 @@ h4 {
 	}
 }
 
+.search .site-main > .wrapper {
+	display: grid;
+}
+
 .content p {
 	font-family: $font-body;
 }
@@ -520,7 +524,7 @@ h4 {
 .resource-card p.resource-excerpt {
 	overflow-wrap: anywhere;
 	font-family: $font-body;
-	color: black;
+	color: white;
 	margin-top: 10px;
 }
 

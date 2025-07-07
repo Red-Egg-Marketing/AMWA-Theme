@@ -628,7 +628,7 @@ function amwa_theme_resource_card($id, $cats = true, $read = 'Read More', $image
 		$thumbnail = get_the_post_thumbnail_url($id, 'post-landscape') != false ? get_the_post_thumbnail_url($id, 'post-landscape') : get_the_post_thumbnail_url($id, 'thumbnail');
 
 		if ($thumbnail == false || $thumbnail == '') {
-			$thumbnail .= get_template_directory_uri() .  '/img/coming-soon.gif';
+			$thumbnail .= get_template_directory_uri() .  '/img/shop-header.jpg';
 		}
 
 		$html = '<div class="resource-card">';
