@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.8.3' );
+	define( '_S_VERSION', '1.8.4' );
 }
 
 if ( ! function_exists( 'amwa_theme_setup' ) ) :
@@ -480,11 +480,11 @@ add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart
 
 function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	global $woocommerce;
-
+	 
 	ob_start();
-
+	$items_count = WC()->cart->get_cart_contents_count();
 	?>
-	<span class="total cart-total">' . $woocommerce->cart->get_cart_total() . '</span>
+	<span class="total cart-total"><?php echo $items_count ? $items_count : '&nbsp;'; ?></span>
 	<?php
 	$fragments['span.cart-total'] = ob_get_clean();
 	return $fragments;

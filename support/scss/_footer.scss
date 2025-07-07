@@ -304,6 +304,11 @@ a.footer-home {
 	font-family: $font-body;
 }
 
+.site .site-footer p {
+	margin-bottom: 10px;
+}
+
+.site-footer li,
 .site .site-footer p, 
 .site-footer address p,
 .site-footer .contact-link,
@@ -331,6 +336,7 @@ a.footer-home {
 	margin-bottom: 10px;
 	@media screen and (min-width: $med-small-width) {
 		margin-bottom: 10px;
+		line-height: 26px;
 	}
 }
 

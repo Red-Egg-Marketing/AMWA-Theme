@@ -282,3 +282,11 @@ body.woocommerce-page div.product div.summary {
 	max-width: $max-cont-w + 200px;
 	margin: 45px auto 45px;
 }
+
+.woocommerce a.added_to_cart {
+	background: $light-grey !important;
+	line-height: 34px;
+	&:hover {
+		color: black;
+	}
+}

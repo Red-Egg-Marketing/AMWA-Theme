@@ -109,6 +109,10 @@ const SaveTickets = ( { attributes, reference } ) => {
   				setType(false);
   			}
 
+  			let parent = reference.querySelector('.select-field').parentElement;
+
+  			parent.classList.remove('toggled');
+
   		}
 
   		const decreaseQuantity = () => {
@@ -135,8 +139,8 @@ const SaveTickets = ( { attributes, reference } ) => {
 
   		const submitTickets = (event) => {
   			// /?add-to-cart=PRODUCT_ID&quantity=QUANTITY
-  			let url = '?add-to-cart=' + finalProduct + '&quantity=' + quantity;
-  			window.location.href = '/cart' + url;
+  			// let url = '?add-to-cart=' + finalProduct + '&quantity=' + quantity;
+  			// window.location.href = '/cart' + url;
   			event.preventDefault();
   		}
 
@@ -194,7 +198,9 @@ const SaveTickets = ( { attributes, reference } ) => {
 								)}
 								<button 
 									disabled={ type == false ? true : false }
-									className="single_add_to_cart_button button" 
+									className="single_add_to_cart_button button ajax_add_to_cart add_to_cart_button"
+									data-product_id={ finalProduct }
+									data-quantity={ quantity }
 									type="submit"
 									onClick={ submitTickets }
 								>Book Tickets</button>

@@ -353,10 +353,14 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     -webkit-appearance: none;
 }
 
+.ticket-form button[type="submit"].loading {
+	height: auto;
+}
 
 
 .woocommerce div.product form.cart .button,
 .ticket-form button[type="submit"],
+.ticket-form button[type="submit"].loading,
 div.gform_wrapper input[type="submit"]:not([type=checkbox]):not([type=image]):not([type=file])	
  {
 	@extend .wp-block-button__link;
@@ -1008,6 +1012,7 @@ form.cart .quantity {
 	border-radius: 0;
 	padding-left: 18px;
 	padding-right: 0;
+	background: white;
 	font-size: 18px;
 	color: black;
 	@media screen and (min-width: $small-width) {
