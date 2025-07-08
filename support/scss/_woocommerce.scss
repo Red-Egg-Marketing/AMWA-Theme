@@ -6,10 +6,6 @@
 	text-decoration: none;
 }
 
-.woocommerce-notices-wrapper {
-	margin-bottom: 25px;
-}
-
 .woocommerce-notices-wrapper:empty {
 	margin-bottom: 0;
 }
@@ -285,6 +281,11 @@ body.woocommerce-page div.product div.summary {
 	margin: 0 auto;
 }
 
+div.woocommerce-notices-wrapper {
+	margin-bottom: 25px;
+	margin-top: 25px;
+}
+
 .woocommerce > .wrapper {
 	max-width: $max-cont-w + 200px;
 	margin: 45px auto 45px;
@@ -296,4 +297,9 @@ body.woocommerce-page div.product div.summary {
 	&:hover {
 		color: black;
 	}
+}
+
+.woocommerce #content table.cart td.actions .coupon, .woocommerce table.cart td.actions .coupon, .woocommerce-page #content table.cart td.actions .coupon, .woocommerce-page table.cart td.actions .coupon {
+	display: flex;
+	align-items: stretch;
 }
