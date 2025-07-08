@@ -500,6 +500,18 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 }
 
 
+add_filter( 'gettext', 'amwa_change_view_cart_text', 20, 3 );
+     function amwa_change_view_cart_text( $translated_text, $text, $domain ) {
+         if ( is_cart() || is_checkout() ) {
+             return $translated_text;
+         }
+         if ( 'View cart' === $text ) {
+             $translated_text = 'Checkout';
+         }
+         return $translated_text;
+     }
+
+
 
 /**
  * Implement the Custom Header feature.
