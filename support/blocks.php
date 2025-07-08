@@ -149,7 +149,7 @@ function amwa_theme_dynamic_case_studies_grid_block() {
             'fancybox',
             get_template_directory_uri() . '/support/js-compile/libraries/fancybox-v4.0.26.js',
             ['jquery'],
-            'v1.0.5',
+            'v1.0.6',
             true
         );
         $front_path = '/support/assets/js/main.js';
@@ -157,7 +157,7 @@ function amwa_theme_dynamic_case_studies_grid_block() {
             'wp-main-js',
             get_template_directory_uri() . $front_path,
             ['wp-api', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'scroll-magic', 'tweenmax', 'tweenmax-animation', 'scrolltrigger', 'lottie-script'],
-            'v1.0.5',
+            'v1.0.7',
             true
        );
     }

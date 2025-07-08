@@ -16,7 +16,7 @@
 
 .contact-section .block-wrapper {
 	width: 100%;
-	max-width: 1680px;
+	max-width: $max-cont-w + 200px;
 	padding-left: 1.25rem;
 	padding-right: 1.25rem;
 	margin: 0 auto;
@@ -40,6 +40,16 @@
 	max-width: $med-small-width;
 	width: 100%;
 	margin: 0 auto;
+	@media screen and (min-width: $small-width) {
+		width: 60%;
+	}
+}
+
+.contact-section .header-intro-block {
+	width: 100%;
+	@media screen and (min-width: $small-width) {
+		width: 40%;
+	}
 }
 
 .contact-section .content {

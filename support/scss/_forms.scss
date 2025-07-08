@@ -615,9 +615,9 @@ div.gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) s
 div.gform_wrapper.gravity-theme .gform_footer,
 div.gform_wrapper .gform_page_footer {
 	padding-top: 0;
-	margin-top: 20px;
+	margin-top: 10px;
 	@media screen and (min-width: $form-width) {
-		margin-top: 45px;
+		margin-top: 15px;
 	}
 }
 
@@ -679,7 +679,7 @@ div.gform_wrapper .gform_page_footer {
 }
 
 .contact-section div.gform_wrapper .gfield_required {
-	color: white;
+	color: black;
 }
 
 .contact-section div.gform_wrapper input[type=color], .contact-section div.gform_wrapper input[type=color], [class*="wp-block"].contact-section div.gform_wrapper input[type=color],
@@ -888,7 +888,7 @@ div.gform_wrapper .gform_drop_area .gform_drop_instructions {
 }
 
 div.gform_wrapper .gform_fileupload_rules {
-	color: white;
+	color: black;
 }
 
 div.gform_wrapper .gform_drop_area button.gform_button_select_files {
@@ -897,7 +897,7 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 
 .gform_confirmation_message {
 	text-align: center;
-	color: white;
+	color: black;
 	text-transform: capitalize;
 	font-size: 26px;
 	line-height: 32px;

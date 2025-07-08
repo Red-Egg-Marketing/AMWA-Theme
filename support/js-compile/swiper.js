@@ -9,7 +9,7 @@ import Swiper from 'swiper/bundle';
         {
             loop: false,
             slidesPerView: 1,
-            autoplay: false,
+            autoplay: true,
             autoHeight: false,
             effect: 'slide',
             spaceBetween: 15,
@@ -26,7 +26,7 @@ import Swiper from 'swiper/bundle';
         {
             loop: true,
             slidesPerView: 1,
-            autoplay: false,
+            autoplay: true,
             autoHeight: false,
             effect: 'slide',
             spaceBetween: 15,
@@ -42,11 +42,11 @@ import Swiper from 'swiper/bundle';
     let collections = new Swiper('.collections.swiper', 
         {
             loop: true,
-            slidesPerView: 1,
-            autoplay: false,
+            slidesPerView: 1.5,
+            autoplay: true,
             autoHeight: false,
             effect: 'slide',
-            spaceBetween: 10,
+            spaceBetween: 15,
             speed: 800,
             navigation: {
                 nextEl: '.swiper-button-next',
