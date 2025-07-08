@@ -149,7 +149,7 @@ function amwa_theme_dynamic_case_studies_grid_block() {
             'fancybox',
             get_template_directory_uri() . '/support/js-compile/libraries/fancybox-v4.0.26.js',
             ['jquery'],
-            'v1.0.4',
+            'v1.0.5',
             true
         );
         $front_path = '/support/assets/js/main.js';
