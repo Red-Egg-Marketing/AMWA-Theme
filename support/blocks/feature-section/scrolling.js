@@ -7,33 +7,18 @@ require('es6-promise/auto');
 
 		gsap.registerPlugin(ScrollTrigger);
 
-		var columns = document.querySelectorAll('.feature-section.scroll-activate');
+		var columns = document.querySelectorAll('.feature-section');
 
 		if (columns.length > 0 ) {
 			columns.forEach(function(column, index) {
-				let block = column.querySelector('.block-content');
-				let content = column.querySelector('.content-columns');
-				let image = column.querySelector('.image-col');
-				let classList = column.classList.contains('img-right');
-				let x = classList == true ? -15 : 15;
+				let image = column.querySelector('.image-column');
 
-				gsap.set(content,
-					{
-						opacity: 0,
-						x: x + '%'
-					}
-				);
-				gsap.set(image,
-					{
-						opacity: 0,
-					}
-				);
 				let tl = gsap.timeline({
 					scrollTrigger: {
-						trigger: block,
+						trigger: column,
 						start: "top 100%",
 						onUpdate: function(progress) {
-							animateFrom(progress, block, x, column);
+							animateFrom(progress, image);
 						},
 					}
 				});
@@ -42,32 +27,27 @@ require('es6-promise/auto');
 		}
 	}
 
-
-	function animateFrom(progress, element, xPos, parent) {
-		let prog = (progress.progress * 4) < 1 ? progress.progress * 4 : 1;
-		let content = element.querySelector('.content-columns');
-		let image = element.querySelector('.image-column');
-		let PosNeg = Math.sign(xPos);
-		let newX = PosNeg < 0 ? Math.abs(xPos) : -xPos;
-		let progX = xPos + (newX * prog);
-
-		gsap.to(content, 
-		{
-			opacity: prog,
-			x: progX + '%'
-		});	
-
-		gsap.to(image,
-		{
-			opacity: prog,
-		});
-
-		if (prog > 0.75) {
-			parent.classList.add('animate-complete');
-		} else {
-			parent.classList.remove('animate-complete');
+	function animateFrom(progress, element) {
+		let prog = progress.progress;
+		let menu = document.querySelector('#masthead');
+		let anchors = document.querySelectorAll('.anchor-links');
+		let totalHeight = 0;
+		if (menu) {
+			let menuH = menu.offsetHeight;
+			totalHeight += menuH
+		}
+		
+		if (anchors) {
+			anchors.forEach((anchor)=> {
+				let anchorH = anchor.offsetHeight;
+				totalHeight += anchorH;
+			})
 		}
 
+
+		if (prog > 0) {
+			element.style.top = totalHeight + 'px';
+		}
 	}
 
 	ScrollImageColumns();

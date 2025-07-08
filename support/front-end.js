@@ -15,7 +15,7 @@ import "./blocks/collections/frontend.js";
 // import "./blocks/progress-block/scroll.js";
 import "./blocks/contact/contact.js";
 // import "./blocks/savings-calculator/savings.js";
-// import "./blocks/feature-section/scrolling.js";
+import "./blocks/feature-section/scrolling.js";
 import "./blocks/text-cards-grid/text-cards.js";
 import "./blocks/timeline/timeline.js";
 import "./js-compile/fancybox-settings.js";
