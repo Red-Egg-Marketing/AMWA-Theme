@@ -364,6 +364,7 @@ div.woocommerce-notices-wrapper:empty {
 	width: 100%;
 	display: flex;
 	flex-wrap: wrap;
+	align-items: flex-start;
 }
 
 .woocommerce-cart .product-remove {
@@ -388,7 +389,8 @@ div.woocommerce-notices-wrapper:empty {
 		width: calc(35% - 2.5rem);
 		margin-left: 2.5rem;
 		margin-top: 0;
-		
+		position: sticky;
+		top: 120px;
 	}
 }
 
@@ -414,5 +416,18 @@ div.woocommerce-notices-wrapper:empty {
 .cart-collaterals .coupon {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-between;
+	justify-content: flex-end;
+	@media screen and (min-width: $small-width) {
+		justify-content: space-between;
+	}
+}
+
+.cart-collaterals .coupon #coupon_code {
+	width: 100%;
+	margin-bottom: 10px;
+	min-height: 45px;
+	@media screen and (min-width: $small-width) {
+		width: auto;
+		margin-bottom: 0;
+	}
 }

@@ -43,8 +43,7 @@ import Swiper from 'swiper/bundle';
         {
             loop: true,
             slidesPerView: 1.5,
-            autoplay: true,
-            autoHeight: false,
+            autoplay: false,
             effect: 'slide',
             spaceBetween: 15,
             speed: 800,
