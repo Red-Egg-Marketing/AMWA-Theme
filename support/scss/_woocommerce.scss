@@ -427,7 +427,7 @@ div.woocommerce-notices-wrapper:empty {
 	margin-bottom: 10px;
 	min-height: 45px;
 	@media screen and (min-width: $small-width) {
-		width: auto;
+		width: 50%;
 		margin-bottom: 0;
 	}
 }
