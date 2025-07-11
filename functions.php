@@ -196,10 +196,10 @@ add_action( 'wp_enqueue_scripts', 'amwa_theme_scripts');
 
 
 function amwa_cart_scripts() {
-	// if (is_cart()) {
+	if (is_cart()) {
 		wp_enqueue_script( 'wc-cart-fragments' );
 
-	// }
+	}
 }
 
 add_action('wp_enqueue_scripts', 'amwa_cart_scripts');
