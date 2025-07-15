@@ -332,10 +332,26 @@ div.gform_wrapper label.gfield_label {
 div.gform_wrapper div.ginput_complex .ginput_left,
 div.gform_wrapper div.ginput_complex .ginput_right {
 	@media screen and (min-width: $form-width) {
-		width: 100%;
+		width: calc(50% - 17.5px);
+		flex: 0 0 calc(50% - 17.5px);
 		padding-right: 0;
 		padding-left: 0;
 	}
+}
+
+div.gform_wrapper.gravity-theme .ginput_container_time {
+	max-width: 125px;
+	min-width: 125px;
+}
+
+div.gform_wrapper.gravity-theme .field_sublabel_below .ginput_complex {
+	align-items: center;
+}
+
+.gform_wrapper.gravity-theme .gfield {
+	font-size: 16px;
+	line-height: 24px;
+	font-family: $font-body;
 }
 
 div.gform_legacy_markup_wrapper ul.gform_fields li.gfield {
@@ -774,7 +790,7 @@ div.gform_wrapper .gfield_checkbox {
 }
 
 div.gform_wrapper h3 {
-	color: white;
+	color: black;
 	font-size: 24px;
 	line-height: 28px;
 	@media screen and (min-width: $small-width) {
@@ -1047,4 +1063,18 @@ form.search-form input[type="search"] {
 		min-height: 52px;
 		min-width: 300px;
 	}
+}
+
+div.gform_wrapper.gravity-theme .ginput_container_address span {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+div.gform_wrapper.gravity-theme .ginput_container_address {
+	  margin-left: 0;
+    margin-right: 0;
+}
+
+div.gform_wrapper.gravity-theme .gf_progressbar_percentage.percentbar_blue {
+	background-color: $light-orange;
 }

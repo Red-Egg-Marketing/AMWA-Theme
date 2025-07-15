@@ -36,20 +36,23 @@
 	}
 }
 
+.contact-section .header-intro-block .block-wrapper {
+	padding-left: 0;
+	padding-right: 0;
+}
+
 .contact-section .form-column {
 	max-width: $med-small-width;
 	width: 100%;
 	margin: 0 auto;
 	@media screen and (min-width: $small-width) {
 		width: 60%;
+		margin-left: 0;
 	}
 }
 
 .contact-section .header-intro-block {
 	width: 100%;
-	@media screen and (min-width: $small-width) {
-		width: 40%;
-	}
 }
 
 .contact-section .content {
