@@ -18,7 +18,7 @@ const SaveSelectedProjects = ( {category, append} ) => {
 		React.useEffect( () => {
 
 			if (resources === false) {
-				data['ppp'] = 15;
+				data['ppp'] = -1;
 				data['category'] = category;
 				data['post_types'] = 'product';
 				setData(data);
@@ -85,7 +85,7 @@ const SaveSelectedProjects = ( {category, append} ) => {
 					{ resourcesEmpty && (
 						<Fragment>
 							<div className="error">
-								<p>There are no available programs matching your filters. Please try something else.</p>
+								<p>Check back later for updates.</p>
 							</div>
 						</Fragment>
 					)}

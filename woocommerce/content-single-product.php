@@ -19,6 +19,16 @@ defined( 'ABSPATH' ) || exit;
 
 global $product;
 
+$session = WC()->session;
+
+$notices = $session->wc_notices;
+
+$success_class = '';
+
+if ($notices && array_key_exists('success', $notices)) {
+	$success_class = 'success';
+}
+
 /**
  * Hook: woocommerce_before_single_product.
  *
@@ -33,7 +43,7 @@ if ( post_password_required() ) {
 ?>
 <div class="site-main">
 <div class="wrapper">
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( $success_class, $product ); ?>>
 
 	<?php
 	/**
@@ -60,6 +70,8 @@ if ( post_password_required() ) {
 		 * @hooked WC_Structured_Data::generate_product_data() - 60
 		 */
 		do_action( 'woocommerce_single_product_summary' );
+
+
 		?>
 	</div>
 </div>

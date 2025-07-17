@@ -17,6 +17,14 @@
 	}
 }
 
+.added_to_cart.success {
+	display: none !important;
+}
+
+.product.success .added_to_cart.success {
+	display: block !important;
+}
+
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .product .woocommerce-loop-product__title {
 	color: black;
@@ -34,6 +42,14 @@
 		margin-top: 15px;
 		margin-bottom: 10px;
 		line-height: 28px;
+	}
+}
+
+
+.product button.single_add_to_cart_button {
+	margin-right: 20px;
+	@media screen and (min-width: $small-width) {
+		margin-right: 45px;
 	}
 }
 

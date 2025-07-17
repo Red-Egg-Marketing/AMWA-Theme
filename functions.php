@@ -499,18 +499,34 @@ function woocommerce_header_add_to_cart_fragment( $fragments ) {
 	return $fragments;
 }
 
-
 add_filter( 'gettext', 'amwa_change_view_cart_text', 20, 3 );
-     function amwa_change_view_cart_text( $translated_text, $text, $domain ) {
-         if ( is_cart() || is_checkout() ) {
-             return $translated_text;
-         }
-         if ( 'View cart' === $text ) {
-             $translated_text = 'Checkout';
-         }
-         return $translated_text;
-     }
 
+function amwa_change_view_cart_text( $translated_text, $text, $domain ) {
+    if ( is_cart() || is_checkout() ) {
+        return $translated_text;
+    }
+    if ( 'View cart' === $text ) {
+        $translated_text = 'Checkout';
+    }
+    return $translated_text;
+}
+
+
+function add_content_after_addtocart() {
+
+    // get the current post/product ID
+    $current_product_id = get_the_ID();
+
+    // get the product based on the ID
+    $product = wc_get_product( $current_product_id );
+
+    // get the "Checkout Page" URL
+    $cart_url = WC()->cart->get_cart_url();
+
+    echo '<a href="' . $cart_url . '" class="added_to_cart success wc-forward">Checkout</a>';
+
+}
+add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart');
 
 
 /**

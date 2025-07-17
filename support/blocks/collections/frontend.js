@@ -86,7 +86,7 @@ const SaveSelectedProjects = ( {category, append} ) => {
 					{ resourcesEmpty && (
 						<Fragment>
 							<div className="error">
-								<p>There are no available collections matching your filters. Please try something else.</p>
+								<p>Check back later for updates.</p>
 							</div>
 						</Fragment>
 					)}

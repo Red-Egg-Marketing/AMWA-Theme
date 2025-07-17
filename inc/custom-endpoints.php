@@ -331,7 +331,8 @@ function amwa_theme_return_programs($data, $post_types = 'product') {
 		'ignore_sticky_posts' => true,
 		'ppp' => $posts_per_page,
 		'order' => 'ASC',
-		'orderby' => 'meta_value_num',
+		'orderby' => 'title',
+		// 'orderby' => 'meta_value_num',
 		'meta_query' => [ 
 			'relation'  => 'AND',
 			[
@@ -366,6 +367,7 @@ function amwa_theme_return_programs($data, $post_types = 'product') {
 			$id = get_the_ID();
 			if ($html == false) {
 				$time = date('g:i' , strtotime(get_post_meta($id, 'WooCommerceEventsHour', true) . get_post_meta($id, 'WooCommerceEventsMinutes', true) )) . ' ' . str_replace('.', '', get_post_meta($id, 'WooCommerceEventsPeriod',true));
+				$time = str_replace(":00", "", $time);
 				$post = $query->post;
 				$postObj = new stdClass;
 				$postObj->ID = $id;
