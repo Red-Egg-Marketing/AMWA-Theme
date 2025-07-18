@@ -68,7 +68,11 @@ const SaveTickets = ( { attributes, reference } ) => {
   			if (e.key === 'Escape') {
   				let parent = reference.querySelector('.select-field').parentElement;
   				parent.classList.remove('toggled');
+  			} else if (e.code == 'Space') {
+  				let parent = reference.querySelector('.select-field').parentElement;
+  				parent.classList.toggle('toggled');
   			}
+
   		}
 
   		const setTimeTicket = (value) => {
