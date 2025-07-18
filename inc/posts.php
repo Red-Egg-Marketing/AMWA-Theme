@@ -55,4 +55,32 @@ function lesson_register_template() {
 }
 add_action( 'init', 'lesson_register_template' );
 
+
+// attach category image for guided tours and self guided tours
+add_action( 'publish_product', 'attach_category_image_as_featured_image', 10, 2 );
+
+function attach_category_image_as_featured_image( $post_id, $post ) {
+    // Bail if there is already a post thumbnail set.
+    $current_post_thumbnail = get_post_thumbnail_id( $post_id );
+
+    if ( false != $current_post_thumbnail ) {
+        return;
+    }
+
+	//check which categories are set
+    if (has_term('guided-tour', 'product_cat', $post_id)) {
+    	$guided = get_term_by('slug', 'guided-tour', 'product_cat');
+    	$thumb_id = get_term_meta($guided->term_id, 'thumbnail_id', true);
+    	set_post_thumbnail($post_id, $thumb_id);
+    } else if (has_term('self-guided-tours', 'product_cat', $post_id)) {
+    	$self = get_term_by('slug', 'self-guided-tours', 'product_cat');
+    	$thumb_id = get_term_meta($self->term_id, 'thumbnail_id', true);
+    	set_post_thumbnail($post_id, $thumb_id);
+    } else if (has_term('puzzlin-art', 'product_cat', $post_id)) {
+    	$self = get_term_by('slug', 'puzzlin-art', 'product_cat');
+    	$thumb_id = get_term_meta($self->term_id, 'thumbnail_id', true);
+    	set_post_thumbnail($post_id, $thumb_id);
+    }
+}
+
 ?>

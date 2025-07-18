@@ -66,3 +66,7 @@
 	padding-bottom: 15px;
 	font-family: $font-body;
 }
+
+.wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption):before {
+	backdrop-filter: none !important;
+}

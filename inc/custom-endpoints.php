@@ -41,7 +41,7 @@ function amwa_theme_return_taxonomies($post_types) {
 
 function amwa_get_guided_tours() {
 
-	$current_date = current_time('timestamp', 1);
+	$current_date = time();
 
 	$get = $_GET;
 	$post_a = $_POST;
@@ -321,7 +321,7 @@ function amwa_theme_return_programs($data, $post_types = 'product') {
 	$read_more = isset($get['read_more']) ? $get['read_more'] : 'View Program';
 	$read_more = isset($post_a['read_more']) ? $post_a['read_more'] : $read_more;
 		
-	$current_date = current_time('timestamp', 1);
+	$current_date = time();
 
 	$args = [
 		'post_type' => $post_types,
@@ -436,7 +436,7 @@ function amwa_theme_return_lessons($data, $post_types = 'lesson') {
 	$orderby = isset($get['orderby']) ? $get['orderby'] : 'date';
 	$orderby = isset($post_a['orderby']) ? $post_a['orderby'] : $orderby;
 		
-	$current_date = current_time('timestamp', 1);
+	$current_date = time();
 
 	$args = [
 		'post_type' => $post_types,

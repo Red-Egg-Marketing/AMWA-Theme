@@ -96,7 +96,6 @@ const SaveTickets = ( { attributes, reference } ) => {
   				setDateAttr(setDate);
   				setSelectedDates(matches);
   				setFinalProduct(matches[0].id);
-  				console.log(matches);
   				setTotal(matches[0].quantity);
   				setType(matches);
   			
@@ -168,6 +167,9 @@ const SaveTickets = ( { attributes, reference } ) => {
             						onChange={ setTicketDate }
             						events={ events }
 								/>
+								{ total !== false && (
+									<p className="stock in-stock">{total} in stock</p>
+								)}
 							</div>
 
 							<div className="row buttons">

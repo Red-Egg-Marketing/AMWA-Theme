@@ -447,3 +447,8 @@ div.woocommerce-notices-wrapper:empty {
 		margin-bottom: 0;
 	}
 }
+
+body.woocommerce div.product p.stock {
+	font-size: 1em;
+	color: black !important;
+}

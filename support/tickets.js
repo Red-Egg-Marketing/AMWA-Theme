@@ -103,6 +103,7 @@ const SaveTickets = ( { attributes, reference } ) => {
   				setCurrentTypes(false);
   			}
   			setType(false);
+  			setTotal(false);
   		}
 
   		const setTypeTicket = (value) => {
@@ -123,7 +124,10 @@ const SaveTickets = ( { attributes, reference } ) => {
 
 			if (typeof matches != 'undefined') {
   				let quant = matches.quantity;
+
   				setTotal(quant);
+			} else {
+				setTotal(false);
 			}
   		}
 
@@ -172,6 +176,7 @@ const SaveTickets = ( { attributes, reference } ) => {
   			let parent = reference.querySelector('.select-field').parentElement;
 
   			parent.classList.remove('toggled');
+  			setTotal(false);
  
   		}
 
@@ -249,8 +254,10 @@ const SaveTickets = ( { attributes, reference } ) => {
 									 onChange={ setTypeTicket }
 									 disabled={ currentTypes == false ? true : false }
 								/>
+								{ total !== false && (
+									<p className="stock in-stock">{total} in stock</p>
+								)}
 							</div>
-
 							<div className="row buttons">
 								{ type != false && (
 									<Fragment>
@@ -277,6 +284,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 										</div>
 									</Fragment>
 								)}
+
 								<button 
 									disabled={ type == false ? true : false }
 									className="single_add_to_cart_button button ajax_add_to_cart add_to_cart_button" 
