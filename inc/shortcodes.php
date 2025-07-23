@@ -23,7 +23,7 @@ function amwa_get_closures( $atts = [] ) {
 
 	$title = $wporg_atts['title'];
 
-	$current_date = current_time('timestamp', 1);
+	$current_date = time();
 
 	$args = [
 			'post_type' 		=> 'product',
