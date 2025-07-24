@@ -654,7 +654,10 @@ li.menu-item.nav-button a {
 
 .site-header.fixed-pos.fixed .main-navigation .menu-item:not(.nav-button) a {
 	@media screen and (min-width:  $med-small-width) {
-		color: black;	
+		color: black;
+		&:hover {
+			color: $light-orange;
+		}
 	}
 }
 
