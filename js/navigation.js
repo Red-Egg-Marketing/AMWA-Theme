@@ -202,7 +202,7 @@
 
     			   	e.preventDefault();
     			   	document.querySelector(anchor.hash).scrollIntoView({
-    			       	behavior: 'smooth'
+    			       	behavior: 'smooth',
     			   	});
     			});
 

@@ -24,7 +24,7 @@ import Swiper from 'swiper/bundle';
     
     let products = new Swiper('.product.swiper', 
         {
-            loop: true,
+            loop: count > 1 ? true : false,
             slidesPerView: 1,
             autoplay: true,
             autoHeight: false,
