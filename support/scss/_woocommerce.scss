@@ -25,6 +25,10 @@
 	display: block !important;
 }
 
+.woocommerce div.product .description a {
+	text-decoration: underline;
+}
+
 .woocommerce ul.products li.product .woocommerce-loop-product__title,
 .product .woocommerce-loop-product__title {
 	color: black;
