@@ -501,6 +501,10 @@ li.menu-item.cart a,
 	display: inline;
 }
 
+.site-header .main-navigation li.menu-item.nav-button.current-menu-item > a {
+	color: black;
+}
+
 li.menu-item.nav-button a {
 	@extend .wp-block-button__link;
 	display: block;
