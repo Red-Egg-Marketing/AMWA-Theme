@@ -9,7 +9,7 @@
 
 if ( ! defined( '_S_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '2.0.3' );
+	define( '_S_VERSION', '2.0.4' );
 }
 
 if ( ! function_exists( 'amwa_theme_setup' ) ) :
@@ -527,6 +527,29 @@ function add_content_after_addtocart() {
 
 }
 add_action( 'woocommerce_after_add_to_cart_button', 'add_content_after_addtocart');
+
+
+function amwa_add_blank_to_external_links_js() {
+        ?>
+        <script type="text/javascript">
+            document.addEventListener('DOMContentLoaded', function() {
+                var links = document.querySelectorAll('a');
+                var currentHostname = window.location.hostname;
+
+                for (var i = 0; i < links.length; i++) {
+                    var link = links[i];
+                    var href = link.getAttribute('href');
+
+                    if (href && href.startsWith('http') && !href.includes(currentHostname)) {
+                        link.setAttribute('target', '_blank');
+                    }
+                }
+            });
+        </script>
+        <?php
+}
+
+add_action('wp_footer', 'amwa_add_blank_to_external_links_js');
 
 
 /**

@@ -613,6 +613,10 @@ li.menu-item.nav-button a {
 	}
 }
 
+.site-header .main-navigation .menu-item.current-menu-item > a {
+	color: $light-orange;
+}
+
 .site-header.fixed-pos svg .color-change {
 	@media screen and (min-width:  $med-small-width) {
 		fill: white;
@@ -827,6 +831,10 @@ li.menu-item.nav-button a {
 	display: block;
 }
 
+.main-navigation .nav-menu > .menu-item:not(.mega-menu) > .inner-wrap li.current-menu-item a {
+	color: $light-orange;
+}
+
 
 .main-navigation .nav-menu > .menu-item:not(.mega-menu) > .inner-wrap li a {
 	color: black;
@@ -994,6 +1002,10 @@ li.menu-item.nav-button a {
 		font-size: 18px;
 		font-weight: 500;
 	}
+}
+
+.main-navigation .sub-menu .sub-menu .menu-item.current-menu-item a {
+	color: $light-orange;
 }
 
 .hand-wave:before {
