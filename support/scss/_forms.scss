@@ -439,7 +439,7 @@ body div.gform_wrapper .top_label div.ginput_container.ginput_container_checkbox
 
 div.gform_wrapper.gravity-theme .gfield_checkbox label,
 div.gform_wrapper.gravity-theme .gfield-choice-input+label {
-	color: white;
+	color: black;
 	font-family: $font-body;
 	font-size: 16px;
 	font-weight: 600;
@@ -498,14 +498,14 @@ div.gform_wrapper .gfield.gf_list_2col .gfield_radio {
 .radio-cont input[type=radio]:checked + label:after,
 .gfield_radio .gfield-choice-input:checked + label:after {
 	content: "";
-	width: 7px;
-	height: 7px;
-	border-radius: 7px;
+	width: 9px;
+	height: 9px;
+	border-radius: 9px;
 	position: absolute;
-	top: 9px;
-	left: 5px;
+	top: 6px;
+	left: 4px;
 	display: inline-block;
-	background: $body-color;
+	background: black;
 }
 
 .gfield_checkbox .gfield-choice-input:checked + label:after {
