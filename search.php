@@ -13,7 +13,7 @@ get_header();
 	<main id="primary" class="site-main">
 		<?php if ( have_posts() ) : ?>
 
-			<header class="section-header with-bg teal">
+			<header class="section-header with-bg yellow">
 				<div class="block-wrapper">
 					<h1>
 						<?php
