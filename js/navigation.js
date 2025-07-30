@@ -121,11 +121,12 @@
 
 	for ( var link of listsWithChildren ) {
 		link.addEventListener( 'mouseover', positionChildMenu, false );
+		link.addEventListener( 'focus', positionChildMenu, false );
 	}
 
 
 	function positionChildMenu() {
-		if ( event.type === 'mouseover') {
+		if ( event.type === 'mouseover' || event.type === 'focus') {
 			let self = this;
 			let rect = self.getBoundingClientRect();
 			let left = rect.left;
