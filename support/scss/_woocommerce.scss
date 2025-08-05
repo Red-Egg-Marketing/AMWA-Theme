@@ -330,6 +330,11 @@ div.woocommerce-notices-wrapper:empty {
 	&:hover {
 		color: black;
 	}
+	width: 100%;
+	text-align: center;
+	@media screen and (min-width: $small-width) {
+		width: auto;
+	}
 }
 
 .woocommerce-cart .quantity .qty {

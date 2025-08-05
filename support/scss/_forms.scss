@@ -1007,6 +1007,8 @@ div.gform_wrapper .gform_drop_area button.gform_button_select_files {
 	align-items: stretch;
 	grid-column-gap: 25px;
 	margin-bottom: 0;
+	flex-wrap: wrap;
+	grid-row-gap: 25px;
 	@media screen and (min-width: $small-width) {
 		grid-column-gap: 45px;
 	}
