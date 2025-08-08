@@ -48,6 +48,10 @@ function amwa_get_guided_tours() {
 	$tax = isset($get['tax-slug']) ? explode(',', $get['tax-slug']) : false;
 	$tax = isset($post_a['tax-slug']) ? explode(',', $post_a['tax-slug']) : $tax;
 
+	if ($tax == 'self-guided-tours') {
+		$current_date = $current_date - (24*60*60);
+	}
+
 	$args = [
 		'posts_per_page' 	=> -1,
 		'orderby' 	=>  'date',
