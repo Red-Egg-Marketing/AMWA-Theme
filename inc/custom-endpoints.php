@@ -335,8 +335,8 @@ function amwa_theme_return_programs($data, $post_types = 'product') {
 		'ignore_sticky_posts' => true,
 		'ppp' => $posts_per_page,
 		'order' => 'ASC',
-		'orderby' => 'title',
-		// 'orderby' => 'meta_value_num',
+		// 'orderby' => 'title',
+		'orderby' => 'meta_value_num',
 		'meta_query' => [ 
 			'relation'  => 'AND',
 			[
