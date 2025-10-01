@@ -93,6 +93,7 @@ const SaveTickets = ( { attributes, reference } ) => {
 					let type = variation.attributes['attribute_ticket-type'];
 					let id = variation.variation_id;
 					let price = Intl.NumberFormat("en-US", { style: "currency", currency: "USD" }).format(variation.display_price);
+					price = price.replace(".00", "");
 					let typeObj = {
 						label: type + ' ' + price,
 						value: id

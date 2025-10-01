@@ -76,7 +76,7 @@ function amwa_get_guided_tours() {
 
 	$products = new WP_Query( $args );
 
-	$posts = [];
+	$posts = [];	
 
 	if ($products->have_posts()) {
 		while($products->have_posts()) {
@@ -85,7 +85,6 @@ function amwa_get_guided_tours() {
 			$time = date('g:i' , strtotime(get_post_meta($id, 'WooCommerceEventsHour', true) . get_post_meta($id, 'WooCommerceEventsMinutes', true) )) . ' ' . str_replace('.', '', get_post_meta($id, 'WooCommerceEventsPeriod',true));
 			$product = wc_get_product($id);
 
-			// print_r($product);
 			$postObj = new stdClass;
 			$postObj->ID = $id;
 			$postObj->tickets = $product->stock_quantity;

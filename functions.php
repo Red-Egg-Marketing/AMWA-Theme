@@ -552,6 +552,10 @@ function amwa_add_blank_to_external_links_js() {
 add_action('wp_footer', 'amwa_add_blank_to_external_links_js');
 
 
+// remove .00 from woocommerce price
+add_filter( 'woocommerce_price_trim_zeros', '__return_true' );
+
+
 /**
  * Implement the Custom Header feature.
  */
