@@ -151,9 +151,11 @@ const SaveTickets = ( { attributes, reference } ) => {
   			});
   			matches.map(match => {
   				let time = match.time;
+  				let origTime = time;
+  				time = time.replace(":00", "");
   				let timeObj = {
   					label: time,
-  					value: time,
+  					value: origTime,
   				};
   				times.push(timeObj);
   			});
