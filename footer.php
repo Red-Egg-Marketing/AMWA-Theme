@@ -23,7 +23,6 @@ if (function_exists('get_field')) {
         'disclaimer'    => get_field('disclaimer', 'options'),
         'privacy'       => get_field('privacy', 'options'),
     ];
-        
 ?>
 
     <footer id="colophon" class="site-footer">
