@@ -41,63 +41,64 @@ function amwa_theme_return_taxonomies($post_types) {
 
 function amwa_get_guided_tours() {
 
-	$current_date = time();
 
-	$get = $_GET;
-	$post_a = $_POST;
-	$tax = isset($get['tax-slug']) ? explode(',', $get['tax-slug']) : false;
-	$tax = isset($post_a['tax-slug']) ? explode(',', $post_a['tax-slug']) : $tax;
 
-	if ($tax == 'self-guided-tours' || in_array('self-guided-tours', $tax)) {
-		$current_date = $current_date - (17*60*60);
-	}
+		$current_date = time();
+		$get = $_GET;
+		$post_a = $_POST;
+		$tax = isset($get['tax-slug']) ? explode(',', $get['tax-slug']) : false;
+		$tax = isset($post_a['tax-slug']) ? explode(',', $post_a['tax-slug']) : $tax;
 
-	$args = [
-		'posts_per_page' 	=> -1,
-		'orderby' 	=>  'date',
-		'tax_query' => [
-			'relation' => 'AND',
-			[
-				'taxonomy' 	=> 'product_cat',
-				'terms'		=> $tax,
-				'field'		=> 'slug'
-			]
-		],
-		'meta_query' => [ 
-			'relation'  => 'AND',
-			[
-				'key' 		=> 'WooCommerceEventsDateTimestamp',
-				'compare' 	=> '>=',
-				'type'		=> 'NUMERIC',
-				'value'		=> $current_date
-			]
-		]
-	];
-
-	$products = new WP_Query( $args );
-
-	$posts = [];	
-
-	if ($products->have_posts()) {
-		while($products->have_posts()) {
-			$products->the_post();
-			$id = get_the_ID();
-			$time = date('g:i' , strtotime(get_post_meta($id, 'WooCommerceEventsHour', true) . get_post_meta($id, 'WooCommerceEventsMinutes', true) )) . ' ' . str_replace('.', '', get_post_meta($id, 'WooCommerceEventsPeriod',true));
-			$product = wc_get_product($id);
-
-			$postObj = new stdClass;
-			$postObj->ID = $id;
-			$postObj->tickets = $product->stock_quantity;
-			if (is_a($product, 'WC_Product_Variable')) {
-				$postObj->variations = $product->get_available_variations();
-			}
-			$postObj->date = date('m/d/Y', get_post_meta($id, 'WooCommerceEventsDateTimestamp', true));
-			$postObj->time = $time;
-			$posts[] = $postObj;
+		if ($tax == 'self-guided-tours' || in_array('self-guided-tours', $tax)) {
+			$current_date = $current_date - (17*60*60);
 		}
 
+		$args = [
+			'posts_per_page' 	=> -1,
+			'orderby' 	=>  'date',
+			'tax_query' => [
+				'relation' => 'AND',
+				[
+					'taxonomy' 	=> 'product_cat',
+					'terms'		=> $tax,
+					'field'		=> 'slug'
+				]
+			],
+			'meta_query' => [ 
+				'relation'  => 'AND',
+				[
+					'key' 		=> 'WooCommerceEventsDateTimestamp',
+					'compare' 	=> '>=',
+					'type'		=> 'NUMERIC',
+					'value'		=> $current_date
+				]
+			]
+		];
+
+		$products = new WP_Query( $args );
+
+		$posts = [];	
+
+		if ($products->have_posts()) {
+			while($products->have_posts()) {
+				$products->the_post();
+				$id = get_the_ID();
+				$time = date('g:i' , strtotime(get_post_meta($id, 'WooCommerceEventsHour', true) . get_post_meta($id, 'WooCommerceEventsMinutes', true) )) . ' ' . str_replace('.', '', get_post_meta($id, 'WooCommerceEventsPeriod',true));
+				$product = wc_get_product($id);
+
+				$postObj = new stdClass;
+				$postObj->ID = $id;
+				$postObj->tickets = $product->stock_quantity;
+				if (is_a($product, 'WC_Product_Variable')) {
+					$postObj->variations = $product->get_available_variations();
+				}
+				$postObj->date = date('m/d/Y', get_post_meta($id, 'WooCommerceEventsDateTimestamp', true));
+				$postObj->time = $time;
+				$posts[] = $postObj;
+			}
+		}
 		wp_reset_postdata();
-	}
+	
 
 	return $posts;
 }
