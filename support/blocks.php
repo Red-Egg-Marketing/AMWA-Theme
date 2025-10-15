@@ -156,7 +156,7 @@ function amwa_theme_dynamic_case_studies_grid_block() {
         wp_enqueue_script(
             'wp-main-js',
             get_template_directory_uri() . $front_path,
-            ['wp-api', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'scroll-magic', 'tweenmax', 'tweenmax-animation', 'scrolltrigger', 'lottie-script'],
+            ['wp-api', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'scroll-magic', 'tweenmax', 'tweenmax-animation', 'scrolltrigger', 'lottie-script', 'wp-api-request'],
             'v1.0.7',
             true
        );
