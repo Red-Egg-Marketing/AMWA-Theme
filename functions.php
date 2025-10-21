@@ -169,7 +169,7 @@ function amwa_theme_scripts() {
 	 	wp_register_script(
         	'site-tickets',
         	get_stylesheet_directory_uri() . '/js/tickets.js',
-        	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
+        	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash', 'wp-api-request' ],
         	'2.0.2',
         	true
     	);
@@ -182,7 +182,7 @@ function amwa_theme_scripts() {
 	 	wp_register_script(
         	'self-tickets',
         	get_stylesheet_directory_uri() . '/js/self-tickets.js',
-        	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
+        	['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash', 'wp-api-request' ],
         	'2.0.2',
         	true
     	);
