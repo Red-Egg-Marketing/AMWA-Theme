@@ -159,7 +159,7 @@ function amwa_theme_scripts() {
 	 wp_register_script(
         'site-time',
         get_stylesheet_directory_uri() . '/js/time.js',
-        ['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash' ],
+        ['jquery', 'wp-i18n', 'wp-element', 'wp-blocks', 'wp-components', 'wp-editor', 'wp-dom-ready', 'lodash', 'wp-api-request' ],
         '1.1.7',
         true
     );
@@ -219,7 +219,7 @@ function amwa_theme_browser_body_class($classes) {
                 $classes[] = 'ie'.$browser_version[1];
             	if (!is_admin()) {
             		wp_deregister_script('wp-main-js');
-            		wp_enqueue_script('AMWA-theme-faq-id', get_template_directory_uri() . '/js/faq.js', [], 'v1', true);
+            		// wp_enqueue_script('AMWA-theme-faq-id', get_template_directory_uri() . '/js/faq.js', [], 'v1', true);
             	}
         } else $classes[] = 'unknown';
         if($is_iphone) $classes[] = 'iphone';

@@ -116,10 +116,11 @@ add_action( 'rest_api_init', function () {
 
 function amwa_get_business_hours() {
 	if (function_exists('get_field')) {
-		$current_date = wp_date('F d, Y');
+		$current_date = wp_date('F j, Y');
 		$display_date = wp_date('l, F d ');
 		$current_day = wp_date('l');
 		$closure = false;
+
 		// first check for any clousures
 
 		$args = [
