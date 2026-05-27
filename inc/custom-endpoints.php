@@ -188,7 +188,7 @@ function amwa_get_business_hours() {
 						if ($closure == true && !$has_event) {
 							$day_language = 'AMWA is closed today, ' . $display_date;
 						} elseif ($has_event == true) {
-							$day_language = 'AMWA is open today,' . $display_date;
+							$day_language = 'AMWA is open today, ' . $display_date;
 						} else {
 							$day_language = 'AMWA is open today ' . $h;
 						}
