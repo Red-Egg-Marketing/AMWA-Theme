@@ -274,7 +274,7 @@ const SaveResources = ( { attributes } ) => {
 										resourceIndex={ resourceIndex }
 										resourceURL={ resource.link }
 										resourceID={ resource.ID }
-										resourceImg={ resource.media_url }														resourceExcerpt={ resource.post_excerpt }
+										resourceImg={ resource.media_url }														
 										resourceExcerpt={ resource.post_excerpt }
 										resourceTitle={ resource.post_title  }
 									/>
