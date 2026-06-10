@@ -49,7 +49,7 @@ function amwa_get_guided_tours() {
 		$tax = isset($get['tax-slug']) ? explode(',', $get['tax-slug']) : false;
 		$tax = isset($post_a['tax-slug']) ? explode(',', $post_a['tax-slug']) : $tax;
 
-		if ($tax == 'self-guided-tours' || in_array('self-guided-tours', $tax)) {
+		if ($tax == 'self-guided-tours' || (is_array($tax) && in_array('self-guided-tours', $tax))) {
 			$current_date = $current_date - (17*60*60);
 		}
 
@@ -185,12 +185,14 @@ function amwa_get_business_hours() {
 						$h = ltrim($h);
 						$hours[] = [$weekday[0], $weekday[1], $closure];
 
-						if ($closure == true && !$has_event) {
+						if ($closure == true && $has_event == false) {
 							$day_language = 'AMWA is closed today, ' . $display_date;
 						} elseif ($has_event == true) {
 							$day_language = 'AMWA is open today, ' . $display_date;
+						} elseif($h == 'Closed' && $has_event == false) {
+							$day_language = 'AMWA is closed today ' . $display_date; 
 						} else {
-							$day_language = 'AMWA is open today ' . $h;
+							$day_language = 'AMWA is open today, ' . $h;
 						}
 					} else {
 						$hours[] = [$weekday[0], $weekday[1]];
