@@ -627,6 +627,12 @@ require get_template_directory() . '/inc/menu-functions.php';
 require get_template_directory() . '/inc/shortcodes.php';
 
 
+/**
+ * Woo Order Export Data
+ */
+require get_template_directory() . '/inc/woo-order-export.php';
+
+
 
 /**
  * Load Jetpack compatibility file.
