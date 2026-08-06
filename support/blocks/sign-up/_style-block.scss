@@ -81,8 +81,10 @@
 	padding-bottom: 10px;
 	padding-left: 20px;
 	min-height: 40px;
+	max-height: 40px;
 	@media screen and (min-width: $small-width) {
-		min-height: 62px;
+		min-height: 54px;
+		max-height: 54px;
 	}
 }
 
