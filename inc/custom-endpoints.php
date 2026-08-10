@@ -41,8 +41,6 @@ function amwa_theme_return_taxonomies($post_types) {
 
 function amwa_get_guided_tours() {
 
-
-
 		$current_date = time();
 		$get = $_GET;
 		$post_a = $_POST;
