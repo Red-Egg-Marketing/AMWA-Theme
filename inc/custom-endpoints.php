@@ -56,6 +56,7 @@ function amwa_get_guided_tours() {
 		$args = [
 			'posts_per_page' 	=> -1,
 			'orderby' 	=>  'date',
+			'order' => 'ASC',
 			'tax_query' => [
 				'relation' => 'AND',
 				[
