@@ -29,7 +29,7 @@ function amwa_get_closures( $atts = [] ) {
 			'post_type' 		=> 'product',
 			'posts_per_page' 	=> -1,
 			'post_status'		=> 'publish',
-			'order'				=> 'DESC',
+			'order'				=> 'ASC',
 			'meta_query'		=> [
 				'relation' 		=> 'AND',
 				[
