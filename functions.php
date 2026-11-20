@@ -385,9 +385,10 @@ function woocommerce_show_flex_slider_product_images() {
 							echo wp_get_attachment_image($feat, 'large');
 						?>
 					</div>
-					<?
-					foreach($attachments as $key => $attachment) {
-							if ($key == 0) {
+					<?php
+					foreach($attachments as $attachment) {
+							// skip the featured image if it was also added to the gallery
+							if ($attachment != $feat) {
 					?>
 							
 							<div class="swiper-slide">
